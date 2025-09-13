@@ -1,6 +1,7 @@
 import { Search, Menu, User, Heart, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 
 const StreamingHeader = () => {
   return (
@@ -18,9 +19,11 @@ const StreamingHeader = () => {
           </div>
           
           <nav className="hidden md:flex items-center gap-6">
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              Home
-            </Button>
+            <Link to="/">
+              <Button variant="ghost" className="text-foreground hover:text-primary">
+                Home
+              </Button>
+            </Link>
             <Button variant="ghost" className="text-foreground hover:text-primary">
               Live TV
             </Button>
@@ -33,9 +36,11 @@ const StreamingHeader = () => {
             <Button variant="ghost" className="text-foreground hover:text-primary">
               News
             </Button>
-            <Button variant="ghost" className="text-foreground hover:text-primary">
-              Kids
-            </Button>
+            <Link to="/telugu-channels">
+              <Button variant="ghost" className="text-foreground hover:text-primary">
+                Telugu Channels
+              </Button>
+            </Link>
           </nav>
         </div>
 

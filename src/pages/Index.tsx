@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import StreamingHeader from "@/components/StreamingHeader";
 import HeroSection from "@/components/HeroSection";
 import CategoryFilter from "@/components/CategoryFilter";
@@ -51,6 +54,49 @@ const Index = () => {
         <div className="space-y-8">
           <ContentCarousel title="Trending Movies" items={trendingMovies} />
           <LiveTVSection />
+          
+          {/* Telugu Channels Section */}
+          <section className="py-8">
+            <div className="container px-4">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground mb-2">Telugu TV Channels</h2>
+                  <p className="text-muted-foreground">Watch live Telugu news, entertainment & more</p>
+                </div>
+                <Link to="/telugu-channels">
+                  <Button variant="outline" className="gap-2">
+                    View All Channels
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { name: 'TV9 Telugu', category: 'News', isLive: true },
+                  { name: 'Star Maa', category: 'Entertainment', isLive: false },
+                  { name: 'ABN Telugu', category: 'News', isLive: true },
+                  { name: 'ETV Telugu', category: 'Entertainment', isLive: false },
+                  { name: 'V6 News', category: 'News', isLive: true },
+                  { name: 'Gemini TV', category: 'Entertainment', isLive: false },
+                ].map((channel, index) => (
+                  <Link key={index} to="/telugu-channels">
+                    <div className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-colors">
+                      <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg mb-2 flex items-center justify-center">
+                        <span className="text-xs font-semibold text-center">{channel.name}</span>
+                      </div>
+                      <p className="text-xs text-center text-muted-foreground">{channel.category}</p>
+                      {channel.isLive && (
+                        <div className="text-center mt-1">
+                          <span className="text-xs bg-live-indicator text-white px-1 rounded">LIVE</span>
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+          
           <ContentCarousel title="Popular Web Series" items={popularSeries} />
           <ContentCarousel title="Live TV Channels" items={liveChannels} />
           <ContentCarousel title="Kids & Family" items={kidsContent} />
