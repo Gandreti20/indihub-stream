@@ -57,6 +57,23 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Streaming platform specific colors
+        "live-indicator": "hsl(var(--live-indicator))",
+        "new-badge": "hsl(var(--new-badge))",
+      },
+      backgroundImage: {
+        "hero-gradient": "var(--hero-gradient)",
+        "content-gradient": "var(--content-gradient)", 
+        "premium-gradient": "var(--premium-gradient)",
+      },
+      boxShadow: {
+        "premium": "var(--shadow-premium)",
+        "content": "var(--shadow-content)",
+        "glow": "var(--shadow-glow)",
+      },
+      transitionTimingFunction: {
+        "smooth": "var(--transition-smooth)",
+        "bounce": "var(--transition-bounce)",
       },
       borderRadius: {
         lg: "var(--radius)",
