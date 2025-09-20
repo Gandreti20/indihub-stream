@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StreamingHeader from "@/components/StreamingHeader";
+import Breadcrumb from "@/components/Breadcrumb";
 import HeroSection from "@/components/HeroSection";
 import CategoryFilter from "@/components/CategoryFilter";
 import ContentCarousel from "@/components/ContentCarousel";
@@ -48,6 +49,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <StreamingHeader />
+      <Breadcrumb />
       <main>
         <HeroSection />
         <CategoryFilter />
