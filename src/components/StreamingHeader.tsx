@@ -40,45 +40,24 @@ const StreamingHeader = () => {
                 className={`flex items-center gap-2 ${isActivePage("/telugu-channels") ? "bg-secondary text-secondary-foreground" : "text-foreground hover:text-primary"}`}
               >
                 <Tv className="h-4 w-4" />
-                Telugu Channels
+                All Channels
               </Button>
             </Link>
-            <Button variant="ghost" className="flex items-center gap-2 text-foreground hover:text-primary">
-              <Film className="h-4 w-4" />
-              Movies
-            </Button>
-            <Button variant="ghost" className="flex items-center gap-2 text-foreground hover:text-primary">
-              <Trophy className="h-4 w-4" />
-              Sports
-            </Button>
-            <Button variant="ghost" className="flex items-center gap-2 text-foreground hover:text-primary">
-              <Newspaper className="h-4 w-4" />
-              News
-            </Button>
           </nav>
         </div>
 
-        {/* Search and User Actions */}
-        <div className="flex items-center gap-4">
+        {/* Search */}
+        <div className="flex items-center gap-2">
           <div className="relative hidden sm:block">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
-              placeholder="Search movies, shows, live TV..."
-              className="w-64 pl-9 bg-secondary/50 border-border/50"
+              placeholder="Search channels..."
+              className="w-48 pl-9 bg-secondary/50 border-border/50"
             />
           </div>
           
-          <Button variant="ghost" size="icon" className="text-foreground hover:text-primary">
-            <Search className="h-5 w-5 sm:hidden" />
-            <Bell className="h-5 w-5 hidden sm:block" />
-          </Button>
-          
-          <Button variant="ghost" size="icon" className="text-foreground hover:text-primary">
-            <Heart className="h-5 w-5" />
-          </Button>
-          
-          <Button variant="ghost" size="icon" className="text-foreground hover:text-primary">
-            <User className="h-5 w-5" />
+          <Button variant="ghost" size="icon" className="text-foreground hover:text-primary sm:hidden">
+            <Search className="h-5 w-5" />
           </Button>
         </div>
       </div>

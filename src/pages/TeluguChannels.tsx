@@ -160,20 +160,143 @@ const TeluguChannels = () => {
       description: 'Telugu movie channel'
     },
     
-    // Kids & Music
+    // Hindi Entertainment Channels
+    {
+      id: 'colors-tv',
+      name: 'Colors TV',
+      category: 'Entertainment',
+      language: 'Hindi',
+      description: 'Popular Hindi serials and reality shows'
+    },
+    {
+      id: 'star-plus',
+      name: 'Star Plus',
+      category: 'Entertainment', 
+      language: 'Hindi',
+      description: 'Hindi family entertainment'
+    },
+    {
+      id: 'zee-tv',
+      name: 'Zee TV',
+      category: 'Entertainment',
+      language: 'Hindi', 
+      description: 'Hindi entertainment channel'
+    },
+    {
+      id: 'sony-tv',
+      name: 'Sony TV',
+      category: 'Entertainment',
+      language: 'Hindi',
+      description: 'Hindi serials and shows'
+    },
+    
+    // Hindi Movies
+    {
+      id: 'sony-max',
+      name: 'Sony Max',
+      category: 'Movies',
+      language: 'Hindi',
+      description: 'Latest Bollywood movies'
+    },
+    {
+      id: 'zee-cinema',
+      name: 'Zee Cinema',
+      category: 'Movies',
+      language: 'Hindi',
+      description: 'Hindi blockbuster movies'
+    },
+    {
+      id: 'star-gold',
+      name: 'Star Gold',
+      category: 'Movies',
+      language: 'Hindi',
+      description: 'Classic and new Hindi movies'
+    },
+    
+    // Kids Channels
     {
       id: 'chutti-tv',
       name: 'Chutti TV',
       category: 'Kids',
-      language: 'Telugu',
+      language: 'Tamil',
       description: 'Kids entertainment and cartoons'
     },
+    {
+      id: 'pogo',
+      name: 'Pogo',
+      category: 'Kids',
+      language: 'Hindi',
+      description: 'Hindi cartoons and kids shows'
+    },
+    {
+      id: 'cartoon-network',
+      name: 'Cartoon Network',
+      category: 'Kids',
+      language: 'English',
+      description: 'International cartoons and animation'
+    },
+    {
+      id: 'disney-channel',
+      name: 'Disney Channel',
+      category: 'Kids', 
+      language: 'English',
+      description: 'Disney movies and shows for kids'
+    },
+    {
+      id: 'nick',
+      name: 'Nickelodeon',
+      category: 'Kids',
+      language: 'English',
+      description: 'Nick Jr. shows and cartoons'
+    },
+    
+    // Sports Channels
+    {
+      id: 'star-sports-1',
+      name: 'Star Sports 1',
+      category: 'Sports',
+      language: 'Hindi',
+      description: 'Live cricket, football and sports'
+    },
+    {
+      id: 'sony-sports',
+      name: 'Sony Sports Network',
+      category: 'Sports',
+      language: 'Hindi',
+      description: 'Live sports coverage'
+    },
+    {
+      id: 'dd-sports',
+      name: 'DD Sports',
+      category: 'Sports',
+      isYouTubeLive: true,
+      youtubeEmbedId: 'bWL9_DzI16w',
+      language: 'Hindi',
+      description: 'Free live sports channel',
+      viewerCount: '12K'
+    },
+    {
+      id: 'eurosport',
+      name: 'Eurosport',
+      category: 'Sports',
+      language: 'English',
+      description: 'International sports coverage'
+    },
+    
+    // Music
     {
       id: 'maa-music',
       name: 'Maa Music',
       category: 'Music',
       language: 'Telugu',
       description: 'Telugu music videos and songs'
+    },
+    {
+      id: 'mtv',
+      name: 'MTV India',
+      category: 'Music',
+      language: 'Hindi',
+      description: 'Hindi music videos and shows'
     },
     
     // Devotional
@@ -229,13 +352,12 @@ const TeluguChannels = () => {
       <StreamingHeader />
       <Breadcrumb />
       <div className="container px-4 py-8">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-            Telugu TV Channels
+            TV Channels
           </h1>
           <p className="text-muted-foreground text-lg mb-4">
-            Watch your favorite Telugu channels live and free
+            Telugu, Hindi, Kids & Sports channels - all in one place
           </p>
           <div className="flex items-center justify-center gap-3 flex-wrap">
             <Badge variant="secondary" className="bg-accent text-accent-foreground px-3 py-1">
@@ -415,7 +537,6 @@ const ChannelCard = ({
           >
             {channel.category}
           </Badge>
-          <span className="text-xs text-muted-foreground">{channel.language}</span>
         </div>
         <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
           {channel.description}
