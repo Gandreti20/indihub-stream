@@ -8,19 +8,27 @@ import CategoryFilter from "@/components/CategoryFilter";
 import ContentCarousel from "@/components/ContentCarousel";
 import LiveTVSection from "@/components/LiveTVSection";
 
+// Import images
+import rrrImage from "@/assets/movies/rrr.jpg";
+import pushpaImage from "@/assets/movies/pushpa.jpg";
+import kgf2Image from "@/assets/movies/kgf2.jpg";
+import familyManImage from "@/assets/series/family-man.jpg";
+import starSportsImage from "@/assets/channels/star-sports.jpg";
+import chhotaBheemImage from "@/assets/kids/chhota-bheem.jpg";
+
 const Index = () => {
   // Sample content data
   const trendingMovies = [
-    { id: '1', title: 'RRR', image: '', rating: 8.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
-    { id: '2', title: 'Pushpa', image: '', rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
-    { id: '3', title: 'KGF Chapter 2', image: '', rating: 8.4, year: 2022, language: 'Kannada', type: 'movie' as const },
+    { id: '1', title: 'RRR', image: rrrImage, rating: 8.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
+    { id: '2', title: 'Pushpa', image: pushpaImage, rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
+    { id: '3', title: 'KGF Chapter 2', image: kgf2Image, rating: 8.4, year: 2022, language: 'Kannada', type: 'movie' as const },
     { id: '4', title: 'Gangubai Kathiawadi', image: '', rating: 7.8, year: 2022, language: 'Hindi', type: 'movie' as const },
     { id: '5', title: 'Sooryavanshi', image: '', rating: 5.6, year: 2021, language: 'Hindi', type: 'movie' as const },
     { id: '6', title: 'Bell Bottom', image: '', rating: 6.9, year: 2021, language: 'Hindi', type: 'movie' as const },
   ];
 
   const popularSeries = [
-    { id: '1', title: 'The Family Man 3', image: '', rating: 8.7, year: 2023, language: 'Hindi', type: 'series' as const, badge: 'NEW' },
+    { id: '1', title: 'The Family Man 3', image: familyManImage, rating: 8.7, year: 2023, language: 'Hindi', type: 'series' as const, badge: 'NEW' },
     { id: '2', title: 'Scam 1992', image: '', rating: 9.5, year: 2020, language: 'Hindi', type: 'series' as const },
     { id: '3', title: 'Mumbai Diaries 26/11', image: '', rating: 8.1, year: 2021, language: 'Hindi', type: 'series' as const },
     { id: '4', title: 'Arya', image: '', rating: 8.3, year: 2020, language: 'Tamil', type: 'series' as const },
@@ -29,7 +37,7 @@ const Index = () => {
   ];
 
   const liveChannels = [
-    { id: '1', title: 'Star Sports 1', image: '', language: 'Hindi', type: 'live' as const, badge: 'LIVE' },
+    { id: '1', title: 'Star Sports 1', image: starSportsImage, language: 'Hindi', type: 'live' as const, badge: 'LIVE' },
     { id: '2', title: 'Sony Entertainment', image: '', language: 'Hindi', type: 'live' as const, badge: 'LIVE' },
     { id: '3', title: 'Zee News', image: '', language: 'Hindi', type: 'live' as const, badge: 'LIVE' },
     { id: '4', title: 'Sun TV', image: '', language: 'Tamil', type: 'live' as const, badge: 'LIVE' },
@@ -38,7 +46,7 @@ const Index = () => {
   ];
 
   const kidsContent = [
-    { id: '1', title: 'Chhota Bheem', image: '', rating: 7.2, year: 2023, language: 'Hindi', type: 'series' as const },
+    { id: '1', title: 'Chhota Bheem', image: chhotaBheemImage, rating: 7.2, year: 2023, language: 'Hindi', type: 'series' as const },
     { id: '2', title: 'Motu Patlu', image: '', rating: 6.8, year: 2023, language: 'Hindi', type: 'series' as const },
     { id: '3', title: 'Doraemon', image: '', rating: 8.5, year: 2023, language: 'Hindi', type: 'series' as const },
     { id: '4', title: 'Shinchan', image: '', rating: 8.1, year: 2023, language: 'Hindi', type: 'series' as const },
