@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import StreamingHeader from "@/components/StreamingHeader";
-import Breadcrumb from "@/components/Breadcrumb";
+import NavigationBreadcrumb from "@/components/Breadcrumb";
 
 interface Movie {
   id: string;
@@ -117,7 +117,7 @@ const Movies = () => {
       
       <main className="pt-20">
         <div className="container px-4 py-6">
-          <Breadcrumb />
+          <NavigationBreadcrumb />
           
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-foreground mb-2">Free Movies</h1>

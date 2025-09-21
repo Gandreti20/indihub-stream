@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play, Radio, Tv, Users, X, Volume2 } from "lucide-react";
 import StreamingHeader from "@/components/StreamingHeader";
-import Breadcrumb from "@/components/Breadcrumb";
+import NavigationBreadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -350,7 +350,7 @@ const TeluguChannels = () => {
   return (
     <div className="min-h-screen bg-background">
       <StreamingHeader />
-      <Breadcrumb />
+      <NavigationBreadcrumb />
       <div className="container px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">

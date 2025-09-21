@@ -2,7 +2,7 @@ import { ChevronRight, Home } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-const Breadcrumb = () => {
+const NavigationBreadcrumb = () => {
   const location = useLocation();
   
   const getBreadcrumbs = () => {
@@ -56,4 +56,4 @@ const Breadcrumb = () => {
   );
 };
 
-export default Breadcrumb;
+export default NavigationBreadcrumb;
