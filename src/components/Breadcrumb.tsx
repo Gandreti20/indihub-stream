@@ -15,7 +15,14 @@ const Breadcrumb = () => {
     if (path === "/telugu-channels") {
       return [
         { label: "Home", path: "/" },
-        { label: "Telugu Channels", path: "/telugu-channels" }
+        { label: "All Channels", path: "/telugu-channels" }
+      ];
+    }
+    
+    if (path === "/movies") {
+      return [
+        { label: "Home", path: "/" },
+        { label: "Free Movies", path: "/movies" }
       ];
     }
     

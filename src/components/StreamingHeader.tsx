@@ -43,6 +43,15 @@ const StreamingHeader = () => {
                 All Channels
               </Button>
             </Link>
+            <Link to="/movies">
+              <Button 
+                variant={isActivePage("/movies") ? "secondary" : "ghost"}
+                className={`flex items-center gap-2 ${isActivePage("/movies") ? "bg-secondary text-secondary-foreground" : "text-foreground hover:text-primary"}`}
+              >
+                <Film className="h-4 w-4" />
+                Free Movies
+              </Button>
+            </Link>
           </nav>
         </div>
 
