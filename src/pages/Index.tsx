@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Tv } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import StreamingHeader from "@/components/StreamingHeader";
-import NavigationBreadcrumb from "@/components/Breadcrumb";
-import HeroSection from "@/components/HeroSection";
 import CategoryFilter from "@/components/CategoryFilter";
 import ContentCarousel from "@/components/ContentCarousel";
 import LiveTVSection from "@/components/LiveTVSection";
@@ -65,11 +63,20 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <StreamingHeader />
-      <NavigationBreadcrumb />
       <main>
-        <HeroSection />
+        {/* Simple Welcome Header */}
+        <section className="border-b border-border bg-gradient-to-b from-primary/5 to-background">
+          <div className="container px-4 py-8">
+            <div className="flex items-center gap-3 mb-2">
+              <Tv className="h-8 w-8 text-primary" />
+              <h1 className="text-3xl font-bold text-foreground">My TV</h1>
+            </div>
+            <p className="text-muted-foreground">Your personal Telugu entertainment collection</p>
+          </div>
+        </section>
+
         <CategoryFilter />
-        <div className="space-y-8">
+        <div className="space-y-8 py-8">
           <ContentCarousel title="Trending Movies" items={trendingMovies} />
           <LiveTVSection />
           
