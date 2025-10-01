@@ -5,7 +5,7 @@ import NavigationBreadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 
 interface Channel {
   id: string;
@@ -91,6 +91,17 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news and current affairs',
       viewerCount: '18K'
+    },
+    {
+      id: 'sakshi-tv',
+      name: 'Sakshi TV',
+      category: 'News',
+      isLive: true,
+      isYouTubeLive: true,
+      youtubeEmbedId: '9kCcUipLPJM',
+      language: 'Telugu',
+      description: 'AP & Telangana breaking news',
+      viewerCount: '25K'
     },
     
     // Entertainment Channels
@@ -225,8 +236,12 @@ const TeluguChannels = () => {
       id: 'pogo',
       name: 'Pogo',
       category: 'Kids',
+      isLive: true,
+      isYouTubeLive: true,
+      youtubeEmbedId: 'UVEkJJ17fF4',
       language: 'Hindi',
-      description: 'Hindi cartoons and kids shows'
+      description: 'Hindi cartoons and kids shows',
+      viewerCount: '6K'
     },
     {
       id: 'cartoon-network',
@@ -288,8 +303,12 @@ const TeluguChannels = () => {
       id: 'maa-music',
       name: 'Maa Music',
       category: 'Music',
+      isLive: true,
+      isYouTubeLive: true,
+      youtubeEmbedId: 'OrWp3xLd7KE',
       language: 'Telugu',
-      description: 'Telugu music videos and songs'
+      description: 'Telugu music videos and songs',
+      viewerCount: '3K'
     },
     {
       id: 'mtv',
@@ -304,15 +323,34 @@ const TeluguChannels = () => {
       id: 'bhakti-tv',
       name: 'Bhakti TV',
       category: 'Devotional',
+      isLive: true,
+      isYouTubeLive: true,
+      youtubeEmbedId: 'BXRcVXUlOuo',
       language: 'Telugu',
-      description: 'Spiritual and devotional content'
+      description: 'Spiritual and devotional content',
+      viewerCount: '8K'
     },
     {
-      id: 'svbc-tth',
+      id: 'svbc-ttd',
       name: 'SVBC TTD',
       category: 'Devotional',
+      isLive: true,
+      isYouTubeLive: true,
+      youtubeEmbedId: 'VtXR9UiRZwM',
       language: 'Telugu',
-      description: 'Tirumala spiritual channel'
+      description: 'Tirumala Tirupati Devasthanams live',
+      viewerCount: '12K'
+    },
+    {
+      id: 'subhavaartha-tv',
+      name: 'Subhavaartha TV',
+      category: 'Devotional',
+      isLive: true,
+      isYouTubeLive: true,
+      youtubeEmbedId: 'hzXhY5_vEKI',
+      language: 'Telugu',
+      description: 'Christian devotional channel',
+      viewerCount: '5K'
     }
   ];
 
