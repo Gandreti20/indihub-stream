@@ -23,23 +23,25 @@ import chhotaBheemImage from "@/assets/kids/chhota-bheem.jpg";
 import doraemonImage from "@/assets/kids/doraemon.jpg";
 
 const Index = () => {
-  // Sample content data - Telugu focused
+  // Telugu content only - after 2000
   const trendingMovies = [
     { id: '1', title: 'RRR', image: rrrImage, rating: 8.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
     { id: '2', title: 'Pushpa', image: pushpaImage, rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
     { id: '3', title: 'Baahubali 2', image: baahubaliImage, rating: 8.4, year: 2017, language: 'Telugu', type: 'movie' as const },
     { id: '4', title: 'Arjun Reddy', image: arjunReddyImage, rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '5', title: 'KGF Chapter 2', image: kgf2Image, rating: 8.4, year: 2022, language: 'Kannada', type: 'movie' as const },
-    { id: '6', title: 'Gangubai Kathiawadi', image: gangubaiImage, rating: 7.8, year: 2022, language: 'Hindi', type: 'movie' as const },
+    { id: '5', title: 'Eega', image: '', rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
+    { id: '6', title: 'Magadheera', image: '', rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
+    { id: '7', title: 'Ala Vaikunthapurramuloo', image: '', rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
+    { id: '8', title: 'Rangasthalam', image: '', rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
   ];
 
   const popularSeries = [
-    { id: '1', title: 'The Family Man 3', image: familyManImage, rating: 8.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
-    { id: '2', title: 'Scam 1992', image: scam1992Image, rating: 9.5, year: 2020, language: 'Hindi', type: 'series' as const },
-    { id: '3', title: 'Mumbai Diaries 26/11', image: '', rating: 8.1, year: 2021, language: 'Hindi', type: 'series' as const },
-    { id: '4', title: 'Kota Factory Telugu', image: '', rating: 8.3, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '5', title: 'Criminal Justice Telugu', image: '', rating: 7.9, year: 2022, language: 'Telugu', type: 'series' as const },
-    { id: '6', title: 'Rocket Boys', image: '', rating: 8.9, year: 2022, language: 'Hindi', type: 'series' as const },
+    { id: '1', title: 'Dhootha', image: familyManImage, rating: 7.8, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
+    { id: '2', title: 'Bhamakalapam', image: scam1992Image, rating: 7.5, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '3', title: 'Parampara', image: '', rating: 8.1, year: 2021, language: 'Telugu', type: 'series' as const },
+    { id: '4', title: 'Loser', image: '', rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '5', title: 'Pitta Kathalu', image: '', rating: 6.9, year: 2021, language: 'Telugu', type: 'series' as const },
+    { id: '6', title: '3 Roses', image: '', rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
   ];
 
   const liveChannels = [

@@ -3,42 +3,66 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import liveTvImage from "@/assets/live-tv.jpg";
+import { useToast } from "@/hooks/use-toast";
 
 const LiveTVSection = () => {
+  const { toast } = useToast();
+  
   const liveChannels = [
     { 
       id: '1', 
-      name: 'Star Sports 1', 
-      category: 'Sports', 
-      currentShow: 'IPL 2024 - MI vs CSK',
-      viewers: '2.3M',
-      timeSlot: '7:30 PM - 11:00 PM'
+      name: 'ETV Telugu', 
+      category: 'Entertainment', 
+      currentShow: 'Jabardasth Comedy Show',
+      viewers: '1.8M',
+      timeSlot: '9:00 PM - 11:00 PM'
     },
     { 
       id: '2', 
-      name: 'Sony Entertainment', 
+      name: 'Star Maa', 
       category: 'Entertainment', 
-      currentShow: 'Kaun Banega Crorepati',
-      viewers: '1.8M',
-      timeSlot: '9:00 PM - 10:00 PM'
+      currentShow: 'Bigg Boss Telugu',
+      viewers: '2.1M',
+      timeSlot: '9:30 PM - 11:00 PM'
     },
     { 
       id: '3', 
-      name: 'Zee News', 
+      name: 'TV9 Telugu', 
       category: 'News', 
-      currentShow: 'Prime Time Debate',
+      currentShow: 'News at 9',
       viewers: '890K',
-      timeSlot: '8:00 PM - 9:00 PM'
+      timeSlot: '9:00 PM - 10:00 PM'
     },
     { 
       id: '4', 
-      name: 'Discovery Kids', 
-      category: 'Kids', 
-      currentShow: 'Chhota Bheem',
-      viewers: '450K',
-      timeSlot: '6:00 PM - 7:00 PM'
+      name: 'Gemini TV', 
+      category: 'Entertainment', 
+      currentShow: 'Cash',
+      viewers: '750K',
+      timeSlot: '8:00 PM - 9:00 PM'
     },
   ];
+
+  const handleWatchLive = () => {
+    toast({
+      title: "Starting Live Stream",
+      description: "ETV Telugu - Jabardasth Comedy Show",
+    });
+  };
+
+  const handleSetReminder = () => {
+    toast({
+      title: "Reminder Set",
+      description: "You'll be notified when the show starts",
+    });
+  };
+
+  const handleChannelClick = (channel: typeof liveChannels[0]) => {
+    toast({
+      title: `Tuning to ${channel.name}`,
+      description: channel.currentShow,
+    });
+  };
 
   return (
     <section className="py-12 bg-secondary/20">
@@ -74,13 +98,13 @@ const LiveTVSection = () => {
                 
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-white">IPL 2024 - Mumbai Indians vs Chennai Super Kings</h3>
-                    <p className="text-gray-200">Star Sports 1 • 2.3M viewers</p>
+                    <h3 className="text-xl font-bold text-white">Jabardasth Comedy Show</h3>
+                    <p className="text-gray-200">ETV Telugu • 1.8M viewers</p>
                     <div className="flex items-center gap-2">
-                      <Button variant="hero" size="sm">
+                      <Button variant="hero" size="sm" onClick={handleWatchLive}>
                         Watch Live
                       </Button>
-                      <Button variant="watchlist" size="sm">
+                      <Button variant="watchlist" size="sm" onClick={handleSetReminder}>
                         Set Reminder
                       </Button>
                     </div>
@@ -94,7 +118,11 @@ const LiveTVSection = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">Currently Airing</h3>
             {liveChannels.map((channel) => (
-              <Card key={channel.id} className="p-4 bg-card border-border hover:border-primary/50 transition-colors cursor-pointer">
+              <Card 
+                key={channel.id} 
+                className="p-4 bg-card border-border hover:border-primary/50 transition-colors cursor-pointer"
+                onClick={() => handleChannelClick(channel)}
+              >
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">

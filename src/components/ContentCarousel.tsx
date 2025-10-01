@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight, Play, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
 
 interface ContentItem {
   id: string;
@@ -46,8 +47,20 @@ const ContentCarousel = ({ title, items }: ContentCarouselProps) => {
 };
 
 const ContentCard = ({ item }: { item: ContentItem }) => {
+  const { toast } = useToast();
+
+  const handlePlay = () => {
+    toast({
+      title: `Playing ${item.title}`,
+      description: `${item.type} • ${item.language} • ${item.year}`,
+    });
+  };
+
   return (
-    <Card className="group relative min-w-[200px] overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer">
+    <Card 
+      className="group relative min-w-[200px] overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+      onClick={handlePlay}
+    >
       <div className="aspect-[2/3] relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
@@ -61,7 +74,15 @@ const ContentCard = ({ item }: { item: ContentItem }) => {
         
         {/* Play button on hover */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button variant="play" size="lg" className="gap-2">
+          <Button 
+            variant="play" 
+            size="lg" 
+            className="gap-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePlay();
+            }}
+          >
             <Play className="h-5 w-5" />
             Play
           </Button>
