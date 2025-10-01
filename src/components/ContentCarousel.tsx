@@ -50,6 +50,15 @@ const ContentCard = ({ item }: { item: ContentItem }) => {
   const { toast } = useToast();
 
   const handlePlay = () => {
+    if (!item.image) {
+      toast({
+        title: "Content Unavailable",
+        description: "This content is not available right now.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     toast({
       title: `Playing ${item.title}`,
       description: `${item.type} • ${item.language} • ${item.year}`,
@@ -58,16 +67,25 @@ const ContentCard = ({ item }: { item: ContentItem }) => {
 
   return (
     <Card 
-      className="group relative min-w-[200px] overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+      className={`group relative min-w-[200px] overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 ${
+        item.image ? 'cursor-pointer hover:shadow-lg hover:shadow-primary/20' : 'cursor-not-allowed opacity-60'
+      }`}
       onClick={handlePlay}
     >
       <div className="aspect-[2/3] relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-          style={{ 
-            backgroundImage: `linear-gradient(45deg, #6366f1, #8b5cf6, #a855f7)`,
-          }}
-        />
+        {item.image ? (
+          <img 
+            src={item.image} 
+            alt={item.title}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          />
+        ) : (
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"
+          >
+            <span className="text-sm font-semibold text-center px-2">{item.title}</span>
+          </div>
+        )}
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />

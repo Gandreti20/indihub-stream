@@ -21,6 +21,12 @@ import etvTeluguImage from "@/assets/channels/etv-telugu.jpg";
 import tv9TeluguImage from "@/assets/channels/tv9-telugu.jpg";
 import chhotaBheemImage from "@/assets/kids/chhota-bheem.jpg";
 import doraemonImage from "@/assets/kids/doraemon.jpg";
+import eegaImage from "@/assets/movies/eega.jpg";
+import magadheera from "@/assets/movies/magadheera.jpg";
+import alaVaikunthapurramulooImage from "@/assets/movies/ala-vaikunthapurramuloo.jpg";
+import rangasthalamImage from "@/assets/movies/rangasthalam.jpg";
+import dhoothaImage from "@/assets/series/dhootha.jpg";
+import bhamakalapatImage from "@/assets/series/bhamakalapam.jpg";
 
 const Index = () => {
   // Telugu content only - after 2000
@@ -29,19 +35,19 @@ const Index = () => {
     { id: '2', title: 'Pushpa', image: pushpaImage, rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
     { id: '3', title: 'Baahubali 2', image: baahubaliImage, rating: 8.4, year: 2017, language: 'Telugu', type: 'movie' as const },
     { id: '4', title: 'Arjun Reddy', image: arjunReddyImage, rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '5', title: 'Eega', image: '', rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
-    { id: '6', title: 'Magadheera', image: '', rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
-    { id: '7', title: 'Ala Vaikunthapurramuloo', image: '', rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
-    { id: '8', title: 'Rangasthalam', image: '', rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
+    { id: '5', title: 'Eega', image: eegaImage, rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
+    { id: '6', title: 'Magadheera', image: magadheera, rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
+    { id: '7', title: 'Ala Vaikunthapurramuloo', image: alaVaikunthapurramulooImage, rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
+    { id: '8', title: 'Rangasthalam', image: rangasthalamImage, rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
   ];
 
   const popularSeries = [
-    { id: '1', title: 'Dhootha', image: familyManImage, rating: 7.8, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
-    { id: '2', title: 'Bhamakalapam', image: scam1992Image, rating: 7.5, year: 2022, language: 'Telugu', type: 'series' as const },
-    { id: '3', title: 'Parampara', image: '', rating: 8.1, year: 2021, language: 'Telugu', type: 'series' as const },
-    { id: '4', title: 'Loser', image: '', rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
-    { id: '5', title: 'Pitta Kathalu', image: '', rating: 6.9, year: 2021, language: 'Telugu', type: 'series' as const },
-    { id: '6', title: '3 Roses', image: '', rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '1', title: 'Dhootha', image: dhoothaImage, rating: 7.8, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
+    { id: '2', title: 'Bhamakalapam', image: bhamakalapatImage, rating: 7.5, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '3', title: 'The Family Man', image: familyManImage, rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
+    { id: '4', title: 'Scam 1992', image: scam1992Image, rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '5', title: 'Loser', image: familyManImage, rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '6', title: '3 Roses', image: bhamakalapatImage, rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
   ];
 
   const liveChannels = [
@@ -67,19 +73,19 @@ const Index = () => {
       <StreamingHeader />
       <main>
         {/* Simple Welcome Header */}
-        <section className="border-b border-border bg-gradient-to-b from-primary/5 to-background">
-          <div className="container px-4 py-8">
-            <div className="flex items-center gap-3 mb-2">
-              <Tv className="h-8 w-8 text-primary" />
-              <h1 className="text-3xl font-bold text-foreground">My TV</h1>
+        <section className="border-b border-border bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10">
+          <div className="container px-4 py-12">
+            <div className="flex items-center gap-3 mb-3">
+              <Tv className="h-10 w-10 text-primary" />
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">My TV</h1>
             </div>
-            <p className="text-muted-foreground">Your personal Telugu entertainment collection</p>
+            <p className="text-muted-foreground text-lg">Your personal Telugu entertainment collection</p>
           </div>
         </section>
 
         <CategoryFilter />
-        <div className="space-y-8 py-8">
-          <ContentCarousel title="Trending Movies" items={trendingMovies} />
+        <div className="space-y-12 py-8 bg-gradient-to-b from-background via-background/95 to-background">
+          <ContentCarousel title="Trending Telugu Movies" items={trendingMovies} />
           <LiveTVSection />
           
           {/* Telugu Channels Section */}
