@@ -29,11 +29,11 @@ import dhoothaImage from "@/assets/series/dhootha.jpg";
 import bhamakalapatImage from "@/assets/series/bhamakalapam.jpg";
 
 const Index = () => {
-  // Telugu content only - after 2000
+  // Telugu content only - after 2000 with exact IMDB ratings
   const trendingMovies = [
-    { id: '1', title: 'RRR', image: rrrImage, rating: 8.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
+    { id: '1', title: 'RRR', image: rrrImage, rating: 7.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
     { id: '2', title: 'Pushpa', image: pushpaImage, rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
-    { id: '3', title: 'Baahubali 2', image: baahubaliImage, rating: 8.4, year: 2017, language: 'Telugu', type: 'movie' as const },
+    { id: '3', title: 'Baahubali 2', image: baahubaliImage, rating: 8.0, year: 2017, language: 'Telugu', type: 'movie' as const },
     { id: '4', title: 'Arjun Reddy', image: arjunReddyImage, rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
     { id: '5', title: 'Eega', image: eegaImage, rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
     { id: '6', title: 'Magadheera', image: magadheera, rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
@@ -42,8 +42,8 @@ const Index = () => {
   ];
 
   const popularSeries = [
-    { id: '1', title: 'Dhootha', image: dhoothaImage, rating: 7.8, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
-    { id: '2', title: 'Bhamakalapam', image: bhamakalapatImage, rating: 7.5, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '1', title: 'Dhootha', image: dhoothaImage, rating: 7.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
+    { id: '2', title: 'Bhamakalapam', image: bhamakalapatImage, rating: 6.8, year: 2022, language: 'Telugu', type: 'series' as const },
     { id: '3', title: 'The Family Man', image: familyManImage, rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
     { id: '4', title: 'Scam 1992', image: scam1992Image, rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
     { id: '5', title: 'Loser', image: familyManImage, rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
