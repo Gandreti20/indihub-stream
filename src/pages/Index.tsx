@@ -10,40 +10,40 @@ const Index = () => {
   // Telugu content with proper portrait posters (2:3 aspect ratio)
   const trendingMovies = [
     { id: '1', title: 'RRR', image: 'https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 7.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
-    { id: '2', title: 'Pushpa', image: 'https://images.justwatch.com/poster/301464074/s718/pushpa-the-rise-part-1.jpg', rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
-    { id: '3', title: 'Baahubali 2', image: 'https://images.justwatch.com/poster/8618292/s718/baahubali-2-the-conclusion.jpg', rating: 8.0, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '4', title: 'Arjun Reddy', image: 'https://images.justwatch.com/poster/127476528/s718/arjun-reddy.jpg', rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '5', title: 'Eega', image: 'https://images.justwatch.com/poster/240875862/s718/eega.jpg', rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
-    { id: '6', title: 'Magadheera', image: 'https://images.justwatch.com/poster/301540820/s718/magadheera.jpg', rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
-    { id: '7', title: 'Ala Vaikunthapurramuloo', image: 'https://images.justwatch.com/poster/174719677/s718/ala-vaikunthapurramuloo.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
-    { id: '8', title: 'Rangasthalam', image: 'https://images.justwatch.com/poster/92161684/s718/rangasthalam.jpg', rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
+    { id: '2', title: 'Pushpa', image: 'https://m.media-amazon.com/images/M/MV5BY2FmYTY1NTYtYjQ3Mi00OWRlLWI1MjUtN2VlYjFhZDcwODVlXkEyXkFqcGdeQXVyMTIyNzY0NTMx._V1_FMjpg_UX1000_.jpg', rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
+    { id: '3', title: 'Baahubali 2', image: 'https://m.media-amazon.com/images/M/MV5BYTljZjJjODgtZTg3Mi00N2FjLWExYmMtODVkZmZkYzI3Yzk2XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 8.0, year: 2017, language: 'Telugu', type: 'movie' as const },
+    { id: '4', title: 'Arjun Reddy', image: 'https://m.media-amazon.com/images/M/MV5BYjJlYjYzMTEtMmMxNy00NTI1LWIzOWQtNzJmMGRhNjI1NzE3XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
+    { id: '5', title: 'Eega', image: 'https://m.media-amazon.com/images/M/MV5BMTZiY2RjZGQtODhiMi00YmJlLWE1Y2YtMTYzMjhhZDM0YjdmXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
+    { id: '6', title: 'Magadheera', image: 'https://m.media-amazon.com/images/M/MV5BMjFhYzVhNjItNmI0Yy00MjgyLWIwZGMtMjkxNzNkNTQ3NWY2XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
+    { id: '7', title: 'Ala Vaikunthapurramuloo', image: 'https://m.media-amazon.com/images/M/MV5BYzlmNDQyZjYtZjgxYS00NWY5LWEwMjItNTFjYzJkOTM0MmJiXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_FMjpg_UX1000_.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
+    { id: '8', title: 'Rangasthalam', image: 'https://m.media-amazon.com/images/M/MV5BMjE3MDUzYzctNjFlYi00NmU2LWE5NTgtY2RjNDMxMDA5MzE5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
   ];
 
   const popularSeries = [
-    { id: '1', title: 'Dhootha', image: 'https://images.justwatch.com/poster/306879776/s718/dhootha.jpg', rating: 7.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
-    { id: '2', title: 'Bhamakalapam', image: 'https://images.justwatch.com/poster/267846732/s718/bhamakalapam.jpg', rating: 6.8, year: 2022, language: 'Telugu', type: 'series' as const },
-    { id: '3', title: 'The Family Man', image: 'https://images.justwatch.com/poster/243810833/s718/the-family-man.jpg', rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
-    { id: '4', title: 'Scam 1992', image: 'https://images.justwatch.com/poster/205213126/s718/scam-1992-the-harshad-mehta-story.jpg', rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
-    { id: '5', title: 'Loser', image: 'https://images.justwatch.com/poster/186691776/s718/loser-2020.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
-    { id: '6', title: '3 Roses', image: 'https://images.justwatch.com/poster/300819264/s718/3-roses.jpg', rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '1', title: 'Dhootha', image: 'https://m.media-amazon.com/images/M/MV5BNjQwOGRkMjEtNmM3OS00YjJhLWE4NzgtMWRkNWY5YTVlOTYzXkEyXkFqcGdeQXVyMTUzNTgzNzM0._V1_FMjpg_UX1000_.jpg', rating: 7.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
+    { id: '2', title: 'Bhamakalapam', image: 'https://m.media-amazon.com/images/M/MV5BMDU2OThhYjItNzg0Zi00YzhlLWJiMDgtYjBjNWU5YWMzMWU5XkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_FMjpg_UX1000_.jpg', rating: 6.8, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '3', title: 'The Family Man', image: 'https://m.media-amazon.com/images/M/MV5BYTlkNTZjYTItZTBiMC00Zjk0LTgzNGYtMzk0MGFkMzRkNzllXkEyXkFqcGdeQXVyMTIxMDk2NDE4._V1_FMjpg_UX1000_.jpg', rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
+    { id: '4', title: 'Scam 1992', image: 'https://m.media-amazon.com/images/M/MV5BNjMxNTI5MTU4MV5BMl5BanBnXkFtZTgwNjAzNjg2NzM@._V1_FMjpg_UX1000_.jpg', rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '5', title: 'Loser', image: 'https://m.media-amazon.com/images/M/MV5BNWExNGZmYjgtNWJiMi00MjYzLTk2MWUtZTFkOGZmNTNiMjg5XkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_FMjpg_UX1000_.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '6', title: '3 Roses', image: 'https://m.media-amazon.com/images/M/MV5BNDE3MGJlYWItODg1NS00OWE5LWE2NDgtYTRmMjA4YjU1MzcyXkEyXkFqcGdeQXVyMTI1NDAzMzM0._V1_FMjpg_UX1000_.jpg', rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
   ];
 
   const liveChannels = [
-    { id: '1', title: 'TV9 Telugu', image: 'https://images.tv9telugu.com/wp-content/uploads/2019/09/tv9-telugu-logo.jpg', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '2', title: 'ETV Telugu', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/ETV_Telugu_logo.png/512px-ETV_Telugu_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '3', title: 'Star Sports 1', image: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Star_Sports_logo.svg/512px-Star_Sports_logo.svg.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '4', title: 'Gemini TV', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Gemini_TV_logo.png/512px-Gemini_TV_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '5', title: 'Zee Telugu', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Zee_Telugu_logo.png/512px-Zee_Telugu_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '6', title: 'Star Maa', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Star_Maa_logo.png/512px-Star_Maa_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
+    { id: '1', title: 'TV9 Telugu', image: 'https://yt3.googleusercontent.com/ytc/AIdro_nEPYNqbCt5YmAQ9GqD5qPKNvFEIRqLxVN_0AZm=s900-c-k-c0x00ffffff-no-rj', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
+    { id: '2', title: 'ETV Telugu', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/ETV_Telugu_logo.png/800px-ETV_Telugu_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
+    { id: '3', title: 'Star Sports 1', image: 'https://upload.wikimedia.org/wikipedia/en/1/11/Star_Sports_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
+    { id: '4', title: 'Gemini TV', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Gemini_TV_logo.png/800px-Gemini_TV_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
+    { id: '5', title: 'Zee Telugu', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Zee_Telugu_logo.png/800px-Zee_Telugu_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
+    { id: '6', title: 'Star Maa', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Star_Maa_logo.png/800px-Star_Maa_logo.png', language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
   ];
 
   const kidsContent = [
-    { id: '1', title: 'Chhota Bheem', image: 'https://images.justwatch.com/poster/306842095/s718/chhota-bheem.jpg', rating: 7.2, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '2', title: 'Doraemon', image: 'https://images.justwatch.com/poster/176119414/s718/doraemon-1979.jpg', rating: 8.5, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '3', title: 'Motu Patlu', image: 'https://images.justwatch.com/poster/241056624/s718/motu-patlu.jpg', rating: 6.8, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '4', title: 'Shinchan', image: 'https://images.justwatch.com/poster/8588249/s718/shin-chan.jpg', rating: 8.1, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '5', title: 'Oggy and Cockroaches', image: 'https://images.justwatch.com/poster/8592366/s718/oggy-and-the-cockroaches.jpg', rating: 7.9, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '6', title: 'Tom and Jerry', image: 'https://images.justwatch.com/poster/305319816/s718/tom-and-jerry.jpg', rating: 8.7, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '1', title: 'Chhota Bheem', image: 'https://m.media-amazon.com/images/M/MV5BOTY3YmY4ZWUtNGU3Yy00NmE1LWI0NDMtZGM1NzkwNDQ1NjRiXkEyXkFqcGdeQXVyNjI4MzA5NDc@._V1_FMjpg_UX1000_.jpg', rating: 7.2, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '2', title: 'Doraemon', image: 'https://m.media-amazon.com/images/M/MV5BMjEzNjE4ZjctYzVlMy00YjdkLWJmOGItZjg5ZDg2YzZlYjYxXkEyXkFqcGdeQXVyNTI4MTkwNDY@._V1_FMjpg_UX1000_.jpg', rating: 8.5, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '3', title: 'Motu Patlu', image: 'https://m.media-amazon.com/images/M/MV5BNmQ2NjU2YzItOTA3MC00YjdkLWI4MDItYWZiZjljN2E5ZTdkXkEyXkFqcGdeQXVyNTI4NTA1MDg@._V1_FMjpg_UX1000_.jpg', rating: 6.8, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '4', title: 'Shinchan', image: 'https://m.media-amazon.com/images/M/MV5BYzQxOTNiOWYtMTdmZi00MzMyLWFmNTItMTgwNjMwMTBmOWE4XkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_FMjpg_UX1000_.jpg', rating: 8.1, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '5', title: 'Oggy and Cockroaches', image: 'https://m.media-amazon.com/images/M/MV5BNjVjNTY5YTItNTg3MC00ZjQzLWEwZWItZTA4NmQzOGU0Mjg5XkEyXkFqcGdeQXVyNjU0NTI0Nw@@._V1_FMjpg_UX1000_.jpg', rating: 7.9, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '6', title: 'Tom and Jerry', image: 'https://m.media-amazon.com/images/M/MV5BYzE3YjUwN2YtYjcyNi00ZjBjLWEzYmEtNTcyOWQ2MWNmMWFmXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_FMjpg_UX1000_.jpg', rating: 8.7, year: 2023, language: 'Telugu', type: 'series' as const },
   ];
 
   return (
