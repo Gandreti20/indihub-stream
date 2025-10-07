@@ -50,14 +50,35 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <StreamingHeader />
       <main>
-        {/* Simple Welcome Header */}
-        <section className="border-b border-border bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10">
-          <div className="container px-4 py-12">
-            <div className="flex items-center gap-3 mb-3">
-              <Tv className="h-10 w-10 text-primary" />
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">My TV</h1>
+        {/* Animated Welcome Header */}
+        <section className="relative border-b border-border bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10 overflow-hidden">
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5 animate-[gradient_8s_ease_infinite] opacity-50" 
+               style={{ backgroundSize: '200% 200%' }} />
+          
+          <div className="container px-4 py-12 relative z-10">
+            <div className="flex items-center gap-3 mb-3 animate-fade-in">
+              {/* Animated TV Icon with pulse and float */}
+              <div className="relative">
+                <Tv className="h-10 w-10 text-primary animate-[pulse_3s_ease-in-out_infinite]" />
+                <div className="absolute inset-0 h-10 w-10 text-primary opacity-30 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]">
+                  <Tv className="h-10 w-10" />
+                </div>
+              </div>
+              
+              {/* Animated gradient text with shimmer effect */}
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-[gradient_3s_ease_infinite] relative"
+                  style={{ backgroundSize: '200% auto' }}>
+                My TV
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_2s_infinite]" 
+                      style={{ backgroundSize: '200% 100%' }} />
+              </h1>
             </div>
-            <p className="text-muted-foreground text-lg">Your personal Telugu entertainment collection</p>
+            
+            {/* Animated subtitle with delay */}
+            <p className="text-muted-foreground text-lg animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
+              Your personal Telugu entertainment collection
+            </p>
           </div>
         </section>
 
