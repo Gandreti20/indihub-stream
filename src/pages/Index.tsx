@@ -10,22 +10,22 @@ const Index = () => {
   // Telugu content with proper portrait posters (2:3 aspect ratio)
   const trendingMovies = [
     { id: '1', title: 'RRR', image: 'https://m.media-amazon.com/images/M/MV5BODUwNDNjYzctODUxNy00ZTA2LWIyYTEtMDc5Y2E5ZjBmNTMzXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_FMjpg_UX1000_.jpg', rating: 7.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
-    { id: '2', title: 'Pushpa', image: 'https://m.media-amazon.com/images/M/MV5BNjM4MzBmNTctYzA1My00ZGFhLWJkZWEtN2M1OTJlOWYzYThiXkEyXkFqcGdeQXVyMTQ3Mzk2MDg4._V1_FMjpg_UX1000_.jpg', rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
-    { id: '3', title: 'Baahubali 2', image: 'https://m.media-amazon.com/images/M/MV5BYTMyOWE1NzgtZWRkOC00OGE3LTkxMTctNWMyOWZhNjQ5NzZkXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg', rating: 8.0, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '4', title: 'Arjun Reddy', image: 'https://m.media-amazon.com/images/M/MV5BYjQ0NzU2ZmQtYzlkYS00NDM5LTlkYWUtMzRjNDMzOGFiYzU0XkEyXkFqcGdeQXVyNjEyNzM4OTM@._V1_FMjpg_UX1000_.jpg', rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '5', title: 'Eega', image: 'https://m.media-amazon.com/images/M/MV5BODcyNTgzMjMwNV5BMl5BanBnXkFtZTgwMzkxNTI5MDE@._V1_FMjpg_UX1000_.jpg', rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
-    { id: '6', title: 'Magadheera', image: 'https://m.media-amazon.com/images/M/MV5BMTU3MTYwOTk1OV5BMl5BanBnXkFtZTcwMjI2MTMzMg@@._V1_FMjpg_UX1000_.jpg', rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
-    { id: '7', title: 'Ala Vaikunthapurramuloo', image: 'https://m.media-amazon.com/images/M/MV5BNjE2NTcwMzEyOF5BMl5BanBnXkFtZTgwMjMwOTk0ODE@._V1_FMjpg_UX1000_.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
-    { id: '8', title: 'Rangasthalam', image: 'https://m.media-amazon.com/images/M/MV5BNDg1MDkzNWItM2E1Yi00YmVkLTlkNTEtZjE0ZTJhMGFjYTgwXkEyXkFqcGdeQXVyNTgxODMzMTg@._V1_FMjpg_UX1000_.jpg', rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
+    { id: '2', title: 'Pushpa', image: 'https://images.justwatch.com/poster/301464074/s718/pushpa-the-rise-part-1.jpg', rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
+    { id: '3', title: 'Baahubali 2', image: 'https://images.justwatch.com/poster/8618292/s718/baahubali-2-the-conclusion.jpg', rating: 8.0, year: 2017, language: 'Telugu', type: 'movie' as const },
+    { id: '4', title: 'Arjun Reddy', image: 'https://images.justwatch.com/poster/127476528/s718/arjun-reddy.jpg', rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
+    { id: '5', title: 'Eega', image: 'https://images.justwatch.com/poster/240875862/s718/eega.jpg', rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
+    { id: '6', title: 'Magadheera', image: 'https://images.justwatch.com/poster/301540820/s718/magadheera.jpg', rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
+    { id: '7', title: 'Ala Vaikunthapurramuloo', image: 'https://images.justwatch.com/poster/174719677/s718/ala-vaikunthapurramuloo.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
+    { id: '8', title: 'Rangasthalam', image: 'https://images.justwatch.com/poster/92161684/s718/rangasthalam.jpg', rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
   ];
 
   const popularSeries = [
-    { id: '1', title: 'Dhootha', image: 'https://m.media-amazon.com/images/M/MV5BYmZlZTQ0YWYtYjZmMS00MjU2LWI4N2UtYTllMzNlMTE2MzkzXkEyXkFqcGdeQXVyNjcxNjc5NzY@._V1_FMjpg_UX1000_.jpg', rating: 7.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
-    { id: '2', title: 'Bhamakalapam', image: 'https://m.media-amazon.com/images/M/MV5BMjRlYTdmYzAtOTcyZC00OTQ1LTlkOTMtYTdhMzEwNDJjZjc1XkEyXkFqcGdeQXVyMzQ0NzQxOTQ@._V1_FMjpg_UX1000_.jpg', rating: 6.8, year: 2022, language: 'Telugu', type: 'series' as const },
-    { id: '3', title: 'The Family Man', image: 'https://m.media-amazon.com/images/M/MV5BYjdkYzk4N2YtNzYxYy00OWNjLWE5OTctZGFjZWEyZTUxYWQ1XkEyXkFqcGdeQXVyNjkwOTg4MTA@._V1_FMjpg_UX1000_.jpg', rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
-    { id: '4', title: 'Scam 1992', image: 'https://m.media-amazon.com/images/M/MV5BNjgxZTM3NmQtY2Q1ZC00ZmNiLWJiNGQtODBkNjcxNDYxMDEyXkEyXkFqcGdeQXVyMTAyMTE1MDA5._V1_FMjpg_UX1000_.jpg', rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
-    { id: '5', title: 'Loser', image: 'https://m.media-amazon.com/images/M/MV5BMmJjNWQ2MjItNWQ5Yy00ZmFhLWE4YjgtYTBkNWFmMzEzMWVlXkEyXkFqcGdeQXVyNjkwOTg4MTA@._V1_FMjpg_UX1000_.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
-    { id: '6', title: '3 Roses', image: 'https://m.media-amazon.com/images/M/MV5BYzlmZGQ2NTAtYjM2Zi00YWI4LWJjZGEtN2NhY2E2YmYyMTk4XkEyXkFqcGdeQXVyMTIwNzg4ODI0._V1_FMjpg_UX1000_.jpg', rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '1', title: 'Dhootha', image: 'https://images.justwatch.com/poster/306879776/s718/dhootha.jpg', rating: 7.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
+    { id: '2', title: 'Bhamakalapam', image: 'https://images.justwatch.com/poster/267846732/s718/bhamakalapam.jpg', rating: 6.8, year: 2022, language: 'Telugu', type: 'series' as const },
+    { id: '3', title: 'The Family Man', image: 'https://images.justwatch.com/poster/243810833/s718/the-family-man.jpg', rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
+    { id: '4', title: 'Scam 1992', image: 'https://images.justwatch.com/poster/205213126/s718/scam-1992-the-harshad-mehta-story.jpg', rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '5', title: 'Loser', image: 'https://images.justwatch.com/poster/186691776/s718/loser-2020.jpg', rating: 7.3, year: 2020, language: 'Telugu', type: 'series' as const },
+    { id: '6', title: '3 Roses', image: 'https://images.justwatch.com/poster/300819264/s718/3-roses.jpg', rating: 7.4, year: 2022, language: 'Telugu', type: 'series' as const },
   ];
 
   const liveChannels = [
@@ -38,47 +38,72 @@ const Index = () => {
   ];
 
   const kidsContent = [
-    { id: '1', title: 'Chhota Bheem', image: 'https://m.media-amazon.com/images/M/MV5BMTM3NzA1MTktZWQ3ZS00MTEzLWE1OWMtMTE5NDI5NzAzZjM2XkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg', rating: 7.2, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '2', title: 'Doraemon Telugu', image: 'https://m.media-amazon.com/images/M/MV5BMzMzMDYwZjAtNjQ3NC00ZDJjLTk0ZWEtNTNhYzYyNzNjZGY0XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg', rating: 8.5, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '3', title: 'Motu Patlu Telugu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwJmqKFxO5TJdX8JZmLfqo1mM-_1zWvYoq1Q&s', rating: 6.8, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '4', title: 'Shinchan Telugu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8sH1pP3Y9xzp-x0yJK4k4O9bD_XN-2nJdnQ&s', rating: 8.1, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '5', title: 'Oggy Telugu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK_J3T2xNJ0eYqNpTKzFzjHYQwKOKy5zlKOQ&s', rating: 7.9, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '6', title: 'Tom and Jerry Telugu', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDOaH0c1O9YL8hL8BFT8K0LdOOLyNpJl8fkQ&s', rating: 8.7, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '1', title: 'Chhota Bheem', image: 'https://images.justwatch.com/poster/306842095/s718/chhota-bheem.jpg', rating: 7.2, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '2', title: 'Doraemon', image: 'https://images.justwatch.com/poster/176119414/s718/doraemon-1979.jpg', rating: 8.5, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '3', title: 'Motu Patlu', image: 'https://images.justwatch.com/poster/241056624/s718/motu-patlu.jpg', rating: 6.8, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '4', title: 'Shinchan', image: 'https://images.justwatch.com/poster/8588249/s718/shin-chan.jpg', rating: 8.1, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '5', title: 'Oggy and Cockroaches', image: 'https://images.justwatch.com/poster/8592366/s718/oggy-and-the-cockroaches.jpg', rating: 7.9, year: 2023, language: 'Telugu', type: 'series' as const },
+    { id: '6', title: 'Tom and Jerry', image: 'https://images.justwatch.com/poster/305319816/s718/tom-and-jerry.jpg', rating: 8.7, year: 2023, language: 'Telugu', type: 'series' as const },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <StreamingHeader />
       <main>
-        {/* Animated Welcome Header */}
-        <section className="relative border-b border-border bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10 overflow-hidden">
-          {/* Animated background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/10 to-primary/5 animate-[gradient_8s_ease_infinite] opacity-50" 
-               style={{ backgroundSize: '200% 200%' }} />
+        {/* Premium Animated Hero Header */}
+        <section className="relative border-b border-border overflow-hidden bg-gradient-to-br from-primary/20 via-background to-accent/20">
+          {/* Animated orbs background */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-[pulse_8s_ease-in-out_infinite]" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-[pulse_10s_ease-in-out_infinite]" 
+                 style={{ animationDelay: '2s' }} />
+            <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-[gradient_12s_ease_infinite]" 
+                 style={{ backgroundSize: '200% 200%' }} />
+          </div>
           
-          <div className="container px-4 py-12 relative z-10">
-            <div className="flex items-center gap-3 mb-3 animate-fade-in">
-              {/* Animated TV Icon with pulse and float */}
-              <div className="relative">
-                <Tv className="h-10 w-10 text-primary animate-[pulse_3s_ease-in-out_infinite]" />
-                <div className="absolute inset-0 h-10 w-10 text-primary opacity-30 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]">
-                  <Tv className="h-10 w-10" />
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+          
+          <div className="container px-4 py-16 md:py-20 relative z-10">
+            <div className="flex flex-col items-center text-center space-y-6">
+              {/* Animated TV Icon with glow */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500 animate-[pulse_3s_ease-in-out_infinite]" />
+                <div className="relative bg-gradient-to-br from-primary to-accent p-4 rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-110 hover:rotate-6">
+                  <Tv className="h-12 w-12 md:h-16 md:w-16 text-white" />
                 </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary opacity-50 rounded-2xl blur animate-[gradient_3s_ease_infinite]" 
+                     style={{ backgroundSize: '200% auto', zIndex: -1 }} />
               </div>
               
-              {/* Animated gradient text with shimmer effect */}
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-[gradient_3s_ease_infinite] relative"
-                  style={{ backgroundSize: '200% auto' }}>
-                My TV
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_2s_infinite]" 
-                      style={{ backgroundSize: '200% 100%' }} />
-              </h1>
+              {/* Main title with 3D effect */}
+              <div className="relative">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black relative">
+                  <span className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent blur-sm opacity-50 animate-[gradient_4s_ease_infinite]"
+                        style={{ backgroundSize: '200% auto' }}>
+                    My TV
+                  </span>
+                  <span className="relative bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-[gradient_4s_ease_infinite]"
+                        style={{ backgroundSize: '200% auto' }}>
+                    My TV
+                  </span>
+                  {/* Shimmer overlay */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shimmer_3s_infinite]" 
+                        style={{ backgroundSize: '200% 100%' }} />
+                </h1>
+              </div>
+              
+              {/* Subtitle with fade in */}
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in font-medium" 
+                 style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
+                Your personal Telugu entertainment collection
+                <span className="block text-sm mt-2 text-primary/80">Movies • Series • Live TV • Kids Content</span>
+              </p>
+              
+              {/* Decorative line */}
+              <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-fade-in" 
+                   style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }} />
             </div>
-            
-            {/* Animated subtitle with delay */}
-            <p className="text-muted-foreground text-lg animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
-              Your personal Telugu entertainment collection
-            </p>
           </div>
         </section>
 
