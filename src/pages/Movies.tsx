@@ -40,19 +40,19 @@ const freeMovies: Movie[] = [
     duration: '179 min',
     rating: 7.6,
     genre: 'Action',
-    description: 'A laborer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.',
+    description: 'A laborer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling.',
     videoId: 'pKctjEKHXkk',
     thumbnail: 'https://img.youtube.com/vi/pKctjEKHXkk/maxresdefault.jpg',
     category: 'action'
   },
   {
     id: '3',
-    title: 'Baahubali 2: The Conclusion',
+    title: 'Baahubali 2',
     year: 2017,
     duration: '167 min',
     rating: 8.0,
     genre: 'Action',
-    description: 'Amarendra Baahubali fights for Mahishmati, his kingdom. After learning about his heritage, he begins to look for answers.',
+    description: 'Amarendra Baahubali fights for his kingdom after learning about his heritage.',
     videoId: 'wZZ_nniRFIE',
     thumbnail: 'https://img.youtube.com/vi/wZZ_nniRFIE/maxresdefault.jpg',
     category: 'action'
@@ -76,7 +76,7 @@ const freeMovies: Movie[] = [
     duration: '165 min',
     rating: 7.3,
     genre: 'Drama',
-    description: 'After growing up enduring criticism from his father, a young man finds his world shaken upon learning he was switched at birth with a millionaire\'s son.',
+    description: 'After growing up enduring criticism from his father, a young man finds his world shaken upon learning he was switched at birth.',
     videoId: 'C_qhF38ob0o',
     thumbnail: 'https://img.youtube.com/vi/C_qhF38ob0o/maxresdefault.jpg',
     category: 'drama'
@@ -88,7 +88,7 @@ const freeMovies: Movie[] = [
     duration: '179 min',
     rating: 8.2,
     genre: 'Action',
-    description: 'The fear of his elder brother\'s death starts to haunt an innocent, hearing impaired guy after they both join forces to overthrow the unlawful 30 year long regime of their village\'s president.',
+    description: 'A hearing impaired guy joins forces with his elder brother to overthrow their village president.',
     videoId: '8CjJLZCUBe0',
     thumbnail: 'https://img.youtube.com/vi/8CjJLZCUBe0/maxresdefault.jpg',
     category: 'action'
@@ -100,7 +100,7 @@ const freeMovies: Movie[] = [
     duration: '155 min',
     rating: 7.7,
     genre: 'Romance',
-    description: 'A warrior gets reincarnated 400 years later, after trying to save the princess and the kingdom, who also dies along with him. He then sets back again to fight against all odds and win back his love.',
+    description: 'A warrior gets reincarnated 400 years later to win back his love and save the kingdom.',
     videoId: 'YcWaDN0NJLc',
     thumbnail: 'https://img.youtube.com/vi/YcWaDN0NJLc/maxresdefault.jpg',
     category: 'romance'
@@ -112,58 +112,10 @@ const freeMovies: Movie[] = [
     duration: '134 min',
     rating: 7.7,
     genre: 'Thriller',
-    description: 'A young man is murdered by a businessman. He is reincarnated as a housefly and seeks revenge.',
+    description: 'A young man is murdered and reincarnated as a housefly to seek revenge.',
     videoId: 'lEOOZDbMrgE',
     thumbnail: 'https://img.youtube.com/vi/lEOOZDbMrgE/maxresdefault.jpg',
     category: 'thriller'
-  },
-  {
-    id: '9',
-    title: 'KGF Chapter 2',
-    year: 2022,
-    duration: '168 min',
-    rating: 8.3,
-    genre: 'Action',
-    description: 'In the blood-soaked Kolar Gold Fields, Rocky\'s name strikes fear into his foes. While his allies look up to him, the government sees him as a threat to law and order.',
-    videoId: 'jwUIaPGTwWg',
-    thumbnail: 'https://img.youtube.com/vi/jwUIaPGTwWg/maxresdefault.jpg',
-    category: 'action'
-  },
-  {
-    id: '10',
-    title: 'Saaho',
-    year: 2019,
-    duration: '170 min',
-    rating: 5.7,
-    genre: 'Action',
-    description: 'An undercover agent and his partner go after a mysterious crime lord in a fictional city.',
-    videoId: 'JJGaXfJLLyw',
-    thumbnail: 'https://img.youtube.com/vi/JJGaXfJLLyw/maxresdefault.jpg',
-    category: 'action'
-  },
-  {
-    id: '11',
-    title: 'Sye Raa Narasimha Reddy',
-    year: 2019,
-    duration: '171 min',
-    rating: 7.2,
-    genre: 'Action',
-    description: 'A historical action epic inspired by the life of Uyyalawada Narasimha Reddy, who revolted against the atrocities of East India Company 10 years before the Sepoy Mutiny.',
-    videoId: 'h8m5HHKI6rI',
-    thumbnail: 'https://img.youtube.com/vi/h8m5HHKI6rI/maxresdefault.jpg',
-    category: 'action'
-  },
-  {
-    id: '12',
-    title: 'Fidaa',
-    year: 2017,
-    duration: '148 min',
-    rating: 7.8,
-    genre: 'Romance',
-    description: 'A love story between a young man from a wealthy family who is studying in USA and a girl from a middle-class family who is pursuing her education in Hyderabad.',
-    videoId: 'lEyPF0QbeAM',
-    thumbnail: 'https://img.youtube.com/vi/lEyPF0QbeAM/maxresdefault.jpg',
-    category: 'romance'
   }
 ];
 
