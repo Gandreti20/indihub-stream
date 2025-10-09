@@ -17,81 +17,153 @@ interface Movie {
   description: string;
   videoId: string;
   thumbnail: string;
-  category: 'bollywood' | 'hollywood' | 'public-domain' | 'documentary';
+  category: 'action' | 'drama' | 'romance' | 'comedy' | 'thriller';
 }
 
 const freeMovies: Movie[] = [
   {
     id: '1',
-    title: 'Big Buck Bunny',
-    year: 2008,
-    duration: '10 min',
-    rating: 6.8,
-    genre: 'Animation',
-    description: 'A large and lovable rabbit deals with three tiny bullies in this short comedy.',
-    videoId: 'aqz-KE-bpKQ',
-    thumbnail: 'https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg',
-    category: 'public-domain'
+    title: 'RRR',
+    year: 2022,
+    duration: '187 min',
+    rating: 7.8,
+    genre: 'Action',
+    description: 'A tale of two legendary revolutionaries and their journey away from home before they started fighting for their country in the 1920s.',
+    videoId: 'GY4CDmUdo3A',
+    thumbnail: 'https://img.youtube.com/vi/GY4CDmUdo3A/maxresdefault.jpg',
+    category: 'action'
   },
   {
     id: '2', 
-    title: 'Sintel',
-    year: 2010,
-    duration: '15 min',
-    rating: 7.4,
-    genre: 'Fantasy',
-    description: 'A lonely young woman, Sintel, helps and befriends a dragon.',
-    videoId: 'eRsGyueVLvQ',
-    thumbnail: 'https://img.youtube.com/vi/eRsGyueVLvQ/maxresdefault.jpg',
-    category: 'public-domain'
+    title: 'Pushpa: The Rise',
+    year: 2021,
+    duration: '179 min',
+    rating: 7.6,
+    genre: 'Action',
+    description: 'A laborer named Pushpa makes enemies as he rises in the world of red sandalwood smuggling. However, violence erupts when the police attempt to bring down his illegal business.',
+    videoId: 'pKctjEKHXkk',
+    thumbnail: 'https://img.youtube.com/vi/pKctjEKHXkk/maxresdefault.jpg',
+    category: 'action'
   },
   {
     id: '3',
-    title: 'Elephants Dream',
-    year: 2006,
-    duration: '11 min',
-    rating: 6.5,
-    genre: 'Sci-Fi',
-    description: 'The story of two strange characters exploring a capricious and seemingly infinite machine.',
-    videoId: 'TLkA0RELQ1g',
-    thumbnail: 'https://img.youtube.com/vi/TLkA0RELQ1g/maxresdefault.jpg',
-    category: 'public-domain'
+    title: 'Baahubali 2: The Conclusion',
+    year: 2017,
+    duration: '167 min',
+    rating: 8.0,
+    genre: 'Action',
+    description: 'Amarendra Baahubali fights for Mahishmati, his kingdom. After learning about his heritage, he begins to look for answers.',
+    videoId: 'wZZ_nniRFIE',
+    thumbnail: 'https://img.youtube.com/vi/wZZ_nniRFIE/maxresdefault.jpg',
+    category: 'action'
   },
   {
     id: '4',
-    title: 'Tears of Steel',
-    year: 2012,
-    duration: '12 min',
-    rating: 6.9,
-    genre: 'Sci-Fi',
-    description: 'A futuristic sci-fi short film about a group of warriors and scientists.',
-    videoId: 'R6MlUcmOul8',
-    thumbnail: 'https://img.youtube.com/vi/R6MlUcmOul8/maxresdefault.jpg',
-    category: 'public-domain'
+    title: 'Arjun Reddy',
+    year: 2017,
+    duration: '182 min',
+    rating: 8.1,
+    genre: 'Drama',
+    description: 'A short-tempered house surgeon gets used to drugs and drinks when his girlfriend is forced to marry another person.',
+    videoId: 'j-5_VzXzQ44',
+    thumbnail: 'https://img.youtube.com/vi/j-5_VzXzQ44/maxresdefault.jpg',
+    category: 'drama'
   },
   {
     id: '5',
-    title: 'Cosmos Laundromat',
-    year: 2015,
-    duration: '12 min',
+    title: 'Ala Vaikunthapurramuloo',
+    year: 2020,
+    duration: '165 min',
     rating: 7.3,
-    genre: 'Fantasy',
-    description: 'On a desolate island, a suicidal sheep named Franck meets his fate in a quirky salesman.',
-    videoId: 'Y-rmzh0PI3c',
-    thumbnail: 'https://img.youtube.com/vi/Y-rmzh0PI3c/maxresdefault.jpg',
-    category: 'hollywood'
+    genre: 'Drama',
+    description: 'After growing up enduring criticism from his father, a young man finds his world shaken upon learning he was switched at birth with a millionaire\'s son.',
+    videoId: 'C_qhF38ob0o',
+    thumbnail: 'https://img.youtube.com/vi/C_qhF38ob0o/maxresdefault.jpg',
+    category: 'drama'
   },
   {
     id: '6',
-    title: 'Spring',
+    title: 'Rangasthalam',
+    year: 2018,
+    duration: '179 min',
+    rating: 8.2,
+    genre: 'Action',
+    description: 'The fear of his elder brother\'s death starts to haunt an innocent, hearing impaired guy after they both join forces to overthrow the unlawful 30 year long regime of their village\'s president.',
+    videoId: '8CjJLZCUBe0',
+    thumbnail: 'https://img.youtube.com/vi/8CjJLZCUBe0/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '7',
+    title: 'Magadheera',
+    year: 2009,
+    duration: '155 min',
+    rating: 7.7,
+    genre: 'Romance',
+    description: 'A warrior gets reincarnated 400 years later, after trying to save the princess and the kingdom, who also dies along with him. He then sets back again to fight against all odds and win back his love.',
+    videoId: 'YcWaDN0NJLc',
+    thumbnail: 'https://img.youtube.com/vi/YcWaDN0NJLc/maxresdefault.jpg',
+    category: 'romance'
+  },
+  {
+    id: '8',
+    title: 'Eega',
+    year: 2012,
+    duration: '134 min',
+    rating: 7.7,
+    genre: 'Thriller',
+    description: 'A young man is murdered by a businessman. He is reincarnated as a housefly and seeks revenge.',
+    videoId: 'lEOOZDbMrgE',
+    thumbnail: 'https://img.youtube.com/vi/lEOOZDbMrgE/maxresdefault.jpg',
+    category: 'thriller'
+  },
+  {
+    id: '9',
+    title: 'KGF Chapter 2',
+    year: 2022,
+    duration: '168 min',
+    rating: 8.3,
+    genre: 'Action',
+    description: 'In the blood-soaked Kolar Gold Fields, Rocky\'s name strikes fear into his foes. While his allies look up to him, the government sees him as a threat to law and order.',
+    videoId: 'jwUIaPGTwWg',
+    thumbnail: 'https://img.youtube.com/vi/jwUIaPGTwWg/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '10',
+    title: 'Saaho',
     year: 2019,
-    duration: '7 min',
+    duration: '170 min',
+    rating: 5.7,
+    genre: 'Action',
+    description: 'An undercover agent and his partner go after a mysterious crime lord in a fictional city.',
+    videoId: 'JJGaXfJLLyw',
+    thumbnail: 'https://img.youtube.com/vi/JJGaXfJLLyw/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '11',
+    title: 'Sye Raa Narasimha Reddy',
+    year: 2019,
+    duration: '171 min',
     rating: 7.2,
-    genre: 'Animation',
-    description: 'A young woman struggles with depression during her first year at Harvard.',
-    videoId: 'WhWc3b3KhnY',
-    thumbnail: 'https://img.youtube.com/vi/WhWc3b3KhnY/maxresdefault.jpg',
-    category: 'hollywood'
+    genre: 'Action',
+    description: 'A historical action epic inspired by the life of Uyyalawada Narasimha Reddy, who revolted against the atrocities of East India Company 10 years before the Sepoy Mutiny.',
+    videoId: 'h8m5HHKI6rI',
+    thumbnail: 'https://img.youtube.com/vi/h8m5HHKI6rI/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '12',
+    title: 'Fidaa',
+    year: 2017,
+    duration: '148 min',
+    rating: 7.8,
+    genre: 'Romance',
+    description: 'A love story between a young man from a wealthy family who is studying in USA and a girl from a middle-class family who is pursuing her education in Hyderabad.',
+    videoId: 'lEyPF0QbeAM',
+    thumbnail: 'https://img.youtube.com/vi/lEyPF0QbeAM/maxresdefault.jpg',
+    category: 'romance'
   }
 ];
 
@@ -101,9 +173,11 @@ const Movies = () => {
 
   const categories = [
     { id: 'all', label: 'All Movies' },
-    { id: 'public-domain', label: 'Classic Films' },
-    { id: 'hollywood', label: 'Hollywood' },
-    { id: 'documentary', label: 'Documentaries' }
+    { id: 'action', label: 'Action' },
+    { id: 'drama', label: 'Drama' },
+    { id: 'romance', label: 'Romance' },
+    { id: 'thriller', label: 'Thriller' },
+    { id: 'comedy', label: 'Comedy' }
   ];
 
   const filteredMovies = selectedCategory === 'all' 
@@ -120,8 +194,8 @@ const Movies = () => {
           <NavigationBreadcrumb />
           
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-foreground mb-2">Free Movies</h1>
-            <p className="text-muted-foreground">Watch classic public domain films and free content</p>
+            <h1 className="text-3xl font-bold text-foreground mb-2">Telugu Movies</h1>
+            <p className="text-muted-foreground">Watch popular Telugu blockbuster movies and trailers</p>
           </div>
 
           {/* Category Filter */}
@@ -231,9 +305,9 @@ const MovieCard = ({ movie, onPlay }: { movie: Movie; onPlay: (movie: Movie) => 
         <div className="absolute top-2 left-2">
           <Badge 
             variant="secondary"
-            className="text-xs bg-secondary/80 text-secondary-foreground"
+            className="text-xs bg-secondary/80 text-secondary-foreground capitalize"
           >
-            {movie.category === 'public-domain' ? 'Classic' : movie.category}
+            {movie.category}
           </Badge>
         </div>
       </div>
