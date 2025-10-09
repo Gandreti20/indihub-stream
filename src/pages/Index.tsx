@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, Tv } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Tv } from "lucide-react";
 import StreamingHeader from "@/components/StreamingHeader";
-import CategoryFilter from "@/components/CategoryFilter";
 import ContentCarousel from "@/components/ContentCarousel";
 import LiveTVSection from "@/components/LiveTVSection";
 import rrr from "@/assets/movies/rrr.jpg";
@@ -118,7 +115,6 @@ const Index = () => {
           </div>
         </section>
 
-        <CategoryFilter />
         <div className="space-y-12 py-8 bg-gradient-to-b from-background via-background/95 to-background">
           <ContentCarousel title="Trending Telugu Movies" items={trendingMovies} />
           <LiveTVSection />
