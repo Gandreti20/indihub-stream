@@ -23,6 +23,174 @@ interface Movie {
 const freeMovies: Movie[] = [
   {
     id: '1',
+    title: 'Crazy Fellow',
+    year: 2024,
+    duration: '145 min',
+    rating: 7.2,
+    genre: 'Comedy',
+    description: 'Love blooms on a dating app when conversations between two people take an unexpected turn.',
+    videoId: 'bklpgXjeWkQ',
+    thumbnail: 'https://img.youtube.com/vi/bklpgXjeWkQ/maxresdefault.jpg',
+    category: 'comedy'
+  },
+  {
+    id: '2',
+    title: 'Dheera',
+    year: 2024,
+    duration: '138 min',
+    rating: 7.3,
+    genre: 'Action',
+    description: 'An action-packed thriller featuring Laksh Chadalavada in an intense performance.',
+    videoId: 'AwB5CW5io9U',
+    thumbnail: 'https://img.youtube.com/vi/AwB5CW5io9U/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '3',
+    title: 'Kajal Karthika',
+    year: 2023,
+    duration: '130 min',
+    rating: 7.0,
+    genre: 'Drama',
+    description: 'Featuring Kajal Aggarwal and Regina Cassandra in a compelling drama.',
+    videoId: 'pgjPpp-vqdY',
+    thumbnail: 'https://img.youtube.com/vi/pgjPpp-vqdY/maxresdefault.jpg',
+    category: 'drama'
+  },
+  {
+    id: '4',
+    title: 'A (Ad Infinitum)',
+    year: 2023,
+    duration: '142 min',
+    rating: 7.5,
+    genre: 'Thriller',
+    description: 'A mysterious person seeks his past in an increasingly convoluted quest spanning decades involving science, crime, and politics.',
+    videoId: 'Xo84bb0qz5E',
+    thumbnail: 'https://img.youtube.com/vi/Xo84bb0qz5E/maxresdefault.jpg',
+    category: 'thriller'
+  },
+  {
+    id: '5',
+    title: 'Kadambari',
+    year: 2024,
+    duration: '125 min',
+    rating: 6.8,
+    genre: 'Thriller',
+    description: 'While watching cricket, an ardent fan observes paranormal activity in his house.',
+    videoId: 'QjtJakiEHKA',
+    thumbnail: 'https://img.youtube.com/vi/QjtJakiEHKA/maxresdefault.jpg',
+    category: 'thriller'
+  },
+  {
+    id: '6',
+    title: 'Ragala 24 Gantallo',
+    year: 2023,
+    duration: '148 min',
+    rating: 7.1,
+    genre: 'Thriller',
+    description: 'Vidya is happily married until mysterious events unfold in just 24 hours.',
+    videoId: '3DY7zBmgEXk',
+    thumbnail: 'https://img.youtube.com/vi/3DY7zBmgEXk/maxresdefault.jpg',
+    category: 'thriller'
+  },
+  {
+    id: '7',
+    title: 'Ramam Raghavam',
+    year: 2023,
+    duration: '135 min',
+    rating: 7.4,
+    genre: 'Drama',
+    description: 'A powerful drama starring Samuthirakani and Harish Uthaman.',
+    videoId: 'tf_E_ZIeWVo',
+    thumbnail: 'https://img.youtube.com/vi/tf_E_ZIeWVo/maxresdefault.jpg',
+    category: 'drama'
+  },
+  {
+    id: '8',
+    title: 'Masakali',
+    year: 2023,
+    duration: '128 min',
+    rating: 6.9,
+    genre: 'Drama',
+    description: 'A heartwarming Telugu drama with English subtitles.',
+    videoId: 'CChK7nI3RRk',
+    thumbnail: 'https://img.youtube.com/vi/CChK7nI3RRk/maxresdefault.jpg',
+    category: 'drama'
+  },
+  {
+    id: '9',
+    title: 'Raghavendra',
+    year: 2003,
+    duration: '155 min',
+    rating: 7.2,
+    genre: 'Action',
+    description: 'Prabhas stars in this action-packed entertainer.',
+    videoId: 'TDoA-7LqIuE',
+    thumbnail: 'https://img.youtube.com/vi/TDoA-7LqIuE/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '10',
+    title: 'UTSAVAM',
+    year: 2023,
+    duration: '140 min',
+    rating: 7.3,
+    genre: 'Drama',
+    description: 'Featuring Dilip Prakash, Regina Cassandra, Rajendra Prasad, and Prakash Raj.',
+    videoId: 'as0XMR9vyhg',
+    thumbnail: 'https://img.youtube.com/vi/as0XMR9vyhg/maxresdefault.jpg',
+    category: 'drama'
+  },
+  {
+    id: '11',
+    title: 'Yevam',
+    year: 2023,
+    duration: '132 min',
+    rating: 7.0,
+    genre: 'Thriller',
+    description: 'Starring Chandini Chowdary in a gripping thriller.',
+    videoId: '-YysWb4qtGs',
+    thumbnail: 'https://img.youtube.com/vi/-YysWb4qtGs/maxresdefault.jpg',
+    category: 'thriller'
+  },
+  {
+    id: '12',
+    title: 'Nuvvostanante Nenoddantana',
+    year: 2005,
+    duration: '165 min',
+    rating: 8.1,
+    genre: 'Romance',
+    description: 'Siddharth and Trisha star in this romantic classic directed by Prabhu Deva.',
+    videoId: 'c_diMSAaojU',
+    thumbnail: 'https://img.youtube.com/vi/c_diMSAaojU/maxresdefault.jpg',
+    category: 'romance'
+  },
+  {
+    id: '13',
+    title: 'Jaffa',
+    year: 2013,
+    duration: '138 min',
+    rating: 6.5,
+    genre: 'Comedy',
+    description: 'Brahmanandam delivers a super hit comedy entertainer.',
+    videoId: 'slmWiYT6LU0',
+    thumbnail: 'https://img.youtube.com/vi/slmWiYT6LU0/maxresdefault.jpg',
+    category: 'comedy'
+  },
+  {
+    id: '14',
+    title: 'Tagore',
+    year: 2003,
+    duration: '175 min',
+    rating: 7.8,
+    genre: 'Action',
+    description: 'Megastar Chiranjeevi stars in this action-packed drama with Shriya Saran.',
+    videoId: 'h9164Uo55As',
+    thumbnail: 'https://img.youtube.com/vi/h9164Uo55As/maxresdefault.jpg',
+    category: 'action'
+  },
+  {
+    id: '15',
     title: 'RRR',
     year: 2022,
     duration: '187 min',
@@ -34,7 +202,7 @@ const freeMovies: Movie[] = [
     category: 'action'
   },
   {
-    id: '2', 
+    id: '16',
     title: 'Pushpa: The Rise',
     year: 2021,
     duration: '179 min',
@@ -46,7 +214,7 @@ const freeMovies: Movie[] = [
     category: 'action'
   },
   {
-    id: '3',
+    id: '17',
     title: 'Baahubali 2',
     year: 2017,
     duration: '167 min',
@@ -58,7 +226,7 @@ const freeMovies: Movie[] = [
     category: 'action'
   },
   {
-    id: '4',
+    id: '18',
     title: 'Arjun Reddy',
     year: 2017,
     duration: '182 min',
@@ -70,7 +238,7 @@ const freeMovies: Movie[] = [
     category: 'drama'
   },
   {
-    id: '5',
+    id: '19',
     title: 'Ala Vaikunthapurramuloo',
     year: 2020,
     duration: '165 min',
@@ -82,7 +250,7 @@ const freeMovies: Movie[] = [
     category: 'drama'
   },
   {
-    id: '6',
+    id: '20',
     title: 'Rangasthalam',
     year: 2018,
     duration: '179 min',
@@ -94,7 +262,7 @@ const freeMovies: Movie[] = [
     category: 'action'
   },
   {
-    id: '7',
+    id: '21',
     title: 'Magadheera',
     year: 2009,
     duration: '155 min',
@@ -106,7 +274,7 @@ const freeMovies: Movie[] = [
     category: 'romance'
   },
   {
-    id: '8',
+    id: '22',
     title: 'Eega',
     year: 2012,
     duration: '134 min',
