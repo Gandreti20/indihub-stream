@@ -8,68 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Streaming Platform Dark Theme */
-    --background: 220 15% 6%;
-    --foreground: 0 0% 98%;
+    /* Cinematic Streaming Theme - Vibrant Purple & Gold */
+    --background: 250 35% 8%;
+    --foreground: 48 100% 96%;
 
-    --card: 220 15% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 250 30% 11%;
+    --card-foreground: 48 100% 96%;
 
-    --popover: 220 15% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 250 30% 11%;
+    --popover-foreground: 48 100% 96%;
 
-    --primary: 259 94% 51%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 280 85% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 0 0% 90%;
+    --secondary: 250 25% 16%;
+    --secondary-foreground: 48 100% 96%;
 
-    --muted: 220 15% 10%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 250 20% 14%;
+    --muted-foreground: 240 5% 64%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 220 15% 6%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 250 35% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85% 97%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 15%;
-    --input: 220 15% 12%;
-    --ring: 259 94% 51%;
+    --border: 250 20% 18%;
+    --input: 250 25% 16%;
+    --ring: 280 85% 60%;
 
     --radius: 0.75rem;
 
-    /* Custom streaming platform tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(259 94% 51% / 0.8), hsl(220 15% 6% / 0.9));
-    --content-gradient: linear-gradient(180deg, transparent, hsl(220 15% 6% / 0.8));
-    --premium-gradient: linear-gradient(45deg, hsl(38 92% 50%), hsl(45 100% 60%));
-    --live-indicator: 0 100% 50%;
-    --new-badge: 120 100% 40%;
+    /* Cinematic streaming platform tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(280 85% 60% / 0.9), hsl(330 85% 55% / 0.7), hsl(250 35% 8% / 0.95));
+    --content-gradient: linear-gradient(180deg, transparent, hsl(250 35% 8% / 0.9));
+    --premium-gradient: linear-gradient(135deg, hsl(45 100% 55%), hsl(38 100% 60%), hsl(30 100% 65%));
+    --card-gradient: linear-gradient(145deg, hsl(280 85% 60% / 0.1), hsl(250 30% 11%));
+    --glow-gradient: linear-gradient(90deg, hsl(280 85% 60% / 0.8), hsl(330 85% 55% / 0.8), hsl(280 85% 60% / 0.8));
     
-    /* Shadows */
-    --shadow-premium: 0 20px 40px -12px hsl(259 94% 51% / 0.4);
-    --shadow-content: 0 10px 30px -5px hsl(220 15% 6% / 0.6);
-    --shadow-glow: 0 0 30px hsl(259 94% 51% / 0.3);
+    --live-indicator: 0 100% 60%;
+    --new-badge: 330 85% 55%;
+    --primary-glow: 280 85% 70%;
+    --accent-glow: 45 100% 65%;
+    
+    /* Enhanced Shadows */
+    --shadow-premium: 0 25px 50px -12px hsl(280 85% 60% / 0.5);
+    --shadow-content: 0 15px 40px -10px hsl(250 35% 8% / 0.8);
+    --shadow-glow: 0 0 40px hsl(280 85% 60% / 0.4);
+    --shadow-card: 0 8px 32px hsl(250 35% 5% / 0.6);
+    --shadow-hover: 0 20px 60px -15px hsl(280 85% 60% / 0.6);
 
-    /* Animations */
+    /* Smooth Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 280 85% 60%;
   }
 
   .dark {
