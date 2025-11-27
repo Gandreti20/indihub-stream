@@ -160,3 +160,41 @@ export const getMoviesByCategory = async (category: Movie['category'], page: num
     return [];
   }
 };
+
+export const getTrendingMovies = async (timeWindow: 'day' | 'week' = 'week'): Promise<Movie[]> => {
+  try {
+    const response = await fetch(
+      `${TMDB_BASE_URL}/trending/movie/${timeWindow}?api_key=${TMDB_API_KEY}&language=te-IN`
+    );
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch trending movies from TMDb');
+    }
+    
+    const data = await response.json();
+    return data.results
+      .filter((movie: TMDBMovie) => movie.original_language === 'te')
+      .map(convertTMDBToMovie);
+  } catch (error) {
+    console.error('Error fetching trending movies:', error);
+    return [];
+  }
+};
+
+export const getPopularTeluguMovies = async (page: number = 1): Promise<Movie[]> => {
+  try {
+    const response = await fetch(
+      `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=te-IN&with_original_language=te&sort_by=vote_average.desc&vote_count.gte=50&page=${page}&primary_release_date.gte=2000-01-01`
+    );
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch popular movies from TMDb');
+    }
+    
+    const data = await response.json();
+    return data.results.map(convertTMDBToMovie);
+  } catch (error) {
+    console.error('Error fetching popular movies:', error);
+    return [];
+  }
+};
