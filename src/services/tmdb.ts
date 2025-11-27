@@ -198,3 +198,25 @@ export const getPopularTeluguMovies = async (page: number = 1): Promise<Movie[]>
     return [];
   }
 };
+
+export const getMovieVideos = async (movieId: string): Promise<string | null> => {
+  try {
+    const response = await fetch(
+      `${TMDB_BASE_URL}/movie/${movieId}/videos?api_key=${TMDB_API_KEY}&language=en-US`
+    );
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch movie videos from TMDb');
+    }
+    
+    const data = await response.json();
+    const trailer = data.results.find((video: any) => 
+      video.type === 'Trailer' && video.site === 'YouTube'
+    );
+    
+    return trailer ? trailer.key : null;
+  } catch (error) {
+    console.error('Error fetching movie videos:', error);
+    return null;
+  }
+};
