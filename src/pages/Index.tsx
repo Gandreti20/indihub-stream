@@ -1,58 +1,34 @@
-import { Tv } from "lucide-react";
+import { Tv, Loader2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import StreamingHeader from "@/components/StreamingHeader";
 import ContentCarousel from "@/components/ContentCarousel";
 import LiveTVSection from "@/components/LiveTVSection";
-import rrr from "@/assets/movies/rrr.jpg";
-import pushpa from "@/assets/movies/pushpa.jpg";
-import baahubali from "@/assets/movies/baahubali.jpg";
-import arjunReddy from "@/assets/movies/arjun-reddy.jpg";
-import eega from "@/assets/movies/eega.jpg";
-import magadheera from "@/assets/movies/magadheera.jpg";
-import alaVaikunthapurramuloo from "@/assets/movies/ala-vaikunthapurramuloo.jpg";
-import rangasthalam from "@/assets/movies/rangasthalam.jpg";
-
-import dhootha from "@/assets/series/dhootha.jpg";
-import bhamakalapam from "@/assets/series/bhamakalapam.jpg";
-import familyMan from "@/assets/series/family-man.jpg";
-import scam1992 from "@/assets/series/scam1992.jpg";
-
-import chhotaBheem from "@/assets/kids/chhota-bheem.jpg";
-import doraemon from "@/assets/kids/doraemon.jpg";
-
-import tv9 from "@/assets/channels/tv9-telugu.jpg";
-import etv from "@/assets/channels/etv-telugu.jpg";
-import starSports from "@/assets/channels/star-sports.jpg";
+import { getTrendingMovies, getPopularTeluguMovies, type Movie } from "@/services/tmdb";
 
 const Index = () => {
-  // Telugu content with proper portrait posters (2:3 aspect ratio)
-  const trendingMovies = [
-    { id: '1', title: 'RRR', image: rrr, rating: 7.8, year: 2022, language: 'Telugu', type: 'movie' as const, badge: 'HOT' },
-    { id: '2', title: 'Pushpa', image: pushpa, rating: 7.6, year: 2021, language: 'Telugu', type: 'movie' as const },
-    { id: '3', title: 'Baahubali', image: baahubali, rating: 8.0, year: 2015, language: 'Telugu', type: 'movie' as const },
-    { id: '4', title: 'Arjun Reddy', image: arjunReddy, rating: 8.1, year: 2017, language: 'Telugu', type: 'movie' as const },
-    { id: '5', title: 'Eega', image: eega, rating: 7.7, year: 2012, language: 'Telugu', type: 'movie' as const },
-    { id: '6', title: 'Magadheera', image: magadheera, rating: 7.7, year: 2009, language: 'Telugu', type: 'movie' as const },
-    { id: '7', title: 'Ala Vaikunthapurramuloo', image: alaVaikunthapurramuloo, rating: 7.3, year: 2020, language: 'Telugu', type: 'movie' as const },
-    { id: '8', title: 'Rangasthalam', image: rangasthalam, rating: 8.2, year: 2018, language: 'Telugu', type: 'movie' as const },
-  ];
+  const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
+  const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const popularSeries = [
-    { id: '1', title: 'Dhootha', image: dhootha, rating: 7.7, year: 2023, language: 'Telugu', type: 'series' as const, badge: 'NEW' },
-    { id: '2', title: 'Bhamakalapam', image: bhamakalapam, rating: 6.8, year: 2022, language: 'Telugu', type: 'series' as const },
-    { id: '3', title: 'The Family Man', image: familyMan, rating: 8.7, year: 2021, language: 'Telugu', type: 'series' as const },
-    { id: '4', title: 'Scam 1992', image: scam1992, rating: 9.5, year: 2020, language: 'Telugu', type: 'series' as const },
-  ];
+  useEffect(() => {
+    const fetchMovies = async () => {
+      setLoading(true);
+      try {
+        const [trending, popular] = await Promise.all([
+          getTrendingMovies(),
+          getPopularTeluguMovies()
+        ]);
+        setTrendingMovies(trending.slice(0, 12));
+        setPopularMovies(popular.slice(0, 12));
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const liveChannels = [
-    { id: '1', title: 'TV9 Telugu', image: tv9, language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '2', title: 'ETV Telugu', image: etv, language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-    { id: '3', title: 'Star Sports 1', image: starSports, language: 'Telugu', type: 'live' as const, badge: 'LIVE' },
-  ];
-
-  const kidsContent = [
-    { id: '1', title: 'Chhota Bheem', image: chhotaBheem, rating: 7.2, year: 2023, language: 'Telugu', type: 'series' as const },
-    { id: '2', title: 'Doraemon', image: doraemon, rating: 8.5, year: 2023, language: 'Telugu', type: 'series' as const },
-  ];
+    fetchMovies();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -116,10 +92,21 @@ const Index = () => {
         </section>
 
         <div className="space-y-12 py-8 bg-gradient-to-b from-background via-background/95 to-background">
-          <ContentCarousel title="Trending Telugu Movies" items={trendingMovies} />
-          <LiveTVSection />
-          <ContentCarousel title="Telugu Movies & Series" items={popularSeries} />
-          <ContentCarousel title="Kids Telugu Content" items={kidsContent} />
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+          ) : (
+            <>
+              {trendingMovies.length > 0 && (
+                <ContentCarousel title="🔥 Trending Telugu Movies" items={trendingMovies} />
+              )}
+              <LiveTVSection />
+              {popularMovies.length > 0 && (
+                <ContentCarousel title="⭐ Popular Telugu Movies" items={popularMovies} />
+              )}
+            </>
+          )}
         </div>
       </main>
     </div>

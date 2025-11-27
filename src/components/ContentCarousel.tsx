@@ -1,18 +1,24 @@
-import { ChevronLeft, ChevronRight, Play, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Star, Clock, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { useState } from "react";
 
 interface ContentItem {
   id: string;
   title: string;
-  image: string;
+  image?: string;
   rating?: number;
   year?: number;
-  language: string;
-  type: 'movie' | 'series' | 'live';
+  language?: string;
+  type?: 'movie' | 'series' | 'live';
   badge?: string;
+  genre?: string;
+  description?: string;
+  duration?: string;
+  thumbnail?: string;
+  category?: string;
 }
 
 interface ContentCarouselProps {
@@ -21,71 +27,103 @@ interface ContentCarouselProps {
 }
 
 const ContentCarousel = ({ title, items }: ContentCarouselProps) => {
+  const [selectedItem, setSelectedItem] = useState<ContentItem | null>(null);
+
   return (
-    <section className="py-8">
-      <div className="container px-4">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-foreground">{title}</h2>
-          <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
-              <ChevronLeft className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
-              <ChevronRight className="h-5 w-5" />
-            </Button>
+    <>
+      <section className="py-8">
+        <div className="container px-4">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+            <div className="flex items-center gap-2">
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+          
+          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+            {items.map((item) => (
+              <ContentCard key={item.id} item={item} onPlay={setSelectedItem} />
+            ))}
           </div>
         </div>
-        
-        <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-          {items.map((item) => (
-            <ContentCard key={item.id} item={item} />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Content Player Dialog */}
+      <Dialog open={!!selectedItem} onOpenChange={(open) => !open && setSelectedItem(null)}>
+        <DialogContent className="max-w-4xl w-full h-[80vh]">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">{selectedItem?.title}</DialogTitle>
+          </DialogHeader>
+          {selectedItem && (
+            <div className="flex-1 flex flex-col">
+              <div className="aspect-video bg-black rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+                <img 
+                  src={selectedItem.thumbnail || selectedItem.image} 
+                  alt={selectedItem.title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="md:col-span-2">
+                  <p className="text-muted-foreground mb-4">
+                    {selectedItem.description || 'No description available'}
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  {selectedItem.year && (
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{selectedItem.year}</span>
+                    </div>
+                  )}
+                  {selectedItem.duration && (
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-muted-foreground" />
+                      <span className="text-sm">{selectedItem.duration}</span>
+                    </div>
+                  )}
+                  {selectedItem.rating && (
+                    <div className="flex items-center gap-2">
+                      <Star className="h-4 w-4 text-accent fill-accent" />
+                      <span className="text-sm">{selectedItem.rating}/10</span>
+                    </div>
+                  )}
+                  {selectedItem.genre && (
+                    <Badge variant="secondary" className="text-xs">
+                      {selectedItem.genre}
+                    </Badge>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
-const ContentCard = ({ item }: { item: ContentItem }) => {
-  const { toast } = useToast();
-
+const ContentCard = ({ item, onPlay }: { item: ContentItem; onPlay: (item: ContentItem) => void }) => {
   const handlePlay = () => {
-    if (!item.image) {
-      toast({
-        title: "Content Unavailable",
-        description: "This content is not available right now.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    toast({
-      title: `Playing ${item.title}`,
-      description: `${item.type} • ${item.language} • ${item.year}`,
-    });
+    onPlay(item);
   };
 
   return (
     <Card 
-      className={`group relative min-w-[200px] overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 ${
-        item.image ? 'cursor-pointer hover:shadow-lg hover:shadow-primary/20' : 'cursor-not-allowed opacity-60'
-      }`}
+      className="group relative min-w-[200px] overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-primary/20"
       onClick={handlePlay}
     >
       <div className="aspect-[2/3] relative overflow-hidden">
-        {item.image ? (
-          <img 
-            src={item.image} 
-            alt={item.title}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-          />
-        ) : (
-          <div 
-            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center"
-          >
-            <span className="text-sm font-semibold text-center px-2">{item.title}</span>
-          </div>
-        )}
+        <img 
+          src={item.thumbnail || item.image || '/placeholder.svg'} 
+          alt={item.title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+        />
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
@@ -131,10 +169,8 @@ const ContentCard = ({ item }: { item: ContentItem }) => {
         <h3 className="font-semibold text-sm text-foreground truncate">{item.title}</h3>
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           {item.year && <span>{item.year}</span>}
-          {item.year && <span>•</span>}
-          <span>{item.language}</span>
-          <span>•</span>
-          <span className="capitalize">{item.type}</span>
+          {item.year && item.genre && <span>•</span>}
+          {item.genre && <span>{item.genre}</span>}
         </div>
       </div>
     </Card>
