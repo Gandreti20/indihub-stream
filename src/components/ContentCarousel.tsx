@@ -1,9 +1,10 @@
-import { ChevronLeft, ChevronRight, Play, Star, Clock, Calendar } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Star, Clock, Calendar, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
+import { getMovieVideos } from "@/services/tmdb";
 
 interface ContentItem {
   id: string;
@@ -28,6 +29,18 @@ interface ContentCarouselProps {
 
 const ContentCarousel = ({ title, items }: ContentCarouselProps) => {
   const [selectedItem, setSelectedItem] = useState<ContentItem | null>(null);
+  const [videoKey, setVideoKey] = useState<string | null>(null);
+  const [loadingVideo, setLoadingVideo] = useState(false);
+
+  const handleItemSelect = async (item: ContentItem) => {
+    setSelectedItem(item);
+    setVideoKey(null);
+    setLoadingVideo(true);
+    
+    const key = await getMovieVideos(item.id);
+    setVideoKey(key);
+    setLoadingVideo(false);
+  };
 
   return (
     <>
@@ -47,7 +60,7 @@ const ContentCarousel = ({ title, items }: ContentCarouselProps) => {
           
           <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
             {items.map((item) => (
-              <ContentCard key={item.id} item={item} onPlay={setSelectedItem} />
+              <ContentCard key={item.id} item={item} onPlay={handleItemSelect} />
             ))}
           </div>
         </div>
@@ -61,12 +74,30 @@ const ContentCarousel = ({ title, items }: ContentCarouselProps) => {
           </DialogHeader>
           {selectedItem && (
             <div className="flex-1 flex flex-col">
-              <div className="aspect-video bg-black rounded-lg overflow-hidden mb-4 flex items-center justify-center">
-                <img 
-                  src={selectedItem.thumbnail || selectedItem.image} 
-                  alt={selectedItem.title}
-                  className="w-full h-full object-contain"
-                />
+              <div className="aspect-video bg-black rounded-lg overflow-hidden mb-4">
+                {loadingVideo ? (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                  </div>
+                ) : videoKey ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${videoKey}`}
+                    title={selectedItem.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <img 
+                      src={selectedItem.thumbnail || selectedItem.image} 
+                      alt={selectedItem.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="md:col-span-2">
