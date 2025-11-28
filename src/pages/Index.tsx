@@ -8,15 +8,16 @@ import { getTrendingMovies, getPopularTeluguMovies, type Movie } from "@/service
 const Index = () => {
   const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
-  const [heroMovie, setHeroMovie] = useState<Movie | null>(null);
+  const [heroMovies, setHeroMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchMovies = async () => {
       setLoading(true);
       try {
         const [trending, popular] = await Promise.all([getTrendingMovies(), getPopularTeluguMovies()]);
-        setHeroMovie(trending[0] || null);
-        setTrendingMovies(trending.slice(1, 13));
+        // Use top 5 trending movies for hero rotation
+        setHeroMovies(trending.slice(0, 5));
+        setTrendingMovies(trending.slice(5, 17));
         setPopularMovies(popular.slice(0, 12));
       } catch (error) {
         console.error('Error fetching movies:', error);
@@ -30,7 +31,7 @@ const Index = () => {
       <StreamingHeader />
       <main>
         {/* Video Hero Banner */}
-        {heroMovie && <VideoHeroSection movie={heroMovie} />}
+        {heroMovies.length > 0 && <VideoHeroSection movies={heroMovies} />}
 
         <div className="space-y-12 py-8 bg-gradient-to-b from-background via-background/95 to-background">
           {loading ? <div className="flex justify-center items-center py-20">
