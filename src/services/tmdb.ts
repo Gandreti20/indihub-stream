@@ -164,7 +164,7 @@ export const getMoviesByCategory = async (category: Movie['category'], page: num
 export const getTrendingMovies = async (timeWindow: 'day' | 'week' = 'week'): Promise<Movie[]> => {
   try {
     const response = await fetch(
-      `${TMDB_BASE_URL}/trending/movie/${timeWindow}?api_key=${TMDB_API_KEY}&language=te-IN`
+      `${TMDB_BASE_URL}/trending/movie/${timeWindow}?api_key=${TMDB_API_KEY}&language=en-US`
     );
     
     if (!response.ok) {
@@ -172,9 +172,7 @@ export const getTrendingMovies = async (timeWindow: 'day' | 'week' = 'week'): Pr
     }
     
     const data = await response.json();
-    return data.results
-      .filter((movie: TMDBMovie) => movie.original_language === 'te')
-      .map(convertTMDBToMovie);
+    return data.results.map(convertTMDBToMovie).slice(0, 20);
   } catch (error) {
     console.error('Error fetching trending movies:', error);
     return [];
@@ -210,11 +208,17 @@ export const getMovieVideos = async (movieId: string): Promise<string | null> =>
     }
     
     const data = await response.json();
-    const trailer = data.results.find((video: any) => 
-      video.type === 'Trailer' && video.site === 'YouTube'
-    );
     
-    return trailer ? trailer.key : null;
+    // Prioritize trailers, then teasers, then any video
+    const trailer = data.results.find((video: any) => 
+      video.site === 'YouTube' && video.type === 'Trailer'
+    );
+    const teaser = data.results.find((video: any) => 
+      video.site === 'YouTube' && video.type === 'Teaser'
+    );
+    const anyVideo = data.results.find((video: any) => video.site === 'YouTube');
+    
+    return trailer?.key || teaser?.key || anyVideo?.key || null;
   } catch (error) {
     console.error('Error fetching movie videos:', error);
     return null;
