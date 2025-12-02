@@ -17,6 +17,7 @@ interface Channel {
   language: string;
   description: string;
   viewerCount?: string;
+  logo?: string;
 }
 
 const TeluguChannels = () => {
@@ -35,7 +36,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'II_m28Bm-iM',
       language: 'Telugu',
       description: '24/7 Telugu news channel with breaking news and political coverage',
-      viewerCount: '45K'
+      viewerCount: '45K',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/TV9_Telugu.svg/200px-TV9_Telugu.svg.png'
     },
     {
       id: 'abn-telugu',
@@ -46,7 +48,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'HoYsWagMFfE',
       language: 'Telugu',
       description: 'Andhra Pradesh and Telangana news updates',
-      viewerCount: '32K'
+      viewerCount: '32K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/ABN_Andhra_Jyothi_logo.svg/200px-ABN_Andhra_Jyothi_logo.svg.png'
     },
     {
       id: 'v6-news',
@@ -57,7 +60,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'nrb8P8shbDk',
       language: 'Telugu',
       description: 'Telangana-focused news with live coverage',
-      viewerCount: '28K'
+      viewerCount: '28K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/a/a6/V6_News_logo.png'
     },
     {
       id: 'tv5-news',
@@ -68,7 +72,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'LUnp_p497s0',
       language: 'Telugu',
       description: 'Breaking news from AP and Telangana',
-      viewerCount: '22K'
+      viewerCount: '22K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/35/TV5_News_logo.svg/200px-TV5_News_logo.svg.png'
     },
     {
       id: '10tv-news',
@@ -79,7 +84,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'byG7EGw9NPs',
       language: 'Telugu',
       description: 'Telugu news with political coverage',
-      viewerCount: '15K'
+      viewerCount: '15K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/1/1b/10TV_logo.png'
     },
     {
       id: 'ntv-news',
@@ -90,7 +96,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'ZOdMhWnVRAY',
       language: 'Telugu',
       description: 'Telugu news and current affairs',
-      viewerCount: '18K'
+      viewerCount: '18K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/NTV_Telugu_logo.svg/200px-NTV_Telugu_logo.svg.png'
     },
     {
       id: 'sakshi-tv',
@@ -101,7 +108,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: '9kCcUipLPJM',
       language: 'Telugu',
       description: 'AP & Telangana breaking news',
-      viewerCount: '25K'
+      viewerCount: '25K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Sakshi_TV_logo.svg/200px-Sakshi_TV_logo.svg.png'
     },
     
     // Entertainment Channels
@@ -110,35 +118,40 @@ const TeluguChannels = () => {
       name: 'Star Maa',
       category: 'Entertainment',
       language: 'Telugu',
-      description: 'Popular Telugu entertainment with serials and movies'
+      description: 'Popular Telugu entertainment with serials and movies',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Star_Maa.svg/200px-Star_Maa.svg.png'
     },
     {
       id: 'zee-telugu',
       name: 'Zee Telugu',
       category: 'Entertainment',
       language: 'Telugu',
-      description: 'Family entertainment with Telugu serials'
+      description: 'Family entertainment with Telugu serials',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Zee_Telugu_Logo.svg/200px-Zee_Telugu_Logo.svg.png'
     },
     {
       id: 'gemini-tv',
       name: 'Gemini TV',
       category: 'Entertainment',
       language: 'Telugu',
-      description: 'Telugu entertainment by Sun Network'
+      description: 'Telugu entertainment by Sun Network',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Gemini_TV_logo.svg/200px-Gemini_TV_logo.svg.png'
     },
     {
       id: 'etv-telugu',
       name: 'ETV Telugu',
       category: 'Entertainment',
       language: 'Telugu',
-      description: 'Popular Telugu serials and shows'
+      description: 'Popular Telugu serials and shows',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/20/ETV_Telugu_logo.svg/200px-ETV_Telugu_logo.svg.png'
     },
     {
       id: 'colors-telugu',
       name: 'Colors Telugu',
       category: 'Entertainment',
       language: 'Telugu',
-      description: 'Contemporary Telugu entertainment'
+      description: 'Contemporary Telugu entertainment',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Colors_Telugu.svg/200px-Colors_Telugu.svg.png'
     },
     
     // Movie Channels
@@ -147,28 +160,32 @@ const TeluguChannels = () => {
       name: 'Star Maa Movies',
       category: 'Movies',
       language: 'Telugu',
-      description: 'Latest Telugu blockbuster movies'
+      description: 'Latest Telugu blockbuster movies',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Star_Maa_Movies.svg/200px-Star_Maa_Movies.svg.png'
     },
     {
       id: 'zee-cinemalu',
       name: 'Zee Cinemalu',
       category: 'Movies',
       language: 'Telugu',
-      description: 'Telugu movies 24/7'
+      description: 'Telugu movies 24/7',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Zee_Cinemalu_Logo.svg/200px-Zee_Cinemalu_Logo.svg.png'
     },
     {
       id: 'gemini-movies',
       name: 'Gemini Movies',
       category: 'Movies',
       language: 'Telugu',
-      description: 'Telugu cinema entertainment'
+      description: 'Telugu cinema entertainment',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/55/Gemini_Movies_logo.svg/200px-Gemini_Movies_logo.svg.png'
     },
     {
       id: 'etv-cinema',
       name: 'ETV Cinema',
       category: 'Movies',
       language: 'Telugu',
-      description: 'Telugu movie channel'
+      description: 'Telugu movie channel',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/9/9a/ETV_Cinema_logo.png'
     },
     
     // Hindi Entertainment Channels
@@ -177,28 +194,32 @@ const TeluguChannels = () => {
       name: 'Colors TV',
       category: 'Entertainment',
       language: 'Hindi',
-      description: 'Popular Hindi serials and reality shows'
+      description: 'Popular Hindi serials and reality shows',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Colors_TV.svg/200px-Colors_TV.svg.png'
     },
     {
       id: 'star-plus',
       name: 'Star Plus',
       category: 'Entertainment', 
       language: 'Hindi',
-      description: 'Hindi family entertainment'
+      description: 'Hindi family entertainment',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/55/Star_Plus_2018.svg/200px-Star_Plus_2018.svg.png'
     },
     {
       id: 'zee-tv',
       name: 'Zee TV',
       category: 'Entertainment',
       language: 'Hindi', 
-      description: 'Hindi entertainment channel'
+      description: 'Hindi entertainment channel',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Zee_TV_Logo.svg/200px-Zee_TV_Logo.svg.png'
     },
     {
       id: 'sony-tv',
       name: 'Sony TV',
       category: 'Entertainment',
       language: 'Hindi',
-      description: 'Hindi serials and shows'
+      description: 'Hindi serials and shows',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/Sony_Entertainment_Television_logo.svg/200px-Sony_Entertainment_Television_logo.svg.png'
     },
     
     // Hindi Movies
@@ -207,21 +228,24 @@ const TeluguChannels = () => {
       name: 'Sony Max',
       category: 'Movies',
       language: 'Hindi',
-      description: 'Latest Bollywood movies'
+      description: 'Latest Bollywood movies',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Sony_Max_logo.svg/200px-Sony_Max_logo.svg.png'
     },
     {
       id: 'zee-cinema',
       name: 'Zee Cinema',
       category: 'Movies',
       language: 'Hindi',
-      description: 'Hindi blockbuster movies'
+      description: 'Hindi blockbuster movies',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Zee_Cinema_2017.svg/200px-Zee_Cinema_2017.svg.png'
     },
     {
       id: 'star-gold',
       name: 'Star Gold',
       category: 'Movies',
       language: 'Hindi',
-      description: 'Classic and new Hindi movies'
+      description: 'Classic and new Hindi movies',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/57/Star_Gold_Logo.svg/200px-Star_Gold_Logo.svg.png'
     },
     
     // Kids Channels
@@ -230,7 +254,8 @@ const TeluguChannels = () => {
       name: 'Chutti TV',
       category: 'Kids',
       language: 'Tamil',
-      description: 'Kids entertainment and cartoons'
+      description: 'Kids entertainment and cartoons',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Chutti_TV_logo.svg/200px-Chutti_TV_logo.svg.png'
     },
     {
       id: 'pogo',
@@ -241,28 +266,32 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'UVEkJJ17fF4',
       language: 'Hindi',
       description: 'Hindi cartoons and kids shows',
-      viewerCount: '6K'
+      viewerCount: '6K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Pogo_TV_logo.svg/200px-Pogo_TV_logo.svg.png'
     },
     {
       id: 'cartoon-network',
       name: 'Cartoon Network',
       category: 'Kids',
       language: 'English',
-      description: 'International cartoons and animation'
+      description: 'International cartoons and animation',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/200px-Cartoon_Network_2010_logo.svg.png'
     },
     {
       id: 'disney-channel',
       name: 'Disney Channel',
       category: 'Kids', 
       language: 'English',
-      description: 'Disney movies and shows for kids'
+      description: 'Disney movies and shows for kids',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Disney_Channel_2019.svg/200px-Disney_Channel_2019.svg.png'
     },
     {
       id: 'nick',
       name: 'Nickelodeon',
       category: 'Kids',
       language: 'English',
-      description: 'Nick Jr. shows and cartoons'
+      description: 'Nick Jr. shows and cartoons',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Nickelodeon_2023_logo_%28outline%29.svg/200px-Nickelodeon_2023_logo_%28outline%29.svg.png'
     },
     
     // Sports Channels
@@ -271,14 +300,16 @@ const TeluguChannels = () => {
       name: 'Star Sports 1',
       category: 'Sports',
       language: 'Hindi',
-      description: 'Live cricket, football and sports'
+      description: 'Live cricket, football and sports',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/00/Star_Sports_2018.svg/200px-Star_Sports_2018.svg.png'
     },
     {
       id: 'sony-sports',
       name: 'Sony Sports Network',
       category: 'Sports',
       language: 'Hindi',
-      description: 'Live sports coverage'
+      description: 'Live sports coverage',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Sony_Sports_Network_logo.svg/200px-Sony_Sports_Network_logo.svg.png'
     },
     {
       id: 'dd-sports',
@@ -288,14 +319,16 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'bWL9_DzI16w',
       language: 'Hindi',
       description: 'Free live sports channel',
-      viewerCount: '12K'
+      viewerCount: '12K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/DD_Sports_logo.svg/200px-DD_Sports_logo.svg.png'
     },
     {
       id: 'eurosport',
       name: 'Eurosport',
       category: 'Sports',
       language: 'English',
-      description: 'International sports coverage'
+      description: 'International sports coverage',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Eurosport_Logo_2015.svg/200px-Eurosport_Logo_2015.svg.png'
     },
     
     // Music
@@ -308,14 +341,16 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'OrWp3xLd7KE',
       language: 'Telugu',
       description: 'Telugu music videos and songs',
-      viewerCount: '3K'
+      viewerCount: '3K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/8/82/Maa_Music_logo.png'
     },
     {
       id: 'mtv',
       name: 'MTV India',
       category: 'Music',
       language: 'Hindi',
-      description: 'Hindi music videos and shows'
+      description: 'Hindi music videos and shows',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/MTV_Logo.svg/200px-MTV_Logo.svg.png'
     },
     
     // Devotional
@@ -328,7 +363,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'BXRcVXUlOuo',
       language: 'Telugu',
       description: 'Spiritual and devotional content',
-      viewerCount: '8K'
+      viewerCount: '8K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/7/76/Bhakti_TV_logo.png'
     },
     {
       id: 'svbc-ttd',
@@ -339,7 +375,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'VtXR9UiRZwM',
       language: 'Telugu',
       description: 'Tirumala Tirupati Devasthanams live',
-      viewerCount: '12K'
+      viewerCount: '12K',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/SVBC_logo.svg/200px-SVBC_logo.svg.png'
     },
     {
       id: 'subhavaartha-tv',
@@ -350,7 +387,8 @@ const TeluguChannels = () => {
       youtubeEmbedId: 'hzXhY5_vEKI',
       language: 'Telugu',
       description: 'Christian devotional channel',
-      viewerCount: '5K'
+      viewerCount: '5K',
+      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_niQTdBRq6UhNJGPXYEwTa9pA1N-ys2S8eJJMq_3g=s176-c-k-c0x00ffffff-no-rj'
     }
   ];
 
@@ -517,7 +555,18 @@ const ChannelCard = ({
       onClick={isClickable ? onClick : undefined}
     >
       <div className="aspect-video relative bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center p-4">
-        <div className="text-center">
+        {channel.logo ? (
+          <img 
+            src={channel.logo} 
+            alt={channel.name}
+            className="max-h-16 max-w-[80%] object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+        ) : null}
+        <div className={`text-center ${channel.logo ? 'hidden' : ''}`}>
           <Tv className="h-6 w-6 mx-auto mb-2 text-primary" />
           <h3 className="font-semibold text-foreground text-sm leading-tight">{channel.name}</h3>
         </div>
