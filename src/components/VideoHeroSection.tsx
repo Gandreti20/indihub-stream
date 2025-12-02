@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Play, Info, Volume2, VolumeX, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +10,7 @@ interface VideoHeroSectionProps {
 }
 
 const VideoHeroSection = ({ movies }: VideoHeroSectionProps) => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [videoKey, setVideoKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -147,6 +149,7 @@ const VideoHeroSection = ({ movies }: VideoHeroSectionProps) => {
               variant="default" 
               size="lg" 
               className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+              onClick={() => navigate(`/trailer/${currentMovie.id}/${encodeURIComponent(currentMovie.title)}`)}
             >
               <Play className="h-5 w-5 fill-current" />
               Watch Trailer
