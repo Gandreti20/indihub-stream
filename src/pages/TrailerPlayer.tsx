@@ -67,23 +67,21 @@ const TrailerPlayer = () => {
       </div>
 
       {/* Video Player */}
-      <div className="flex-1 flex items-center justify-center">
+      <div className="absolute inset-0 pt-16 pb-24">
         {loading ? (
-          <div className="flex flex-col items-center gap-4">
+          <div className="h-full flex flex-col items-center justify-center gap-4">
             <Loader2 className="h-12 w-12 animate-spin text-primary" />
             <p className="text-white/70">Loading trailer...</p>
           </div>
         ) : videoKey ? (
-          <div className="relative w-full h-full">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=${muted ? 1 : 0}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
-              title={decodedTitle}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-            />
-          </div>
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${videoKey}?autoplay=1&mute=${muted ? 1 : 0}&controls=1&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+            title={decodedTitle}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+            allowFullScreen
+          />
         ) : (
           <div className="text-center text-white">
             <p className="text-xl mb-2">No trailer available</p>
