@@ -7,6 +7,24 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
+// Channel Logos
+import tv9Logo from "@/assets/channels/tv9-telugu-logo.png";
+import abnLogo from "@/assets/channels/abn-telugu-logo.png";
+import v6Logo from "@/assets/channels/v6-news-logo.png";
+import tv5Logo from "@/assets/channels/tv5-news-logo.png";
+import ntvLogo from "@/assets/channels/ntv-telugu-logo.png";
+import sakshiLogo from "@/assets/channels/sakshi-tv-logo.png";
+import tenTvLogo from "@/assets/channels/10tv-news-logo.png";
+import starMaaLogo from "@/assets/channels/star-maa-logo.png";
+import zeeLogo from "@/assets/channels/zee-telugu-logo.png";
+import geminiLogo from "@/assets/channels/gemini-tv-logo.png";
+import etvLogo from "@/assets/channels/etv-telugu-logo.png";
+import cnLogo from "@/assets/channels/cartoon-network-logo.png";
+import pogoLogo from "@/assets/channels/pogo-logo.png";
+import nickLogo from "@/assets/channels/nick-logo.png";
+import disneyLogo from "@/assets/channels/disney-channel-logo.png";
+import starSportsLogo from "@/assets/channels/star-sports-logo.png";
+
 interface Channel {
   id: string;
   name: string;
@@ -37,7 +55,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: '24/7 Telugu news channel with breaking news and political coverage',
       viewerCount: '45K',
-      logo: ''
+      logo: tv9Logo
     },
     {
       id: 'abn-telugu',
@@ -49,7 +67,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Andhra Pradesh and Telangana news updates',
       viewerCount: '32K',
-      logo: ''
+      logo: abnLogo
     },
     {
       id: 'v6-news',
@@ -61,7 +79,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telangana-focused news with live coverage',
       viewerCount: '28K',
-      logo: ''
+      logo: v6Logo
     },
     {
       id: 'tv5-news',
@@ -73,7 +91,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Breaking news from AP and Telangana',
       viewerCount: '22K',
-      logo: ''
+      logo: tv5Logo
     },
     {
       id: '10tv-news',
@@ -85,7 +103,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news with political coverage',
       viewerCount: '15K',
-      logo: ''
+      logo: tenTvLogo
     },
     {
       id: 'ntv-news',
@@ -97,7 +115,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news and current affairs',
       viewerCount: '18K',
-      logo: ''
+      logo: ntvLogo
     },
     {
       id: 'sakshi-tv',
@@ -109,7 +127,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'AP & Telangana breaking news',
       viewerCount: '25K',
-      logo: ''
+      logo: sakshiLogo
     },
     
     // Entertainment Channels
@@ -119,7 +137,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Popular Telugu entertainment with serials and movies',
-      logo: ''
+      logo: starMaaLogo
     },
     {
       id: 'zee-telugu',
@@ -127,7 +145,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Family entertainment with Telugu serials',
-      logo: 'https://logo.clearbit.com/zee5.com'
+      logo: zeeLogo
     },
     {
       id: 'gemini-tv',
@@ -135,7 +153,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Telugu entertainment by Sun Network',
-      logo: 'https://logo.clearbit.com/sunnxt.com'
+      logo: geminiLogo
     },
     {
       id: 'etv-telugu',
@@ -143,7 +161,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Popular Telugu serials and shows',
-      logo: ''
+      logo: etvLogo
     },
     {
       id: 'colors-telugu',
@@ -267,7 +285,7 @@ const TeluguChannels = () => {
       language: 'Hindi',
       description: 'Hindi cartoons and kids shows',
       viewerCount: '6K',
-      logo: 'https://logo.clearbit.com/discoveryplus.in'
+      logo: pogoLogo
     },
     {
       id: 'cartoon-network',
@@ -275,7 +293,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'International cartoons and animation',
-      logo: 'https://logo.clearbit.com/cartoonnetwork.com'
+      logo: cnLogo
     },
     {
       id: 'disney-channel',
@@ -283,7 +301,7 @@ const TeluguChannels = () => {
       category: 'Kids', 
       language: 'English',
       description: 'Disney movies and shows for kids',
-      logo: 'https://logo.clearbit.com/disney.com'
+      logo: disneyLogo
     },
     {
       id: 'nick',
@@ -291,7 +309,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Nick Jr. shows and cartoons',
-      logo: 'https://logo.clearbit.com/nick.com'
+      logo: nickLogo
     },
     
     // Sports Channels
@@ -301,7 +319,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'Hindi',
       description: 'Live cricket, football and sports',
-      logo: 'https://logo.clearbit.com/hotstar.com'
+      logo: starSportsLogo
     },
     {
       id: 'sony-sports',
