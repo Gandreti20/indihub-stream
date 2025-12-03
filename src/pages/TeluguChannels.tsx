@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Play, Radio, Tv, Users, X, Volume2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Play, Radio, Tv, Users, X, Volume2, Heart } from "lucide-react";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -42,6 +42,28 @@ const TeluguChannels = () => {
   const { toast } = useToast();
   const [selectedChannel, setSelectedChannel] = useState<Channel | null>(null);
   const [isPlayerOpen, setIsPlayerOpen] = useState(false);
+  const [favorites, setFavorites] = useState<string[]>(() => {
+    const saved = localStorage.getItem('channel-favorites');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('channel-favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  const toggleFavorite = (channelId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setFavorites(prev => {
+      const isFavorite = prev.includes(channelId);
+      if (isFavorite) {
+        toast({ title: "Removed from favorites" });
+        return prev.filter(id => id !== channelId);
+      } else {
+        toast({ title: "Added to favorites" });
+        return [...prev, channelId];
+      }
+    });
+  };
 
   const channels: Channel[] = [
     // Live News Channels on YouTube
@@ -432,14 +454,17 @@ const TeluguChannels = () => {
     setSelectedChannel(null);
   };
 
-  const categories = ['All', 'News', 'Entertainment', 'Movies', 'Kids', 'Music', 'Sports', 'Devotional'];
+  const categories = ['All', 'Favorites', 'News', 'Entertainment', 'Movies', 'Kids', 'Music', 'Sports', 'Devotional'];
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredChannels = selectedCategory === 'All' 
     ? channels 
+    : selectedCategory === 'Favorites'
+    ? channels.filter(channel => favorites.includes(channel.id))
     : channels.filter(channel => channel.category === selectedCategory);
 
   const liveChannelsCount = channels.filter(c => c.isYouTubeLive).length;
+  const favoritesCount = favorites.length;
 
   return (
     <div className="min-h-screen bg-background">
@@ -475,8 +500,13 @@ const TeluguChannels = () => {
               onClick={() => setSelectedCategory(category)}
               className="text-sm"
             >
+              {category === 'Favorites' && <Heart className="h-3 w-3 mr-1" />}
               {category}
-              {category !== 'All' && (
+              {category === 'Favorites' ? (
+                <Badge variant="secondary" className="ml-2 text-xs bg-secondary/50">
+                  {favoritesCount}
+                </Badge>
+              ) : category !== 'All' && (
                 <Badge variant="secondary" className="ml-2 text-xs bg-secondary/50">
                   {channels.filter(c => c.category === category).length}
                 </Badge>
@@ -492,6 +522,8 @@ const TeluguChannels = () => {
               key={channel.id} 
               channel={channel} 
               onClick={() => handleChannelClick(channel)}
+              isFavorite={favorites.includes(channel.id)}
+              onToggleFavorite={(e) => toggleFavorite(channel.id, e)}
             />
           ))}
         </div>
@@ -543,10 +575,14 @@ const TeluguChannels = () => {
 
 const ChannelCard = ({ 
   channel, 
-  onClick 
+  onClick,
+  isFavorite,
+  onToggleFavorite
 }: { 
   channel: Channel; 
-  onClick: () => void; 
+  onClick: () => void;
+  isFavorite: boolean;
+  onToggleFavorite: (e: React.MouseEvent) => void;
 }) => {
   const [logoError, setLogoError] = useState(false);
   
@@ -654,13 +690,26 @@ const ChannelCard = ({
       </div>
       
       <div className="p-3 space-y-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between gap-2">
           <Badge 
             variant="secondary" 
             className={`${getCategoryColor(channel.category)} text-white text-xs`}
           >
             {channel.category}
           </Badge>
+          <button
+            onClick={onToggleFavorite}
+            className="p-1.5 rounded-full hover:bg-secondary/50 transition-colors"
+            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+          >
+            <Heart 
+              className={`h-4 w-4 transition-colors ${
+                isFavorite 
+                  ? 'fill-red-500 text-red-500' 
+                  : 'text-muted-foreground hover:text-red-500'
+              }`} 
+            />
+          </button>
         </div>
         <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed">
           {channel.description}
