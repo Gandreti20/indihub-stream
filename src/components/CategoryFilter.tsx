@@ -10,10 +10,10 @@ const CategoryFilter = () => {
     { name: 'Movies', count: '2.5K', path: '/movies' },
     { name: 'TV Shows', count: '850', path: '/telugu-channels' },
     { name: 'Live TV', count: '200+', path: '/telugu-channels' },
+    { name: 'Categories', count: '6', path: '/channel-categories' },
     { name: 'Sports', count: '45', path: '/telugu-channels' },
     { name: 'News', count: '30', path: '/telugu-channels' },
     { name: 'Kids', count: '120', path: '/' },
-    { name: 'Regional', count: '1.2K', path: '/telugu-channels' },
   ];
   
   const isActive = (path: string) => {
