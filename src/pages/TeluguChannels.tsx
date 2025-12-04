@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Play, Radio, Tv, Users, X, Volume2, Heart } from "lucide-react";
+import { Play, Radio, Tv, Users, X, Volume2, Heart, Search } from "lucide-react";
+import { Input } from "@/components/ui/input";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -456,12 +457,18 @@ const TeluguChannels = () => {
 
   const categories = ['All', 'Favorites', 'News', 'Entertainment', 'Movies', 'Kids', 'Music', 'Sports', 'Devotional'];
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredChannels = selectedCategory === 'All' 
-    ? channels 
-    : selectedCategory === 'Favorites'
-    ? channels.filter(channel => favorites.includes(channel.id))
-    : channels.filter(channel => channel.category === selectedCategory);
+  const filteredChannels = channels
+    .filter(channel => {
+      const matchesSearch = channel.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           channel.description.toLowerCase().includes(searchQuery.toLowerCase());
+      if (!matchesSearch) return false;
+      
+      if (selectedCategory === 'All') return true;
+      if (selectedCategory === 'Favorites') return favorites.includes(channel.id);
+      return channel.category === selectedCategory;
+    });
 
   const liveChannelsCount = channels.filter(c => c.isYouTubeLive).length;
   const favoritesCount = favorites.length;
@@ -487,6 +494,20 @@ const TeluguChannels = () => {
               <Tv className="h-3 w-3 mr-1" />
               {channels.length} Total Channels
             </Badge>
+          </div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="max-w-md mx-auto mb-6">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="text"
+              placeholder="Search channels..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 bg-secondary/50 border-border"
+            />
           </div>
         </div>
 
