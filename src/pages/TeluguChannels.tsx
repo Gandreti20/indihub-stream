@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Play, Radio, Tv, Users, X, Heart, Search, Clock } from "lucide-react";
+import { Play, Radio, Tv, Users, X, Heart, Search, Clock, Minimize2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import MiniPlayer from "@/components/MiniPlayer";
 import {
   HoverCard,
   HoverCardContent,
@@ -53,6 +54,7 @@ const TeluguChannels = () => {
   const { toast } = useToast();
   const [selectedChannel, setSelectedChannel] = useState<Channel | null>(null);
   const [isPlayerOpen, setIsPlayerOpen] = useState(false);
+  const [miniPlayerChannel, setMiniPlayerChannel] = useState<Channel | null>(null);
   const [favorites, setFavorites] = useState<string[]>(() => {
     const saved = localStorage.getItem('channel-favorites');
     return saved ? JSON.parse(saved) : [];
@@ -460,12 +462,17 @@ const TeluguChannels = () => {
 
   const handleChannelClick = (channel: Channel) => {
     if (channel.isYouTubeLive && channel.youtubeEmbedId) {
-      setSelectedChannel(channel);
-      setIsPlayerOpen(true);
+      // If modal is open, switch channel in modal
+      if (isPlayerOpen) {
+        setSelectedChannel(channel);
+      } else {
+        // Otherwise open in mini player
+        setMiniPlayerChannel(channel);
+      }
       addToRecentlyWatched(channel.id);
       toast({
-        title: `Opening ${channel.name}`,
-        description: "Loading live stream...",
+        title: `Now playing: ${channel.name}`,
+        description: "Stream loaded in mini player",
       });
     } else {
       toast({
@@ -479,6 +486,26 @@ const TeluguChannels = () => {
   const closePlayer = () => {
     setIsPlayerOpen(false);
     setSelectedChannel(null);
+  };
+
+  const closeMiniPlayer = () => {
+    setMiniPlayerChannel(null);
+  };
+
+  const expandMiniPlayer = () => {
+    if (miniPlayerChannel) {
+      setSelectedChannel(miniPlayerChannel);
+      setIsPlayerOpen(true);
+      setMiniPlayerChannel(null);
+    }
+  };
+
+  const minimizeToMiniPlayer = () => {
+    if (selectedChannel) {
+      setMiniPlayerChannel(selectedChannel);
+      setIsPlayerOpen(false);
+      setSelectedChannel(null);
+    }
   };
 
   const getRecentChannels = () => {
@@ -636,9 +663,14 @@ const TeluguChannels = () => {
                     </div>
                   )}
                 </div>
-                <Button variant="ghost" size="sm" onClick={closePlayer}>
-                  <X className="h-4 w-4" />
-                </Button>
+                <div className="flex items-center gap-2">
+                  <Button variant="ghost" size="sm" onClick={minimizeToMiniPlayer} title="Minimize to PiP">
+                    <Minimize2 className="h-4 w-4" />
+                  </Button>
+                  <Button variant="ghost" size="sm" onClick={closePlayer}>
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
               </div>
               
               {/* YouTube Player */}
@@ -656,6 +688,19 @@ const TeluguChannels = () => {
               </div>
             </div>
           </div>
+        )}
+
+        {/* Mini PiP Player */}
+        {miniPlayerChannel && miniPlayerChannel.youtubeEmbedId && (
+          <MiniPlayer
+            channel={{
+              name: miniPlayerChannel.name,
+              youtubeEmbedId: miniPlayerChannel.youtubeEmbedId,
+              viewerCount: miniPlayerChannel.viewerCount,
+            }}
+            onClose={closeMiniPlayer}
+            onExpand={expandMiniPlayer}
+          />
         )}
       </div>
     </div>
