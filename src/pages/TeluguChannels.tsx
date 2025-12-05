@@ -492,6 +492,11 @@ const TeluguChannels = () => {
     setMiniPlayerChannel(null);
   };
 
+  const handleMiniPlayerChannelChange = (newChannel: Channel) => {
+    setMiniPlayerChannel(newChannel);
+    addToRecentlyWatched(newChannel.id);
+  };
+
   const expandMiniPlayer = () => {
     if (miniPlayerChannel) {
       setSelectedChannel(miniPlayerChannel);
@@ -693,13 +698,11 @@ const TeluguChannels = () => {
         {/* Mini PiP Player */}
         {miniPlayerChannel && miniPlayerChannel.youtubeEmbedId && (
           <MiniPlayer
-            channel={{
-              name: miniPlayerChannel.name,
-              youtubeEmbedId: miniPlayerChannel.youtubeEmbedId,
-              viewerCount: miniPlayerChannel.viewerCount,
-            }}
+            channel={miniPlayerChannel}
+            allChannels={channels}
             onClose={closeMiniPlayer}
             onExpand={expandMiniPlayer}
+            onChannelChange={handleMiniPlayerChannelChange}
           />
         )}
       </div>
