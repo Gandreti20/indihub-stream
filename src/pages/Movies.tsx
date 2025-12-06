@@ -49,35 +49,49 @@ const Movies = () => {
     return movie.year >= yearRange.start && movie.year <= yearRange.end;
   });
 
-  useEffect(() => {
-    const fetchMovies = async () => {
+  const fetchMovies = async (isBackgroundRefresh = false) => {
+    if (!isBackgroundRefresh) {
       setLoading(true);
       setCurrentPage(10);
       setHasMore(true);
-      try {
-        let data;
-        if (searchQuery.trim()) {
-          data = await searchTeluguMovies(searchQuery);
-          setHasMore(false);
-        } else if (selectedCategory === 'all') {
-          // Fetch 10 pages (200 movies)
-          data = await discoverTeluguMoviesMultiplePages(10);
-        } else {
-          data = await getMoviesByCategory(selectedCategory as Movie['category']);
-        }
-        setMovies(data);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
-      } finally {
+    }
+    try {
+      let data;
+      if (searchQuery.trim()) {
+        data = await searchTeluguMovies(searchQuery);
+        setHasMore(false);
+      } else if (selectedCategory === 'all') {
+        // Fetch 10 pages (200 movies)
+        data = await discoverTeluguMoviesMultiplePages(10);
+      } else {
+        data = await getMoviesByCategory(selectedCategory as Movie['category']);
+      }
+      setMovies(data);
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    } finally {
+      if (!isBackgroundRefresh) {
         setLoading(false);
       }
-    };
+    }
+  };
 
+  // Initial fetch and on filter changes
+  useEffect(() => {
     const debounceTimer = setTimeout(() => {
       fetchMovies();
     }, 300);
 
     return () => clearTimeout(debounceTimer);
+  }, [selectedCategory, searchQuery]);
+
+  // Auto-refresh every 5 minutes to stay synced with TMDB
+  useEffect(() => {
+    const refreshInterval = setInterval(() => {
+      fetchMovies(true);
+    }, 5 * 60 * 1000); // 5 minutes
+
+    return () => clearInterval(refreshInterval);
   }, [selectedCategory, searchQuery]);
 
   const loadMoreMovies = async () => {
