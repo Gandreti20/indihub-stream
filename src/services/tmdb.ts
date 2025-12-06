@@ -118,6 +118,17 @@ export const discoverTeluguMovies = async (page: number = 1): Promise<Movie[]> =
   }
 };
 
+export const discoverTeluguMoviesMultiplePages = async (pageCount: number = 5): Promise<Movie[]> => {
+  try {
+    const pagePromises = Array.from({ length: pageCount }, (_, i) => discoverTeluguMovies(i + 1));
+    const results = await Promise.all(pagePromises);
+    return results.flat();
+  } catch (error) {
+    console.error('Error fetching multiple pages of Telugu movies:', error);
+    return [];
+  }
+};
+
 export const searchTeluguMovies = async (query: string, page: number = 1): Promise<Movie[]> => {
   try {
     const response = await fetch(
