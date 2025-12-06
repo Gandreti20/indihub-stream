@@ -1,23 +1,37 @@
 import { useState, useEffect } from 'react';
-import { Play, Star, Clock, Calendar, Loader2, Search } from "lucide-react";
+import { Play, Star, Clock, Calendar, Loader2, Search, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
-import { discoverTeluguMoviesMultiplePages, getMoviesByCategory, searchTeluguMovies, getMovieVideos, type Movie } from "@/services/tmdb";
+import { discoverTeluguMoviesMultiplePages, discoverTeluguMovies, getMoviesByCategory, searchTeluguMovies, getMovieVideos, type Movie } from "@/services/tmdb";
 
+const currentYear = new Date().getFullYear();
+const yearRanges = [
+  { id: 'all', label: 'All Years', start: 2000, end: currentYear },
+  { id: '2020s', label: '2020-Present', start: 2020, end: currentYear },
+  { id: '2015-2019', label: '2015-2019', start: 2015, end: 2019 },
+  { id: '2010-2014', label: '2010-2014', start: 2010, end: 2014 },
+  { id: '2005-2009', label: '2005-2009', start: 2005, end: 2009 },
+  { id: '2000-2004', label: '2000-2004', start: 2000, end: 2004 },
+];
 
 const Movies = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedYearRange, setSelectedYearRange] = useState<string>('all');
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [videoKey, setVideoKey] = useState<string | null>(null);
   const [loadingVideo, setLoadingVideo] = useState(false);
+  const [currentPage, setCurrentPage] = useState(10); // Start after initial 10 pages (200 movies)
+  const [hasMore, setHasMore] = useState(true);
 
   const categories = [
     { id: 'all', label: 'All Movies' },
@@ -28,16 +42,26 @@ const Movies = () => {
     { id: 'comedy', label: 'Comedy' }
   ];
 
+  // Filter movies by year range
+  const filteredMovies = movies.filter(movie => {
+    const yearRange = yearRanges.find(r => r.id === selectedYearRange);
+    if (!yearRange || selectedYearRange === 'all') return true;
+    return movie.year >= yearRange.start && movie.year <= yearRange.end;
+  });
+
   useEffect(() => {
     const fetchMovies = async () => {
       setLoading(true);
+      setCurrentPage(10);
+      setHasMore(true);
       try {
         let data;
         if (searchQuery.trim()) {
           data = await searchTeluguMovies(searchQuery);
+          setHasMore(false);
         } else if (selectedCategory === 'all') {
-          // Fetch 5 pages (100 movies)
-          data = await discoverTeluguMoviesMultiplePages(5);
+          // Fetch 10 pages (200 movies)
+          data = await discoverTeluguMoviesMultiplePages(10);
         } else {
           data = await getMoviesByCategory(selectedCategory as Movie['category']);
         }
@@ -55,6 +79,27 @@ const Movies = () => {
 
     return () => clearTimeout(debounceTimer);
   }, [selectedCategory, searchQuery]);
+
+  const loadMoreMovies = async () => {
+    if (loadingMore || !hasMore || searchQuery.trim()) return;
+    
+    setLoadingMore(true);
+    try {
+      const nextPage = currentPage + 1;
+      const newMovies = await discoverTeluguMovies(nextPage);
+      
+      if (newMovies.length === 0) {
+        setHasMore(false);
+      } else {
+        setMovies(prev => [...prev, ...newMovies]);
+        setCurrentPage(nextPage);
+      }
+    } catch (error) {
+      console.error('Error loading more movies:', error);
+    } finally {
+      setLoadingMore(false);
+    }
+  };
 
   const handleMovieSelect = async (movie: Movie) => {
     setSelectedMovie(movie);
@@ -95,7 +140,7 @@ const Movies = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-4">
             {categories.map((category) => (
               <Button
                 key={category.id}
@@ -108,21 +153,68 @@ const Movies = () => {
             ))}
           </div>
 
+          {/* Year Range Filter */}
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-sm text-muted-foreground">Filter by year:</span>
+            <Select value={selectedYearRange} onValueChange={setSelectedYearRange}>
+              <SelectTrigger className="w-40">
+                <SelectValue placeholder="Select year range" />
+              </SelectTrigger>
+              <SelectContent>
+                {yearRanges.map((range) => (
+                  <SelectItem key={range.id} value={range.id}>
+                    {range.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <span className="text-sm text-muted-foreground">
+              Showing {filteredMovies.length} movies
+            </span>
+          </div>
+
           {/* Movies Grid */}
           {loading ? (
             <div className="flex justify-center items-center py-20">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div>
-          ) : movies.length === 0 ? (
+          ) : filteredMovies.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-muted-foreground">No movies found</p>
             </div>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-              {movies.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} onPlay={handleMovieSelect} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                {filteredMovies.map((movie) => (
+                  <MovieCard key={movie.id} movie={movie} onPlay={handleMovieSelect} />
+                ))}
+              </div>
+              
+              {/* Load More Button */}
+              {hasMore && !searchQuery.trim() && selectedCategory === 'all' && (
+                <div className="flex justify-center mt-8">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={loadMoreMovies}
+                    disabled={loadingMore}
+                    className="gap-2"
+                  >
+                    {loadingMore ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Loading...
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="h-4 w-4" />
+                        Load More Movies
+                      </>
+                    )}
+                  </Button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </main>
