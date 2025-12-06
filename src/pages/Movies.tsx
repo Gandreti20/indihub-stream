@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Input } from "@/components/ui/input";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
-import { discoverTeluguMovies, getMoviesByCategory, searchTeluguMovies, getMovieVideos, type Movie } from "@/services/tmdb";
+import { discoverTeluguMoviesMultiplePages, getMoviesByCategory, searchTeluguMovies, getMovieVideos, type Movie } from "@/services/tmdb";
 
 
 const Movies = () => {
@@ -36,9 +36,8 @@ const Movies = () => {
         if (searchQuery.trim()) {
           data = await searchTeluguMovies(searchQuery);
         } else if (selectedCategory === 'all') {
-          const page1 = await discoverTeluguMovies(1);
-          const page2 = await discoverTeluguMovies(2);
-          data = [...page1, ...page2];
+          // Fetch 5 pages (100 movies)
+          data = await discoverTeluguMoviesMultiplePages(5);
         } else {
           data = await getMoviesByCategory(selectedCategory as Movie['category']);
         }
