@@ -317,3 +317,45 @@ export const getProfileUrl = (path: string | null): string => {
   if (!path) return '/placeholder.svg';
   return `${TMDB_IMAGE_BASE_URL}/w185${path}`;
 };
+
+// OTT Provider IDs for India region
+export const OTT_PROVIDERS = {
+  netflix: { id: 8, name: 'Netflix', logo: '/t2yyOv40HZeVlLjYsCsPHnWLk4W.jpg' },
+  prime: { id: 119, name: 'Amazon Prime Video', logo: '/emthp39XA2YScoYL1p0sdbAH2WA.jpg' },
+  hotstar: { id: 122, name: 'Hotstar', logo: '/7Fl8ylPDclt3ZYgNbW2t7rbZE9I.jpg' },
+  zee5: { id: 232, name: 'ZEE5', logo: '/xEPXbwbfABMB9fXqnqnmTpPzGh4.jpg' },
+  sonyliv: { id: 237, name: 'SonyLIV', logo: '/lKN0cXQpKrhK4ZeMYTF7yozLn9c.jpg' },
+  jiocinema: { id: 220, name: 'JioCinema', logo: '/lQK4eeBNK7lLoHBZJKr8cQDCl0f.jpg' },
+  aha: { id: 532, name: 'Aha', logo: '/5SxDM7kVr8vmZxPMlaBPVVu5mHB.jpg' },
+} as const;
+
+export type OTTProviderKey = keyof typeof OTT_PROVIDERS;
+
+export const discoverTeluguMoviesByProvider = async (providerId: number, page: number = 1): Promise<Movie[]> => {
+  try {
+    const response = await fetch(
+      `${TMDB_BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&language=te-IN&with_original_language=te&sort_by=popularity.desc&page=${page}&vote_count.gte=10&primary_release_date.gte=2000-01-01&watch_region=IN&with_watch_providers=${providerId}`
+    );
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch movies by provider from TMDb');
+    }
+    
+    const data = await response.json();
+    return data.results.map(convertTMDBToMovie);
+  } catch (error) {
+    console.error('Error fetching movies by provider:', error);
+    return [];
+  }
+};
+
+export const discoverTeluguMoviesByProviderMultiplePages = async (providerId: number, pageCount: number = 5): Promise<Movie[]> => {
+  try {
+    const pagePromises = Array.from({ length: pageCount }, (_, i) => discoverTeluguMoviesByProvider(providerId, i + 1));
+    const results = await Promise.all(pagePromises);
+    return results.flat();
+  } catch (error) {
+    console.error('Error fetching multiple pages by provider:', error);
+    return [];
+  }
+};

@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
-import { discoverTeluguMoviesMultiplePages, discoverTeluguMovies, getMoviesByCategory, searchTeluguMovies, getMovieVideos, type Movie } from "@/services/tmdb";
+import { discoverTeluguMoviesMultiplePages, discoverTeluguMovies, getMoviesByCategory, searchTeluguMovies, getMovieVideos, discoverTeluguMoviesByProviderMultiplePages, discoverTeluguMoviesByProvider, OTT_PROVIDERS, getProviderLogoUrl, type Movie, type OTTProviderKey } from "@/services/tmdb";
 
 const currentYear = new Date().getFullYear();
 const yearRanges = [
@@ -21,10 +21,21 @@ const yearRanges = [
   { id: '2000-2004', label: '2000-2004', start: 2000, end: 2004 },
 ];
 
+const ottPlatforms: { id: string; label: string; logo?: string; providerId?: number }[] = [
+  { id: 'all', label: 'All Platforms' },
+  ...Object.entries(OTT_PROVIDERS).map(([key, provider]) => ({
+    id: key,
+    label: provider.name,
+    logo: provider.logo,
+    providerId: provider.id
+  }))
+];
+
 const Movies = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedYearRange, setSelectedYearRange] = useState<string>('all');
+  const [selectedOTT, setSelectedOTT] = useState<string>('all');
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
@@ -62,6 +73,15 @@ const Movies = () => {
       if (searchQuery.trim()) {
         data = await searchTeluguMovies(searchQuery);
         setHasMore(false);
+      } else if (selectedOTT !== 'all') {
+        // Fetch by OTT provider
+        const provider = OTT_PROVIDERS[selectedOTT as OTTProviderKey];
+        if (provider) {
+          data = await discoverTeluguMoviesByProviderMultiplePages(provider.id, 5);
+        } else {
+          data = [];
+        }
+        setHasMore(false); // OTT filtering doesn't support load more for now
       } else if (selectedCategory === 'all') {
         // Fetch 10 pages (200 movies)
         data = await discoverTeluguMoviesMultiplePages(10);
@@ -85,7 +105,7 @@ const Movies = () => {
     }, 300);
 
     return () => clearTimeout(debounceTimer);
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, selectedOTT]);
 
   // Auto-refresh every 5 minutes to stay synced with TMDB
   useEffect(() => {
@@ -94,7 +114,7 @@ const Movies = () => {
     }, 5 * 60 * 1000); // 5 minutes
 
     return () => clearInterval(refreshInterval);
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, selectedOTT]);
 
   const loadMoreMovies = async () => {
     if (loadingMore || !hasMore || searchQuery.trim()) return;
@@ -169,21 +189,54 @@ const Movies = () => {
             ))}
           </div>
 
-          {/* Year Range Filter */}
-          <div className="flex items-center gap-4 mb-8">
-            <span className="text-sm text-muted-foreground">Filter by year:</span>
-            <Select value={selectedYearRange} onValueChange={setSelectedYearRange}>
-              <SelectTrigger className="w-40">
-                <SelectValue placeholder="Select year range" />
-              </SelectTrigger>
-              <SelectContent>
-                {yearRanges.map((range) => (
-                  <SelectItem key={range.id} value={range.id}>
-                    {range.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Year Range & OTT Platform Filter */}
+          <div className="flex flex-wrap items-center gap-4 mb-8">
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Year:</span>
+              <Select value={selectedYearRange} onValueChange={setSelectedYearRange}>
+                <SelectTrigger className="w-36">
+                  <SelectValue placeholder="Select year" />
+                </SelectTrigger>
+                <SelectContent>
+                  {yearRanges.map((range) => (
+                    <SelectItem key={range.id} value={range.id}>
+                      {range.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Platform:</span>
+              <Select value={selectedOTT} onValueChange={(value) => {
+                setSelectedOTT(value);
+                if (value !== 'all') {
+                  setSelectedCategory('all'); // Reset category when OTT is selected
+                }
+              }}>
+                <SelectTrigger className="w-48">
+                  <SelectValue placeholder="Select platform" />
+                </SelectTrigger>
+                <SelectContent>
+                  {ottPlatforms.map((platform) => (
+                    <SelectItem key={platform.id} value={platform.id}>
+                      <div className="flex items-center gap-2">
+                        {platform.logo && (
+                          <img 
+                            src={getProviderLogoUrl(platform.logo)} 
+                            alt={platform.label}
+                            className="w-5 h-5 rounded"
+                          />
+                        )}
+                        <span>{platform.label}</span>
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            
             <span className="text-sm text-muted-foreground">
               Showing {filteredMovies.length} movies
             </span>
