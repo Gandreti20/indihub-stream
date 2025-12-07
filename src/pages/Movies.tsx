@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Play, Star, Clock, Calendar, Loader2, Search, ChevronDown } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
+import { Play, Star, Clock, Calendar, Loader2, Search, ChevronDown, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -21,6 +22,7 @@ const yearRanges = [
 ];
 
 const Movies = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedYearRange, setSelectedYearRange] = useState<string>('all');
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
@@ -200,7 +202,12 @@ const Movies = () => {
             <>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                 {filteredMovies.map((movie) => (
-                  <MovieCard key={movie.id} movie={movie} onPlay={handleMovieSelect} />
+                  <MovieCard 
+                    key={movie.id} 
+                    movie={movie} 
+                    onPlay={handleMovieSelect}
+                    onDetails={(id) => navigate(`/movie/${id}`)}
+                  />
                 ))}
               </div>
               
@@ -296,9 +303,18 @@ const Movies = () => {
   );
 };
 
-const MovieCard = ({ movie, onPlay }: { movie: Movie; onPlay: (movie: Movie) => void }) => {
+interface MovieCardProps {
+  movie: Movie;
+  onPlay: (movie: Movie) => void;
+  onDetails: (movieId: string) => void;
+}
+
+const MovieCard = ({ movie, onPlay, onDetails }: MovieCardProps) => {
   return (
-    <Card className="group relative overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer">
+    <Card 
+      className="group relative overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
+      onClick={() => onDetails(movie.id)}
+    >
       <div className="aspect-[2/3] relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
@@ -310,16 +326,31 @@ const MovieCard = ({ movie, onPlay }: { movie: Movie; onPlay: (movie: Movie) => 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
         
-        {/* Play button on hover */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* Buttons on hover */}
+        <div className="absolute inset-0 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button 
             variant="default" 
             size="sm" 
-            className="gap-2 bg-primary/90 hover:bg-primary"
-            onClick={() => onPlay(movie)}
+            className="gap-1 bg-primary/90 hover:bg-primary"
+            onClick={(e) => {
+              e.stopPropagation();
+              onPlay(movie);
+            }}
           >
             <Play className="h-4 w-4" />
-            Play
+            Trailer
+          </Button>
+          <Button 
+            variant="secondary" 
+            size="sm" 
+            className="gap-1"
+            onClick={(e) => {
+              e.stopPropagation();
+              onDetails(movie.id);
+            }}
+          >
+            <Info className="h-4 w-4" />
+            Details
           </Button>
         </div>
         
