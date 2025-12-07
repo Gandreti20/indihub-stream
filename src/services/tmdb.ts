@@ -24,7 +24,21 @@ export interface Movie {
   genre: string;
   description: string;
   thumbnail: string;
+  backdrop?: string;
   category: 'action' | 'drama' | 'romance' | 'comedy' | 'thriller';
+}
+
+export interface MovieDetails extends Movie {
+  tagline?: string;
+  runtime?: number;
+  cast: { id: number; name: string; character: string; profile_path: string | null }[];
+  director?: string;
+  watchProviders: {
+    flatrate?: { provider_id: number; provider_name: string; logo_path: string }[];
+    rent?: { provider_id: number; provider_name: string; logo_path: string }[];
+    buy?: { provider_id: number; provider_name: string; logo_path: string }[];
+    link?: string;
+  };
 }
 
 // Genre mapping from TMDb IDs to categories
@@ -234,4 +248,72 @@ export const getMovieVideos = async (movieId: string): Promise<string | null> =>
     console.error('Error fetching movie videos:', error);
     return null;
   }
+};
+
+export const getMovieDetails = async (movieId: string): Promise<MovieDetails | null> => {
+  try {
+    // Fetch movie details, credits, and watch providers in parallel
+    const [detailsRes, creditsRes, providersRes] = await Promise.all([
+      fetch(`${TMDB_BASE_URL}/movie/${movieId}?api_key=${TMDB_API_KEY}&language=en-US`),
+      fetch(`${TMDB_BASE_URL}/movie/${movieId}/credits?api_key=${TMDB_API_KEY}&language=en-US`),
+      fetch(`${TMDB_BASE_URL}/movie/${movieId}/watch/providers?api_key=${TMDB_API_KEY}`)
+    ]);
+
+    if (!detailsRes.ok) {
+      throw new Error('Failed to fetch movie details');
+    }
+
+    const details = await detailsRes.json();
+    const credits = creditsRes.ok ? await creditsRes.json() : { cast: [], crew: [] };
+    const providers = providersRes.ok ? await providersRes.json() : { results: {} };
+
+    // Get India watch providers (IN) or fallback to US
+    const regionProviders = providers.results?.IN || providers.results?.US || {};
+
+    const primaryGenreId = details.genres?.[0]?.id || 18;
+    const category = genreToCategory[primaryGenreId] || 'drama';
+    const genreName = details.genres?.map((g: any) => g.name).join(', ') || 'Drama';
+
+    const director = credits.crew?.find((c: any) => c.job === 'Director')?.name;
+
+    return {
+      id: details.id.toString(),
+      title: details.title,
+      year: details.release_date ? new Date(details.release_date).getFullYear() : 2020,
+      duration: details.runtime ? `${details.runtime} min` : 'N/A',
+      runtime: details.runtime,
+      rating: Math.round(details.vote_average * 10) / 10,
+      genre: genreName,
+      description: details.overview || 'No description available',
+      tagline: details.tagline,
+      thumbnail: getPosterUrl(details.poster_path),
+      backdrop: getBackdropUrl(details.backdrop_path, 'original'),
+      category,
+      cast: credits.cast?.slice(0, 10).map((c: any) => ({
+        id: c.id,
+        name: c.name,
+        character: c.character,
+        profile_path: c.profile_path
+      })) || [],
+      director,
+      watchProviders: {
+        flatrate: regionProviders.flatrate || [],
+        rent: regionProviders.rent || [],
+        buy: regionProviders.buy || [],
+        link: regionProviders.link
+      }
+    };
+  } catch (error) {
+    console.error('Error fetching movie details:', error);
+    return null;
+  }
+};
+
+export const getProviderLogoUrl = (path: string): string => {
+  return `${TMDB_IMAGE_BASE_URL}/w92${path}`;
+};
+
+export const getProfileUrl = (path: string | null): string => {
+  if (!path) return '/placeholder.svg';
+  return `${TMDB_IMAGE_BASE_URL}/w185${path}`;
 };

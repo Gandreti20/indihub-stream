@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import TeluguChannels from "./pages/TeluguChannels";
 import ChannelCategories from "./pages/ChannelCategories";
 import Movies from "./pages/Movies";
+import MovieDetail from "./pages/MovieDetail";
 import TrailerPlayer from "./pages/TrailerPlayer";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/telugu-channels" element={<TeluguChannels />} />
           <Route path="/channel-categories" element={<ChannelCategories />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/movie/:movieId" element={<MovieDetail />} />
           <Route path="/trailer/:movieId/:title" element={<TrailerPlayer />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
