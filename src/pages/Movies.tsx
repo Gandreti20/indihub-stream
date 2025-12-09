@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import StreamingHeader from "@/components/StreamingHeader";
 import NavigationBreadcrumb from "@/components/Breadcrumb";
-import { discoverTeluguMoviesMultiplePages, discoverTeluguMovies, getMoviesByCategory, searchTeluguMovies, getMovieVideos, discoverTeluguMoviesByProviderMultiplePages, discoverTeluguMoviesByProvider, OTT_PROVIDERS, getProviderLogoUrl, type Movie, type OTTProviderKey } from "@/services/tmdb";
+import { discoverTeluguMoviesMultiplePages, discoverTeluguMovies, getMoviesByCategory, searchTeluguMovies, getMovieVideos, discoverTeluguMoviesByProviderMultiplePages, discoverTeluguMoviesByProvider, OTT_PROVIDERS, getProviderLogoUrl, getMovieWatchProviders, type Movie, type OTTProviderKey, type WatchProvider } from "@/services/tmdb";
 
 const currentYear = new Date().getFullYear();
 const yearRanges = [
@@ -363,6 +363,22 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ movie, onPlay, onDetails }: MovieCardProps) => {
+  const [providers, setProviders] = useState<WatchProvider[]>([]);
+  const [loadingProviders, setLoadingProviders] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    const fetchProviders = async () => {
+      const data = await getMovieWatchProviders(movie.id);
+      if (!cancelled) {
+        setProviders(data);
+        setLoadingProviders(false);
+      }
+    };
+    fetchProviders();
+    return () => { cancelled = true; };
+  }, [movie.id]);
+
   return (
     <Card 
       className="group relative overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
@@ -422,6 +438,21 @@ const MovieCard = ({ movie, onPlay, onDetails }: MovieCardProps) => {
             {movie.category}
           </Badge>
         </div>
+
+        {/* OTT Provider Badges */}
+        {providers.length > 0 && (
+          <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1">
+            {providers.map((provider) => (
+              <img
+                key={provider.provider_id}
+                src={getProviderLogoUrl(provider.logo_path)}
+                alt={provider.provider_name}
+                title={provider.provider_name}
+                className="w-6 h-6 rounded shadow-md"
+              />
+            ))}
+          </div>
+        )}
       </div>
       
       <div className="p-3 space-y-1">
