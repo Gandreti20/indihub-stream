@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Play, Star, Clock, Calendar, Loader2, Search, ChevronDown, Info } from "lucide-react";
+import { Play, Star, Clock, Calendar, Loader2, Search, ChevronDown, Info, Tv } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -21,21 +21,11 @@ const yearRanges = [
   { id: '2000-2004', label: '2000-2004', start: 2000, end: 2004 },
 ];
 
-const ottPlatforms: { id: string; label: string; logo?: string; providerId?: number }[] = [
-  { id: 'all', label: 'All Platforms' },
-  ...Object.entries(OTT_PROVIDERS).map(([key, provider]) => ({
-    id: key,
-    label: provider.name,
-    logo: provider.logo,
-    providerId: provider.id
-  }))
-];
 
 const Movies = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedYearRange, setSelectedYearRange] = useState<string>('all');
-  const [selectedOTT, setSelectedOTT] = useState<string>('all');
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
@@ -43,8 +33,11 @@ const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [videoKey, setVideoKey] = useState<string | null>(null);
   const [loadingVideo, setLoadingVideo] = useState(false);
-  const [currentPage, setCurrentPage] = useState(10); // Start after initial 10 pages (200 movies)
+  const [currentPage, setCurrentPage] = useState(10);
   const [hasMore, setHasMore] = useState(true);
+  const [availabilityMovie, setAvailabilityMovie] = useState<Movie | null>(null);
+  const [availabilityProviders, setAvailabilityProviders] = useState<WatchProvider[]>([]);
+  const [loadingAvailability, setLoadingAvailability] = useState(false);
 
   const categories = [
     { id: 'all', label: 'All Movies' },
@@ -73,17 +66,7 @@ const Movies = () => {
       if (searchQuery.trim()) {
         data = await searchTeluguMovies(searchQuery);
         setHasMore(false);
-      } else if (selectedOTT !== 'all') {
-        // Fetch by OTT provider
-        const provider = OTT_PROVIDERS[selectedOTT as OTTProviderKey];
-        if (provider) {
-          data = await discoverTeluguMoviesByProviderMultiplePages(provider.id, 5);
-        } else {
-          data = [];
-        }
-        setHasMore(false); // OTT filtering doesn't support load more for now
       } else if (selectedCategory === 'all') {
-        // Fetch 10 pages (200 movies)
         data = await discoverTeluguMoviesMultiplePages(10);
       } else {
         data = await getMoviesByCategory(selectedCategory as Movie['category']);
@@ -98,6 +81,15 @@ const Movies = () => {
     }
   };
 
+  const checkAvailability = async (movie: Movie) => {
+    setAvailabilityMovie(movie);
+    setLoadingAvailability(true);
+    setAvailabilityProviders([]);
+    const providers = await getMovieWatchProviders(movie.id);
+    setAvailabilityProviders(providers);
+    setLoadingAvailability(false);
+  };
+
   // Initial fetch and on filter changes
   useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -105,16 +97,16 @@ const Movies = () => {
     }, 300);
 
     return () => clearTimeout(debounceTimer);
-  }, [selectedCategory, searchQuery, selectedOTT]);
+  }, [selectedCategory, searchQuery]);
 
   // Auto-refresh every 5 minutes to stay synced with TMDB
   useEffect(() => {
     const refreshInterval = setInterval(() => {
       fetchMovies(true);
-    }, 5 * 60 * 1000); // 5 minutes
+    }, 5 * 60 * 1000);
 
     return () => clearInterval(refreshInterval);
-  }, [selectedCategory, searchQuery, selectedOTT]);
+  }, [selectedCategory, searchQuery]);
 
   const loadMoreMovies = async () => {
     if (loadingMore || !hasMore || searchQuery.trim()) return;
@@ -189,7 +181,7 @@ const Movies = () => {
             ))}
           </div>
 
-          {/* Year Range & OTT Platform Filter */}
+          {/* Year Range Filter */}
           <div className="flex flex-wrap items-center gap-4 mb-8">
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground">Year:</span>
@@ -197,40 +189,10 @@ const Movies = () => {
                 <SelectTrigger className="w-36">
                   <SelectValue placeholder="Select year" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-popover border-border">
                   {yearRanges.map((range) => (
                     <SelectItem key={range.id} value={range.id}>
                       {range.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-muted-foreground">Platform:</span>
-              <Select value={selectedOTT} onValueChange={(value) => {
-                setSelectedOTT(value);
-                if (value !== 'all') {
-                  setSelectedCategory('all'); // Reset category when OTT is selected
-                }
-              }}>
-                <SelectTrigger className="w-48">
-                  <SelectValue placeholder="Select platform" />
-                </SelectTrigger>
-                <SelectContent>
-                  {ottPlatforms.map((platform) => (
-                    <SelectItem key={platform.id} value={platform.id}>
-                      <div className="flex items-center gap-2">
-                        {platform.logo && (
-                          <img 
-                            src={getProviderLogoUrl(platform.logo)} 
-                            alt={platform.label}
-                            className="w-5 h-5 rounded"
-                          />
-                        )}
-                        <span>{platform.label}</span>
-                      </div>
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -260,6 +222,7 @@ const Movies = () => {
                     movie={movie} 
                     onPlay={handleMovieSelect}
                     onDetails={(id) => navigate(`/movie/${id}`)}
+                    onCheckAvailability={checkAvailability}
                   />
                 ))}
               </div>
@@ -295,7 +258,7 @@ const Movies = () => {
 
       {/* Movie Player Dialog */}
       <Dialog open={!!selectedMovie} onOpenChange={(open) => !open && setSelectedMovie(null)}>
-        <DialogContent className="max-w-4xl w-full h-[80vh]">
+        <DialogContent className="max-w-4xl w-full h-[80vh] bg-card border-border">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold">{selectedMovie?.title}</DialogTitle>
           </DialogHeader>
@@ -352,6 +315,69 @@ const Movies = () => {
           )}
         </DialogContent>
       </Dialog>
+
+      {/* Check Availability Dialog */}
+      <Dialog open={!!availabilityMovie} onOpenChange={(open) => !open && setAvailabilityMovie(null)}>
+        <DialogContent className="max-w-md bg-card border-border">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Tv className="h-5 w-5 text-primary" />
+              Where to Watch
+            </DialogTitle>
+          </DialogHeader>
+          {availabilityMovie && (
+            <div className="space-y-4">
+              <div className="flex gap-4">
+                <img 
+                  src={availabilityMovie.thumbnail} 
+                  alt={availabilityMovie.title}
+                  className="w-20 h-28 object-cover rounded"
+                />
+                <div>
+                  <h3 className="font-semibold text-foreground">{availabilityMovie.title}</h3>
+                  <p className="text-sm text-muted-foreground">{availabilityMovie.year} • {availabilityMovie.genre}</p>
+                </div>
+              </div>
+              
+              {loadingAvailability ? (
+                <div className="flex justify-center py-6">
+                  <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                </div>
+              ) : availabilityProviders.length > 0 ? (
+                <div className="space-y-3">
+                  <p className="text-sm text-muted-foreground">Available on these platforms in your region:</p>
+                  <div className="flex flex-wrap gap-3">
+                    {availabilityProviders.map((provider) => (
+                      <div 
+                        key={provider.provider_id}
+                        className="flex items-center gap-2 bg-secondary/50 px-3 py-2 rounded-lg"
+                      >
+                        <img
+                          src={getProviderLogoUrl(provider.logo_path)}
+                          alt={provider.provider_name}
+                          className="w-8 h-8 rounded"
+                        />
+                        <span className="text-sm font-medium text-foreground">{provider.provider_name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-6">
+                  <p className="text-muted-foreground">No streaming info available for your region.</p>
+                  <Button 
+                    variant="outline" 
+                    className="mt-4"
+                    onClick={() => window.open(`https://www.justwatch.com/in/search?q=${encodeURIComponent(availabilityMovie.title)}`, '_blank')}
+                  >
+                    Check on JustWatch
+                  </Button>
+                </div>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
@@ -360,11 +386,11 @@ interface MovieCardProps {
   movie: Movie;
   onPlay: (movie: Movie) => void;
   onDetails: (movieId: string) => void;
+  onCheckAvailability: (movie: Movie) => void;
 }
 
-const MovieCard = ({ movie, onPlay, onDetails }: MovieCardProps) => {
+const MovieCard = ({ movie, onPlay, onDetails, onCheckAvailability }: MovieCardProps) => {
   const [providers, setProviders] = useState<WatchProvider[]>([]);
-  const [loadingProviders, setLoadingProviders] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -372,7 +398,6 @@ const MovieCard = ({ movie, onPlay, onDetails }: MovieCardProps) => {
       const data = await getMovieWatchProviders(movie.id);
       if (!cancelled) {
         setProviders(data);
-        setLoadingProviders(false);
       }
     };
     fetchProviders();
@@ -439,20 +464,39 @@ const MovieCard = ({ movie, onPlay, onDetails }: MovieCardProps) => {
           </Badge>
         </div>
 
-        {/* OTT Provider Badges */}
-        {providers.length > 0 && (
-          <div className="absolute bottom-2 left-2 right-2 flex items-center gap-1">
-            {providers.map((provider) => (
-              <img
-                key={provider.provider_id}
-                src={getProviderLogoUrl(provider.logo_path)}
-                alt={provider.provider_name}
-                title={provider.provider_name}
-                className="w-6 h-6 rounded shadow-md"
-              />
-            ))}
-          </div>
-        )}
+        {/* OTT Provider Badges + Check Availability */}
+        <div 
+          className="absolute bottom-2 left-2 right-2 flex items-center gap-1 cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            onCheckAvailability(movie);
+          }}
+          title="Check Availability"
+        >
+          {providers.length > 0 ? (
+            <>
+              {providers.slice(0, 3).map((provider) => (
+                <img
+                  key={provider.provider_id}
+                  src={getProviderLogoUrl(provider.logo_path)}
+                  alt={provider.provider_name}
+                  title={provider.provider_name}
+                  className="w-6 h-6 rounded shadow-md"
+                />
+              ))}
+              {providers.length > 3 && (
+                <span className="text-xs bg-black/70 text-white px-1.5 py-0.5 rounded">
+                  +{providers.length - 3}
+                </span>
+              )}
+            </>
+          ) : (
+            <div className="flex items-center gap-1 bg-black/70 px-2 py-1 rounded text-xs text-white">
+              <Tv className="h-3 w-3" />
+              <span>Check</span>
+            </div>
+          )}
+        </div>
       </div>
       
       <div className="p-3 space-y-1">
