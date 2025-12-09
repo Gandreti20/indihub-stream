@@ -359,3 +359,45 @@ export const discoverTeluguMoviesByProviderMultiplePages = async (providerId: nu
     return [];
   }
 };
+
+export interface WatchProvider {
+  provider_id: number;
+  provider_name: string;
+  logo_path: string;
+}
+
+export const getMovieWatchProviders = async (movieId: string): Promise<WatchProvider[]> => {
+  try {
+    const response = await fetch(
+      `${TMDB_BASE_URL}/movie/${movieId}/watch/providers?api_key=${TMDB_API_KEY}`
+    );
+    
+    if (!response.ok) return [];
+    
+    const data = await response.json();
+    const regionProviders = data.results?.IN || data.results?.US || {};
+    
+    // Combine flatrate (streaming) providers, prioritize them
+    const providers: WatchProvider[] = [];
+    const seenIds = new Set<number>();
+    
+    const addProviders = (list: WatchProvider[] | undefined) => {
+      if (!list) return;
+      for (const p of list) {
+        if (!seenIds.has(p.provider_id)) {
+          seenIds.add(p.provider_id);
+          providers.push(p);
+        }
+      }
+    };
+    
+    addProviders(regionProviders.flatrate);
+    addProviders(regionProviders.rent);
+    addProviders(regionProviders.buy);
+    
+    return providers.slice(0, 4); // Max 4 providers
+  } catch (error) {
+    console.error('Error fetching watch providers:', error);
+    return [];
+  }
+};
