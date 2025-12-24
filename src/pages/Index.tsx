@@ -37,9 +37,9 @@ const Index = () => {
           {loading ? <div className="flex justify-center items-center py-20">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div> : <>
-              {trendingMovies.length > 0 && <ContentCarousel title="🔥 Trending Telugu Movies" items={trendingMovies} />}
+              {trendingMovies.length > 0 && <ContentCarousel title="Trending Movies" items={trendingMovies} />}
               <LiveTVSection />
-              {popularMovies.length > 0 && <ContentCarousel title="⭐ Popular Telugu Movies" items={popularMovies} />}
+              {popularMovies.length > 0 && <ContentCarousel title="Popular Telugu Movies" items={popularMovies} />}
             </>}
         </div>
       </main>
