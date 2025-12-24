@@ -44,11 +44,11 @@ const LiveTVSection = () => {
   ];
 
   const handleWatchLive = () => {
-    navigate('/channels');
+    navigate('/telugu-channels');
   };
 
   const handleChannelClick = () => {
-    navigate('/channels');
+    navigate('/telugu-channels');
   };
 
   return (

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Volume2, VolumeX, Maximize, Share2 } from "lucide-react";
+import { ArrowLeft, Volume2, VolumeX, Maximize, Share2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Loader2 } from "lucide-react";
+import StreamingHeader from "@/components/StreamingHeader";
 import { getMovieVideos } from "@/services/tmdb";
 
 const TrailerPlayer = () => {
@@ -28,8 +28,10 @@ const TrailerPlayer = () => {
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
+      <StreamingHeader />
+      
       {/* Top Bar */}
-      <div className="absolute top-0 left-0 right-0 z-20 p-4 bg-gradient-to-b from-black/80 to-transparent">
+      <div className="absolute top-16 left-0 right-0 z-20 p-4 bg-gradient-to-b from-black/80 to-transparent">
         <div className="flex items-center justify-between">
           <Button
             variant="ghost"
