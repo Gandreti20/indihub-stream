@@ -9,7 +9,9 @@ import {
   getMovieVideos, 
   getProviderLogoUrl, 
   getProfileUrl,
-  MovieDetails 
+  getSimilarMovies,
+  MovieDetails,
+  Movie
 } from '@/services/tmdb';
 
 // OTT Platform deep links mapping
@@ -32,6 +34,7 @@ const MovieDetail: React.FC = () => {
   const navigate = useNavigate();
   const [movie, setMovie] = useState<MovieDetails | null>(null);
   const [trailerKey, setTrailerKey] = useState<string | null>(null);
+  const [similarMovies, setSimilarMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,12 +43,14 @@ const MovieDetail: React.FC = () => {
       
       setLoading(true);
       try {
-        const [details, videoKey] = await Promise.all([
+        const [details, videoKey, similar] = await Promise.all([
           getMovieDetails(movieId),
-          getMovieVideos(movieId)
+          getMovieVideos(movieId),
+          getSimilarMovies(movieId)
         ]);
         setMovie(details);
         setTrailerKey(videoKey);
+        setSimilarMovies(similar);
       } catch (error) {
         console.error('Error fetching movie data:', error);
       } finally {
@@ -296,6 +301,42 @@ const MovieDetail: React.FC = () => {
                   )}
                   <p className="font-medium text-foreground text-sm truncate">{actor.name}</p>
                   <p className="text-xs text-muted-foreground truncate">{actor.character}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Similar Movies Section */}
+        {similarMovies.length > 0 && (
+          <div className="mt-12 space-y-6">
+            <h3 className="text-2xl font-semibold text-foreground">You May Also Like</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {similarMovies.map((similarMovie) => (
+                <div 
+                  key={similarMovie.id} 
+                  className="group cursor-pointer"
+                  onClick={() => navigate(`/movie/${similarMovie.id}`)}
+                >
+                  <div className="relative aspect-[2/3] rounded-lg overflow-hidden border border-border group-hover:border-primary/50 transition-all">
+                    <img
+                      src={similarMovie.thumbnail}
+                      alt={similarMovie.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="absolute bottom-2 left-2 right-2">
+                        <p className="text-white text-sm font-medium truncate">{similarMovie.title}</p>
+                        <div className="flex items-center gap-2 text-xs text-gray-300">
+                          <span>{similarMovie.year}</span>
+                          <span>⭐ {similarMovie.rating}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="mt-2 text-sm text-foreground font-medium truncate group-hover:text-primary transition-colors">
+                    {similarMovie.title}
+                  </p>
                 </div>
               ))}
             </div>

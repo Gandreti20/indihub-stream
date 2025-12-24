@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import liveTvImage from "@/assets/live-tv.jpg";
-import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const LiveTVSection = () => {
-  const { toast } = useToast();
+  const navigate = useNavigate();
   
   const liveChannels = [
     { 
@@ -44,24 +44,11 @@ const LiveTVSection = () => {
   ];
 
   const handleWatchLive = () => {
-    toast({
-      title: "Starting Live Stream",
-      description: "ETV Telugu - Jabardasth Comedy Show",
-    });
+    navigate('/channels');
   };
 
-  const handleSetReminder = () => {
-    toast({
-      title: "Reminder Set",
-      description: "You'll be notified when the show starts",
-    });
-  };
-
-  const handleChannelClick = (channel: typeof liveChannels[0]) => {
-    toast({
-      title: `Tuning to ${channel.name}`,
-      description: channel.currentShow,
-    });
+  const handleChannelClick = () => {
+    navigate('/channels');
   };
 
   return (
@@ -104,8 +91,8 @@ const LiveTVSection = () => {
                       <Button variant="hero" size="sm" onClick={handleWatchLive}>
                         Watch Live
                       </Button>
-                      <Button variant="watchlist" size="sm" onClick={handleSetReminder}>
-                        Set Reminder
+                      <Button variant="watchlist" size="sm" onClick={() => navigate('/channels')}>
+                        Browse Channels
                       </Button>
                     </div>
                   </div>
@@ -121,7 +108,7 @@ const LiveTVSection = () => {
               <Card 
                 key={channel.id} 
                 className="p-4 bg-card border-border hover:border-primary/50 transition-colors cursor-pointer"
-                onClick={() => handleChannelClick(channel)}
+                onClick={() => handleChannelClick()}
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
