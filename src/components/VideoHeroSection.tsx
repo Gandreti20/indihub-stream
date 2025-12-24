@@ -159,6 +159,7 @@ const VideoHeroSection = ({ movies }: VideoHeroSectionProps) => {
               variant="outline" 
               size="lg" 
               className="gap-2 bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+              onClick={() => navigate(`/movie/${currentMovie.id}`)}
             >
               <Info className="h-5 w-5" />
               More Info
