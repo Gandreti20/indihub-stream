@@ -4,6 +4,7 @@ import { ArrowLeft, Star, Clock, Calendar, Play, ExternalLink, User } from 'luci
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
+import StreamingHeader from '@/components/StreamingHeader';
 import { 
   getMovieDetails, 
   getMovieVideos, 
@@ -146,6 +147,8 @@ const MovieDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <StreamingHeader />
+      
       {/* Backdrop */}
       <div className="relative h-[60vh] overflow-hidden">
         <div 
