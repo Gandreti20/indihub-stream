@@ -101,7 +101,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Andhra Pradesh and Telangana news updates',
       viewerCount: '32K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_lJH_8L-pvhLPHPkFLpwG0YxoKjHYMSQgXKSLXI=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/ABN_Andhra_Jyothi.png/200px-ABN_Andhra_Jyothi.png'
     },
     {
       id: 'v6-news',
@@ -113,7 +113,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telangana-focused news with live coverage',
       viewerCount: '28K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_kYB1E-LUCbkiA3X0L8LzqBWZ0PH5MHUqy37VHH-Q=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/V6_News.jpg/250px-V6_News.jpg'
     },
     {
       id: 'tv5-news',
@@ -125,7 +125,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Breaking news from AP and Telangana',
       viewerCount: '22K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_n2c9qz4eBeyP9R3z8YrX9i7Dz4x1D_QxN_NMJA=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/TV5_Telugu_Logo.png/200px-TV5_Telugu_Logo.png'
     },
     {
       id: '10tv-news',
@@ -137,7 +137,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news with political coverage',
       viewerCount: '15K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_mVbO1h0V16yBWpX3eDVT8VxZZBX_MxJ5m8wZlf=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/10TV_logo.png/200px-10TV_logo.png'
     },
     {
       id: 'ntv-news',
@@ -149,7 +149,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news and current affairs',
       viewerCount: '18K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_nKfNGNuQ2wNNJw6p7b6xVGZYNc7zPq9t0D3X8YqA=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/NTV_Telugu.png/200px-NTV_Telugu.png'
     },
     {
       id: 'sakshi-tv',
@@ -161,7 +161,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'AP & Telangana breaking news',
       viewerCount: '25K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_lzGqn0LCl9oYq3OxBBtS08Km6dC1l-2XKtpVLl=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sakshi_tv.jpg/250px-Sakshi_tv.jpg'
     },
     
     // Entertainment Channels
@@ -171,7 +171,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Popular Telugu entertainment with serials and movies',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/3/31/Star_Maa_2021.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Star_maa_logo_2023.png/250px-Star_maa_logo_2023.png'
     },
     {
       id: 'zee-telugu',
@@ -179,7 +179,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Family entertainment with Telugu serials',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/c/c5/Zee_Telugu_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Zee_Telugu_2025.svg/250px-Zee_Telugu_2025.svg.png'
     },
     {
       id: 'gemini-tv',
@@ -187,7 +187,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Telugu entertainment by Sun Network',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/5/5e/Gemini_TV_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/6/63/Gemini_TV_Logo.png'
     },
     {
       id: 'etv-telugu',
@@ -239,7 +239,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Hindi',
       description: 'Popular Hindi serials and reality shows',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/b/ba/Colors_TV_2020.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Colors_TV_logo.svg/250px-Colors_TV_logo.svg.png'
     },
     {
       id: 'star-plus',
@@ -247,7 +247,7 @@ const TeluguChannels = () => {
       category: 'Entertainment', 
       language: 'Hindi',
       description: 'Hindi family entertainment',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/6/6d/Star_Plus_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/d/d7/StarPlus_Logo.png'
     },
     {
       id: 'zee-tv',
@@ -255,7 +255,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Hindi', 
       description: 'Hindi entertainment channel',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/4/42/Zee_TV_2017.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Zee_TV_2025.svg/250px-Zee_TV_2025.svg.png'
     },
     {
       id: 'sony-tv',
@@ -263,7 +263,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Hindi',
       description: 'Hindi serials and shows',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/c/c5/Sony_Entertainment_Television_2023.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/SET_India_Logo_%282022%29.png/120px-SET_India_Logo_%282022%29.png'
     },
     {
       id: 'sab-tv',
@@ -271,7 +271,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Hindi',
       description: 'Family comedy and entertainment',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/6/6e/Sony_SAB_2021.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_SAB_Logo_%282022%29.png/120px-Sony_SAB_Logo_%282022%29.png'
     },
     {
       id: 'and-tv',
@@ -279,7 +279,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Hindi',
       description: 'Hindi GEC channel by Zee',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/0/0e/%26TV_2015.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%26TV_logo.svg/200px-%26TV_logo.svg.png'
     },
     
     // Bollywood Movie Channels
@@ -453,7 +453,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'English',
       description: 'Live cricket, football and sports',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/0/01/Star_Sports_1_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Star_Sports_Network_logo.png/250px-Star_Sports_Network_logo.png'
     },
     {
       id: 'star-sports-1-hindi',
@@ -461,7 +461,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'Hindi',
       description: 'Sports coverage in Hindi',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/8/88/Star_Sports_Hindi_1_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Star_Sports_Network_logo.png/250px-Star_Sports_Network_logo.png'
     },
     {
       id: 'star-sports-2',
@@ -469,7 +469,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'English',
       description: 'More live sports action',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/e/e2/Star_Sports_2_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Star_Sports_Network_logo.png/250px-Star_Sports_Network_logo.png'
     },
     {
       id: 'star-sports-3',
@@ -477,7 +477,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'English',
       description: 'Cricket and international sports',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/d/da/Star_Sports_3_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Star_Sports_Network_logo.png/250px-Star_Sports_Network_logo.png'
     },
     {
       id: 'star-sports-select-1',
@@ -485,7 +485,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'English',
       description: 'Premium sports including La Liga, Serie A',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/a/a9/Star_Sports_Select_1_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Star_Sports_Network_logo.png/250px-Star_Sports_Network_logo.png'
     },
     {
       id: 'star-sports-select-2',
@@ -493,7 +493,7 @@ const TeluguChannels = () => {
       category: 'Sports',
       language: 'English',
       description: 'International football leagues',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/b/b5/Star_Sports_Select_2_2018.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Star_Sports_Network_logo.png/250px-Star_Sports_Network_logo.png'
     },
     {
       id: 'sony-sports-ten-1',
@@ -590,7 +590,7 @@ const TeluguChannels = () => {
       language: 'Hindi',
       description: 'Hindi cartoons and kids shows',
       viewerCount: '6K',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/6/6e/Pogo_TV_2016.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/POGO-logo.png/250px-POGO-logo.png'
     },
     {
       id: 'cartoon-network',
@@ -598,7 +598,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'International cartoons and animation',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/0/0c/Cartoon_Network_2010.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/250px-Cartoon_Network_2010_logo.svg.png'
     },
     {
       id: 'disney-channel',
@@ -606,7 +606,7 @@ const TeluguChannels = () => {
       category: 'Kids', 
       language: 'English',
       description: 'Disney movies and shows for kids',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/e/e8/Disney_Channel_2019.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2014_Disney_Channel_logo.svg/250px-2014_Disney_Channel_logo.svg.png'
     },
     {
       id: 'nick',
@@ -614,7 +614,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Nick Jr. shows and cartoons',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/2/2b/Nickelodeon_2023.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Nickelodeon_2023_logo.svg/250px-Nickelodeon_2023_logo.svg.png'
     },
     {
       id: 'nick-jr',
@@ -622,7 +622,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Preschool programming',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/1/19/Nick_Jr._2009.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Nick_Jr._logo_2009.svg/200px-Nick_Jr._logo_2009.svg.png'
     },
     {
       id: 'hungama',
@@ -630,7 +630,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'Hindi',
       description: 'Hindi kids entertainment',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/6/6f/Hungama_TV_2006.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Hungama_TV_logo.svg/200px-Hungama_TV_logo.svg.png'
     },
     {
       id: 'sonic',
@@ -638,7 +638,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'Hindi',
       description: 'Action cartoons for kids',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/e/ed/Sonic_Nickelodeon.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sonic_logo.svg/200px-Sonic_logo.svg.png'
     },
     {
       id: 'disney-junior',
@@ -646,7 +646,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Disney for preschoolers',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/c/c2/Disney_Junior_2011.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Disney_Junior_Logo.svg/200px-Disney_Junior_Logo.svg.png'
     },
     {
       id: 'disney-xd',
@@ -654,7 +654,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Action and adventure for kids',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/c/cb/Disney_XD_2015.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Disney_XD_-_2015.svg/200px-Disney_XD_-_2015.svg.png'
     },
     
     // Music Channels
@@ -668,7 +668,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu music videos and songs',
       viewerCount: '3K',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/c/c1/Maa_Music_2019.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Star_Maa_Music_Logo.png/200px-Star_Maa_Music_Logo.png'
     },
     {
       id: 'mtv',
@@ -676,7 +676,7 @@ const TeluguChannels = () => {
       category: 'Music',
       language: 'Hindi',
       description: 'Hindi music videos and shows',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/4/41/MTV_India_2021.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/250px-MTV_2021_%28brand_version%29.svg.png'
     },
     {
       id: 'vh1',
@@ -684,7 +684,7 @@ const TeluguChannels = () => {
       category: 'Music',
       language: 'English',
       description: 'International music and pop culture',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/8/8a/VH1_2013.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/VH1_logo_2023.svg/200px-VH1_logo_2023.svg.png'
     },
     {
       id: '9xm',
@@ -692,7 +692,7 @@ const TeluguChannels = () => {
       category: 'Music',
       language: 'Hindi',
       description: 'Bollywood music channel',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/6/6d/9XM_2014.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/9XM_logo.svg/200px-9XM_logo.svg.png'
     },
     {
       id: 'b4u-music',
