@@ -89,7 +89,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: '24/7 Telugu news channel with breaking news and political coverage',
       viewerCount: '45K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_kfL-smUNyEp4PgMfLdZK8KaD8KV_B8Y6XjRwdYoXM=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/TV9TeluguLogo.jpg/250px-TV9TeluguLogo.jpg'
     },
     {
       id: 'abn-telugu',
@@ -195,7 +195,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Telugu',
       description: 'Popular Telugu serials and shows',
-      logo: 'https://static.wikia.nocookie.net/logopedia/images/a/a7/ETV_Telugu.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png'
     },
     {
       id: 'colors-telugu',
