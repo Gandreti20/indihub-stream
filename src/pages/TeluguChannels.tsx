@@ -101,7 +101,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Andhra Pradesh and Telangana news updates',
       viewerCount: '32K',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/ABN_Andhra_Jyothi.png/200px-ABN_Andhra_Jyothi.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/ABN_Andhra_Jyothi_2018.png/250px-ABN_Andhra_Jyothi_2018.png'
     },
     {
       id: 'v6-news',
@@ -125,7 +125,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Breaking news from AP and Telangana',
       viewerCount: '22K',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/TV5_Telugu_Logo.png/200px-TV5_Telugu_Logo.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/29/TV5_Telugu_logo.png/250px-TV5_Telugu_logo.png'
     },
     {
       id: '10tv-news',
@@ -137,7 +137,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news with political coverage',
       viewerCount: '15K',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/10TV_logo.png/200px-10TV_logo.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/10tv_telugu.jpg/243px-10tv_telugu.jpg'
     },
     {
       id: 'ntv-news',
@@ -149,7 +149,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Telugu news and current affairs',
       viewerCount: '18K',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/NTV_Telugu.png/200px-NTV_Telugu.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/NTV_Telugu_Logo.png/250px-NTV_Telugu_Logo.png'
     },
     {
       id: 'sakshi-tv',
@@ -279,7 +279,7 @@ const TeluguChannels = () => {
       category: 'Entertainment',
       language: 'Hindi',
       description: 'Hindi GEC channel by Zee',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/%26TV_logo.svg/200px-%26TV_logo.svg.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/%26TV_2025.svg/250px-%26TV_2025.svg.png'
     },
     
     // Bollywood Movie Channels
@@ -622,7 +622,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Preschool programming',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Nick_Jr._logo_2009.svg/200px-Nick_Jr._logo_2009.svg.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nick_Jr._logo_2023.svg/250px-Nick_Jr._logo_2023.svg.png'
     },
     {
       id: 'hungama',
@@ -630,7 +630,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'Hindi',
       description: 'Hindi kids entertainment',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Hungama_TV_logo.svg/200px-Hungama_TV_logo.svg.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Hungama_TV.svg/250px-Hungama_TV.svg.png'
     },
     {
       id: 'sonic',
@@ -638,7 +638,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'Hindi',
       description: 'Action cartoons for kids',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sonic_logo.svg/200px-Sonic_logo.svg.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Nick_Sonic_logo.png/250px-Nick_Sonic_logo.png'
     },
     {
       id: 'disney-junior',
@@ -646,7 +646,7 @@ const TeluguChannels = () => {
       category: 'Kids',
       language: 'English',
       description: 'Disney for preschoolers',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Disney_Junior_Logo.svg/200px-Disney_Junior_Logo.svg.png'
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/2024_Disney_Jr._Logo.svg/250px-2024_Disney_Jr._Logo.svg.png'
     },
     {
       id: 'disney-xd',
@@ -722,7 +722,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Spiritual and devotional content',
       viewerCount: '8K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_k1HmHXuVH5j1qGxS3OuXoLfQp6fN4LzB5mMQvbVQ=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/6/61/Bhakthi_TV_logo.jpg'
     },
     {
       id: 'svbc-ttd',
@@ -734,7 +734,7 @@ const TeluguChannels = () => {
       language: 'Telugu',
       description: 'Tirumala Tirupati Devasthanams live',
       viewerCount: '12K',
-      logo: 'https://yt3.googleusercontent.com/ytc/AIdro_mYq-O5kqRPtX4FmGJLMXEbLgx5Xr7E5FZv9V5n=s176-c-k-c0x00ffffff-no-rj'
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/SVBCTVLogo.png/250px-SVBCTVLogo.png'
     },
     {
       id: 'subhavaartha-tv',
