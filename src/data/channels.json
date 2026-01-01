@@ -1,0 +1,332 @@
+{
+  "channels": [
+    {
+      "id": "tv9-telugu",
+      "name": "TV9 Telugu",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "II_m28Bm-iM",
+      "language": "Telugu",
+      "description": "24/7 Telugu news channel with breaking news and political coverage",
+      "viewerCount": "45K",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/TV9TeluguLogo.jpg/250px-TV9TeluguLogo.jpg"
+    },
+    {
+      "id": "abn-telugu",
+      "name": "ABN Telugu",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "HoYsWagMFfE",
+      "language": "Telugu",
+      "description": "Andhra Pradesh and Telangana news updates",
+      "viewerCount": "32K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/8/8f/ABN_Andhra_Jyothi_2018.png"
+    },
+    {
+      "id": "v6-news",
+      "name": "V6 News",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "nrb8P8shbDk",
+      "language": "Telugu",
+      "description": "Telangana-focused news with live coverage",
+      "viewerCount": "28K",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/V6_News.jpg/250px-V6_News.jpg"
+    },
+    {
+      "id": "tv5-news",
+      "name": "TV5 News Telugu",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "LUnp_p497s0",
+      "language": "Telugu",
+      "description": "Breaking news from AP and Telangana",
+      "viewerCount": "22K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/2/29/TV5_Telugu_logo.png"
+    },
+    {
+      "id": "10tv-news",
+      "name": "10TV News",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "byG7EGw9NPs",
+      "language": "Telugu",
+      "description": "Telugu news with political coverage",
+      "viewerCount": "15K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/10tv_telugu.jpg/243px-10tv_telugu.jpg"
+    },
+    {
+      "id": "ntv-news",
+      "name": "NTV Telugu",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "ZOdMhWnVRAY",
+      "language": "Telugu",
+      "description": "Telugu news and current affairs",
+      "viewerCount": "18K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/d/dc/NTV_Telugu_Logo.png"
+    },
+    {
+      "id": "sakshi-tv",
+      "name": "Sakshi TV",
+      "category": "News",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "9kCcUipLPJM",
+      "language": "Telugu",
+      "description": "AP & Telangana breaking news",
+      "viewerCount": "25K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Sakshi_TV_Logo.png/250px-Sakshi_TV_Logo.png"
+    },
+    {
+      "id": "star-maa",
+      "name": "Star Maa",
+      "category": "Entertainment",
+      "language": "Telugu",
+      "description": "Popular Telugu entertainment with serials and movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Star_maa_logo_2023.png/250px-Star_maa_logo_2023.png"
+    },
+    {
+      "id": "zee-telugu",
+      "name": "Zee Telugu",
+      "category": "Entertainment",
+      "language": "Telugu",
+      "description": "Family entertainment with Telugu serials",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Zee_Telugu_2025.svg/250px-Zee_Telugu_2025.svg.png"
+    },
+    {
+      "id": "gemini-tv",
+      "name": "Gemini TV",
+      "category": "Entertainment",
+      "language": "Telugu",
+      "description": "Telugu entertainment by Sun Network",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/63/Gemini_TV_Logo.png"
+    },
+    {
+      "id": "etv-telugu",
+      "name": "ETV Telugu",
+      "category": "Entertainment",
+      "language": "Telugu",
+      "description": "Popular Telugu serials and shows",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "colors-telugu",
+      "name": "Colors Telugu",
+      "category": "Entertainment",
+      "language": "Telugu",
+      "description": "Contemporary Telugu entertainment",
+      "logo": "https://static.wikia.nocookie.net/logopedia/images/8/8b/Colors_Telugu.png"
+    },
+    {
+      "id": "colors-tv",
+      "name": "Colors TV",
+      "category": "Entertainment",
+      "language": "Hindi",
+      "description": "Popular Hindi serials and reality shows",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Colors_TV_logo.svg/250px-Colors_TV_logo.svg.png"
+    },
+    {
+      "id": "star-plus",
+      "name": "Star Plus",
+      "category": "Entertainment",
+      "language": "Hindi",
+      "description": "Hindi family entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/d/d7/StarPlus_Logo.png"
+    },
+    {
+      "id": "zee-tv",
+      "name": "Zee TV",
+      "category": "Entertainment",
+      "language": "Hindi",
+      "description": "Hindi entertainment channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Zee_TV_2025.svg/250px-Zee_TV_2025.svg.png"
+    },
+    {
+      "id": "sony-tv",
+      "name": "Sony TV",
+      "category": "Entertainment",
+      "language": "Hindi",
+      "description": "Hindi serials and shows",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/SET_India_Logo_%282022%29.png/120px-SET_India_Logo_%282022%29.png"
+    },
+    {
+      "id": "sab-tv",
+      "name": "SAB TV",
+      "category": "Entertainment",
+      "language": "Hindi",
+      "description": "Family comedy and entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_SAB_Logo_%282022%29.png/120px-Sony_SAB_Logo_%282022%29.png"
+    },
+    {
+      "id": "and-tv",
+      "name": "& TV",
+      "category": "Entertainment",
+      "language": "Hindi",
+      "description": "Hindi GEC channel by Zee",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/%26TV_2025.svg/250px-%26TV_2025.svg.png"
+    },
+    {
+      "id": "pogo",
+      "name": "Pogo",
+      "category": "Kids",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "UVEkJJ17fF4",
+      "language": "Hindi",
+      "description": "Hindi cartoons and kids shows",
+      "viewerCount": "6K",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/POGO-logo.png/250px-POGO-logo.png"
+    },
+    {
+      "id": "cartoon-network",
+      "name": "Cartoon Network",
+      "category": "Kids",
+      "language": "English",
+      "description": "International cartoons and animation",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/250px-Cartoon_Network_2010_logo.svg.png"
+    },
+    {
+      "id": "disney-channel",
+      "name": "Disney Channel",
+      "category": "Kids",
+      "language": "English",
+      "description": "Disney movies and shows for kids",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2014_Disney_Channel_logo.svg/250px-2014_Disney_Channel_logo.svg.png"
+    },
+    {
+      "id": "nick",
+      "name": "Nickelodeon",
+      "category": "Kids",
+      "language": "English",
+      "description": "Nick Jr. shows and cartoons",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/250px-Nickelodeon_2023_logo_%28outline%29.svg.png"
+    },
+    {
+      "id": "nick-jr",
+      "name": "Nick Jr.",
+      "category": "Kids",
+      "language": "English",
+      "description": "Preschool programming",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nick_Jr._logo_2023.svg/250px-Nick_Jr._logo_2023.svg.png"
+    },
+    {
+      "id": "hungama",
+      "name": "Hungama TV",
+      "category": "Kids",
+      "language": "Hindi",
+      "description": "Hindi kids entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Hungama_TV.svg/250px-Hungama_TV.svg.png"
+    },
+    {
+      "id": "sonic",
+      "name": "Sonic Nickelodeon",
+      "category": "Kids",
+      "language": "Hindi",
+      "description": "Action cartoons for kids",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Nick.svg/250px-Nick.svg.png"
+    },
+    {
+      "id": "disney-junior",
+      "name": "Disney Junior",
+      "category": "Kids",
+      "language": "English",
+      "description": "Disney for preschoolers",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/2024_Disney_Jr._Logo.svg/250px-2024_Disney_Jr._Logo.svg.png"
+    },
+    {
+      "id": "disney-xd",
+      "name": "Disney XD",
+      "category": "Kids",
+      "language": "English",
+      "description": "Action and adventure for kids",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Disney_XD_-_2015.svg/250px-Disney_XD_-_2015.svg.png"
+    },
+    {
+      "id": "maa-music",
+      "name": "Maa Music",
+      "category": "Music",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "OrWp3xLd7KE",
+      "language": "Telugu",
+      "description": "Telugu music videos and songs",
+      "viewerCount": "3K",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Star_maa_logo_2023.png/250px-Star_maa_logo_2023.png"
+    },
+    {
+      "id": "mtv",
+      "name": "MTV India",
+      "category": "Music",
+      "language": "Hindi",
+      "description": "Hindi music videos and shows",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/250px-MTV_2021_%28brand_version%29.svg.png"
+    },
+    {
+      "id": "vh1",
+      "name": "VH1 India",
+      "category": "Music",
+      "language": "English",
+      "description": "International music and pop culture",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/VH1_India_2016.svg/250px-VH1_India_2016.svg.png"
+    },
+    {
+      "id": "9xm",
+      "name": "9XM",
+      "category": "Music",
+      "language": "Hindi",
+      "description": "Bollywood music channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ef/9XMHindiMusicTelevisionChannelLogo.jpg"
+    },
+    {
+      "id": "b4u-music",
+      "name": "B4U Music",
+      "category": "Music",
+      "language": "Hindi",
+      "description": "Non-stop Bollywood music",
+      "logo": "https://static.wikia.nocookie.net/logopedia/images/8/89/B4U_Music.png"
+    },
+    {
+      "id": "bhakti-tv",
+      "name": "Bhakti TV",
+      "category": "Devotional",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "BXRcVXUlOuo",
+      "language": "Telugu",
+      "description": "Spiritual and devotional content",
+      "viewerCount": "8K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/61/Bhakthi_TV_logo.jpg"
+    },
+    {
+      "id": "svbc-ttd",
+      "name": "SVBC TTD",
+      "category": "Devotional",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "VtXR9UiRZwM",
+      "language": "Telugu",
+      "description": "Tirumala Tirupati Devasthanams live",
+      "viewerCount": "12K",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/SVBCTVLogo.png/250px-SVBCTVLogo.png"
+    },
+    {
+      "id": "subhavaartha-tv",
+      "name": "Subhavaartha TV",
+      "category": "Devotional",
+      "isLive": true,
+      "isYouTubeLive": true,
+      "youtubeEmbedId": "hzXhY5_vEKI",
+      "language": "Telugu",
+      "description": "Christian devotional channel",
+      "viewerCount": "5K",
+      "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lPdQEZFv_X3t_4bS7i8Vd5l3ZiP2F7Z-d9Wd_m=s176-c-k-c0x00ffffff-no-rj"
+    }
+  ]
+}
