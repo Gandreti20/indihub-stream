@@ -120,6 +120,16 @@
       "logo": "https://upload.wikimedia.org/wikipedia/en/6/63/Gemini_TV_Logo.png"
     },
     {
+      "id": "etv-abhiruchi",
+      "name": "ETV Abhiruchi",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://d2tbworamivdmb.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_ABHIRUCHI_H264-3_cloud-in/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu cooking and lifestyle channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
       "id": "etv-telugu",
       "name": "ETV Telugu",
       "category": "Entertainment",
