@@ -88,6 +88,8 @@
       "id": "star-maa",
       "name": "Star Maa",
       "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0nj/index.m3u8",
       "language": "Telugu",
       "description": "Popular Telugu entertainment with serials and movies",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Star_maa_logo_2023.png/250px-Star_maa_logo_2023.png"
@@ -133,9 +135,41 @@
       "id": "etv-telugu",
       "name": "ETV Telugu",
       "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://d2z3q47xzd535o.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_HD_H264-2_cloud_in/index.m3u8",
       "language": "Telugu",
       "description": "Popular Telugu serials and shows",
       "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "etv-plus",
+      "name": "ETV Plus",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://d27tnkf60df3v4.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_PLUS_H264-3_cloud_in/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu entertainment and variety shows",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "telugu-one",
+      "name": "Telugu One",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://amg02821-amg02821c1-samsung-in-4717.playouts.now.amagi.tv/playlist/amg02821-objectone-teluguone-samsungin/playlist.m3u8",
+      "language": "Telugu",
+      "description": "Telugu movies and entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "zee-cinema-hd",
+      "name": "Zee Cinema HD",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://amg17931-zee-amg17931c5-samsung-au-8873.playouts.now.amagi.tv/playlist.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood movies in HD",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Zee_TV_2025.svg/250px-Zee_TV_2025.svg.png"
     },
     {
       "id": "colors-telugu",
