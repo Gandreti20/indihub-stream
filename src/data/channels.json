@@ -354,9 +354,31 @@
       "id": "9xm",
       "name": "9XM",
       "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://d35j504z0x2vu2.cloudfront.net/v1/manifest/0bc8e8376bd8417a1b6761138aa41c26c7309312/9xm/23886666-8fc5-470f-aab1-bd637ed607b1/3.m3u8",
       "language": "Hindi",
       "description": "Bollywood music channel",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/e/ef/9XMHindiMusicTelevisionChannelLogo.jpg"
+    },
+    {
+      "id": "zoom-tv",
+      "name": "Zoom",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/zoom-tv/master.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood entertainment and music",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Zoom_TV_Logo.svg/250px-Zoom_TV_Logo.svg.png"
+    },
+    {
+      "id": "etv-music",
+      "name": "ETV Music",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://cc-szivnms4rlah6.akamaized.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-szivnms4rlah6/WWBI/Amagi/ETV_Music_IN/playlist.m3u8",
+      "language": "Telugu",
+      "description": "Telugu music videos 24/7",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
     },
     {
       "id": "b4u-music",
