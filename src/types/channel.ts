@@ -1,10 +1,11 @@
 export interface Channel {
   id: string;
   name: string;
-  category: 'News' | 'Entertainment' | 'Kids' | 'Music' | 'Devotional';
+  category: 'News' | 'Entertainment' | 'Movies' | 'Kids' | 'Music' | 'Devotional';
   isLive?: boolean;
   isYouTubeLive?: boolean;
   youtubeEmbedId?: string;
+  streamUrl?: string;
   language: string;
   description: string;
   viewerCount?: string;
