@@ -433,6 +433,16 @@
       "language": "English",
       "description": "Live sports coverage",
       "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Star_Sports_2018_logo.svg/250px-Star_Sports_2018_logo.svg.png"
+    },
+    {
+      "id": "zee-cinemalu",
+      "name": "Zee Cinemalu",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0ns/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu movies 24/7",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Zee_Telugu_2025.svg/250px-Zee_Telugu_2025.svg.png"
     }
   ]
 }
