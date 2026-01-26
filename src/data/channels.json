@@ -252,6 +252,8 @@
       "id": "disney-channel",
       "name": "Disney Channel",
       "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0kq/index.m3u8",
       "language": "English",
       "description": "Disney movies and shows for kids",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2014_Disney_Channel_logo.svg/250px-2014_Disney_Channel_logo.svg.png"
@@ -268,17 +270,31 @@
       "id": "nick-jr",
       "name": "Nick Jr.",
       "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0kx/index.m3u8",
       "language": "English",
       "description": "Preschool programming",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Nick_Jr._logo_2023.svg/250px-Nick_Jr._logo_2023.svg.png"
     },
     {
-      "id": "hungama",
-      "name": "Hungama TV",
+      "id": "super-hungama",
+      "name": "Super Hungama",
       "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0lk/index.m3u8",
       "language": "Hindi",
       "description": "Hindi kids entertainment",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Hungama_TV.svg/250px-Hungama_TV.svg.png"
+    },
+    {
+      "id": "kushi-tv",
+      "name": "Kushi TV",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://103.140.254.2:3500/live/558.m3u8",
+      "language": "Telugu",
+      "description": "Telugu kids entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Kochu_TV.png/250px-Kochu_TV.png"
     },
     {
       "id": "sonic",
@@ -292,6 +308,8 @@
       "id": "disney-junior",
       "name": "Disney Junior",
       "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0k7/index.m3u8",
       "language": "English",
       "description": "Disney for preschoolers",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/2024_Disney_Jr._Logo.svg/250px-2024_Disney_Jr._Logo.svg.png"
