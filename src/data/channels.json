@@ -383,6 +383,56 @@
       "description": "Christian devotional channel",
       "viewerCount": "5K",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lPdQEZFv_X3t_4bS7i8Vd5l3ZiP2F7Z-d9Wd_m=s176-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "etv-cinema",
+      "name": "ETV Cinema",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://d1q7j6ha51ro6f.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_CINEMA_H264-3_cloud_in/index.m3u8",
+      "language": "Telugu",
+      "description": "24/7 Telugu movies channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "gemini-movies",
+      "name": "Gemini Movies",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0n5/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu blockbuster movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/63/Gemini_TV_Logo.png"
+    },
+    {
+      "id": "star-movies",
+      "name": "Star Movies",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://103.178.78.151:7505/play/a1ge/index.m3u8",
+      "language": "English",
+      "description": "Hollywood blockbusters",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Star_Movies_logo_%282023%29.svg/250px-Star_Movies_logo_%282023%29.svg.png"
+    },
+    {
+      "id": "star-sports-1",
+      "name": "Star Sports 1",
+      "category": "Sports",
+      "isLive": true,
+      "streamUrl": "http://103.178.78.151:7505/play/a0ui/index.m3u8",
+      "language": "English",
+      "description": "Live cricket, football & more",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Star_Sports_2018_logo.svg/250px-Star_Sports_2018_logo.svg.png"
+    },
+    {
+      "id": "star-sports-2",
+      "name": "Star Sports 2",
+      "category": "Sports",
+      "isLive": true,
+      "streamUrl": "http://103.167.255.18:8085/play/a0jj/index.m3u8",
+      "language": "English",
+      "description": "Live sports coverage",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Star_Sports_2018_logo.svg/250px-Star_Sports_2018_logo.svg.png"
     }
   ]
 }
