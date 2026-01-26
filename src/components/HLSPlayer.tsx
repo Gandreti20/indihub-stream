@@ -225,8 +225,36 @@ const HLSPlayer = ({ src, poster, autoPlay = true, className = "" }: HLSPlayerPr
             className="mt-4"
             onClick={() => {
               setError(null);
+              setIsLoading(true);
+              const streamUrl = getProxiedUrl(src);
               if (hlsRef.current) {
-                hlsRef.current.loadSource(src);
+                hlsRef.current.destroy();
+                hlsRef.current = null;
+              }
+              // Re-trigger the effect by forcing a small delay
+              const video = videoRef.current;
+              if (video && Hls.isSupported()) {
+                const hls = new Hls({
+                  enableWorker: true,
+                  lowLatencyMode: true,
+                  backBufferLength: 90,
+                });
+                hlsRef.current = hls;
+                hls.loadSource(streamUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                  setIsLoading(false);
+                  video.play().catch(() => setIsPlaying(false));
+                });
+                hls.on(Hls.Events.ERROR, (_, data) => {
+                  if (data.fatal) {
+                    setError("Stream unavailable - try again later");
+                    setIsLoading(false);
+                  }
+                });
+              } else if (video?.canPlayType("application/vnd.apple.mpegurl")) {
+                video.src = streamUrl;
+                video.load();
               }
             }}
           >
