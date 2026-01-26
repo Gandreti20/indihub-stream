@@ -11,6 +11,17 @@ interface HLSPlayerProps {
   className?: string;
 }
 
+// Get proxied URL for HTTP streams
+const getProxiedUrl = (url: string): string => {
+  // If already HTTPS, use directly
+  if (url.startsWith('https://')) {
+    return url;
+  }
+  // Proxy HTTP streams through edge function
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+  return `${supabaseUrl}/functions/v1/stream-proxy?url=${encodeURIComponent(url)}`;
+};
+
 const HLSPlayer = ({ src, poster, autoPlay = true, className = "" }: HLSPlayerProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,6 +42,9 @@ const HLSPlayer = ({ src, poster, autoPlay = true, className = "" }: HLSPlayerPr
     setIsLoading(true);
     setError(null);
 
+    // Get the proxied URL for HTTP streams
+    const streamUrl = getProxiedUrl(src);
+
     // Check if HLS is supported
     if (Hls.isSupported()) {
       const hls = new Hls({
@@ -41,7 +55,7 @@ const HLSPlayer = ({ src, poster, autoPlay = true, className = "" }: HLSPlayerPr
 
       hlsRef.current = hls;
 
-      hls.loadSource(src);
+      hls.loadSource(streamUrl);
       hls.attachMedia(video);
 
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
@@ -79,7 +93,7 @@ const HLSPlayer = ({ src, poster, autoPlay = true, className = "" }: HLSPlayerPr
       };
     } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       // Native HLS support (Safari)
-      video.src = src;
+      video.src = streamUrl;
       video.addEventListener("loadedmetadata", () => {
         setIsLoading(false);
         if (autoPlay) {
