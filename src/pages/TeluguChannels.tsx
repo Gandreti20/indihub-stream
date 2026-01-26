@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import MiniPlayer from "@/components/MiniPlayer";
+import HLSPlayer from "@/components/HLSPlayer";
 import {
   HoverCard,
   HoverCardContent,
@@ -62,18 +63,25 @@ const TeluguChannels = () => {
   const channels: Channel[] = channelsData.channels as Channel[];
 
   const handleChannelClick = (channel: Channel) => {
-    if (channel.isYouTubeLive && channel.youtubeEmbedId) {
+    // Check if channel has HLS stream or YouTube live
+    const hasStream = channel.streamUrl || (channel.isYouTubeLive && channel.youtubeEmbedId);
+    
+    if (hasStream) {
       // If modal is open, switch channel in modal
       if (isPlayerOpen) {
         setSelectedChannel(channel);
+      } else if (channel.streamUrl) {
+        // HLS streams open in modal directly (no mini player support yet)
+        setSelectedChannel(channel);
+        setIsPlayerOpen(true);
       } else {
-        // Otherwise open in mini player
+        // YouTube streams open in mini player
         setMiniPlayerChannel(channel);
       }
       addToRecentlyWatched(channel.id);
       toast({
         title: `Now playing: ${channel.name}`,
-        description: "Stream loaded in mini player",
+        description: channel.streamUrl ? "HLS stream loaded" : "Stream loaded in mini player",
       });
     } else {
       toast({
@@ -138,7 +146,7 @@ const TeluguChannels = () => {
       return channel.category === selectedCategory;
     });
 
-  const liveChannelsCount = channels.filter(c => c.isYouTubeLive).length;
+  const liveChannelsCount = channels.filter(c => c.isYouTubeLive || c.streamUrl).length;
   const favoritesCount = favorites.length;
   const recentCount = recentlyWatched.length;
 
@@ -251,7 +259,7 @@ const TeluguChannels = () => {
         </div>
 
         {/* Live Stream Player Modal */}
-        {isPlayerOpen && selectedChannel && selectedChannel.youtubeEmbedId && (
+        {isPlayerOpen && selectedChannel && (selectedChannel.youtubeEmbedId || selectedChannel.streamUrl) && (
           <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
             <div className="relative w-full max-w-5xl bg-card rounded-lg overflow-hidden">
               {/* Player Header */}
@@ -268,30 +276,45 @@ const TeluguChannels = () => {
                       {selectedChannel.viewerCount}
                     </div>
                   )}
+                  {selectedChannel.streamUrl && (
+                    <Badge variant="outline" className="text-xs">
+                      HLS Stream
+                    </Badge>
+                  )}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Button variant="ghost" size="sm" onClick={minimizeToMiniPlayer} title="Minimize to PiP">
-                    <Minimize2 className="h-4 w-4" />
-                  </Button>
+                  {selectedChannel.youtubeEmbedId && !selectedChannel.streamUrl && (
+                    <Button variant="ghost" size="sm" onClick={minimizeToMiniPlayer} title="Minimize to PiP">
+                      <Minimize2 className="h-4 w-4" />
+                    </Button>
+                  )}
                   <Button variant="ghost" size="sm" onClick={closePlayer}>
                     <X className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
               
-              {/* YouTube Player */}
-              <div className="aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/${selectedChannel.youtubeEmbedId}?autoplay=1&mute=0`}
-                  title={selectedChannel.name}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
+              {/* Video Player - HLS or YouTube */}
+              {selectedChannel.streamUrl ? (
+                <HLSPlayer
+                  src={selectedChannel.streamUrl}
+                  poster={selectedChannel.logo}
+                  className="aspect-video"
                 />
-              </div>
+              ) : selectedChannel.youtubeEmbedId ? (
+                <div className="aspect-video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${selectedChannel.youtubeEmbedId}?autoplay=1&mute=0`}
+                    title={selectedChannel.name}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
         )}
@@ -356,7 +379,7 @@ const ChannelCard = ({
     return name.split(' ').map(word => word[0]).join('').slice(0, 3).toUpperCase();
   };
 
-  const isClickable = channel.isYouTubeLive && channel.youtubeEmbedId;
+  const isClickable = (channel.isYouTubeLive && channel.youtubeEmbedId) || channel.streamUrl;
 
   const cardContent = (
     <Card 
@@ -385,23 +408,23 @@ const ChannelCard = ({
         )}
         
         {/* Live Indicator */}
-        {channel.isLive && (
+        {(channel.isLive || channel.streamUrl) && (
           <div className="absolute top-2 left-2">
             <Badge 
               variant="secondary" 
-              className={`${channel.isYouTubeLive ? 'bg-accent text-accent-foreground' : 'bg-muted text-muted-foreground'} text-xs animate-pulse gap-1`}
+              className={`${channel.isYouTubeLive || channel.streamUrl ? 'bg-accent text-accent-foreground' : 'bg-muted text-muted-foreground'} text-xs animate-pulse gap-1`}
             >
               <Radio className="h-2 w-2" />
-              {channel.isYouTubeLive ? 'LIVE' : 'TV'}
+              {channel.isYouTubeLive ? 'LIVE' : channel.streamUrl ? 'STREAM' : 'TV'}
             </Badge>
           </div>
         )}
         
-        {/* YouTube Badge */}
-        {channel.isYouTubeLive && (
+        {/* Source Badge */}
+        {(channel.isYouTubeLive || channel.streamUrl) && (
           <div className="absolute top-2 right-2">
-            <Badge variant="secondary" className="bg-red-600 text-white text-xs">
-              Free
+            <Badge variant="secondary" className={`${channel.streamUrl ? 'bg-blue-600' : 'bg-red-600'} text-white text-xs`}>
+              {channel.streamUrl ? 'HLS' : 'Free'}
             </Badge>
           </div>
         )}
