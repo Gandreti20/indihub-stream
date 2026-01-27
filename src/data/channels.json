@@ -622,14 +622,14 @@
       "streamUrl": "https://cdn-1.pishow.tv/live/1117/master.m3u8",
       "language": "Telugu",
       "description": "Telugu kids entertainment",
-      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Chintu\_TV.png"
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Chintu_TV.png"
     },
     {
       "id": "chutti-tv",
       "name": "Chutti TV",
       "category": "Kids",
       "isLive": true,
-      "streamUrl": "https://d2wfvpquya8fkh.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/CHUTTI\_TV\_H264-3\_cloud\_in/index.m3u8",
+      "streamUrl": "https://d2wfvpquya8fkh.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/CHUTTI_TV_H264-3_cloud_in/index.m3u8",
       "language": "Tamil",
       "description": "Tamil kids channel",
       "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Chutti_TV_logo.svg/250px-Chutti_TV_logo.svg.png"
@@ -1122,7 +1122,7 @@
       "streamUrl": "https://g3.itvplayer.in/movlogstocdn/ishwartv/mono.m3u8",
       "language": "Hindi",
       "description": "Religious programming",
-      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Ishwar\_TV.png"
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Ishwar_TV.png"
     },
     {
       "id": "god-tv",
