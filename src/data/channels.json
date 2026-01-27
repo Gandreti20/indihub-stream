@@ -483,6 +483,676 @@
       "language": "Telugu",
       "description": "Telugu movies 24/7",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Zee_Telugu_2025.svg/250px-Zee_Telugu_2025.svg.png"
+    },
+    {
+      "id": "6tv-telugu",
+      "name": "6 TV Telugu",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/232/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news and current affairs",
+      "logo": "https://i.imgur.com/l3EcRnZ.png"
+    },
+    {
+      "id": "99tv",
+      "name": "99TV",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1211/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news channel",
+      "logo": "https://i.imgur.com/dZA4gel.png"
+    },
+    {
+      "id": "4tv-news",
+      "name": "4TV News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-4.pishow.tv/live/1007/master.m3u8",
+      "language": "Hindi",
+      "description": "Hindi news channel",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/4_TV.png"
+    },
+    {
+      "id": "aaj-tak",
+      "name": "Aaj Tak",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/AAJTAK_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "India's leading Hindi news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Aaj_Tak_Logo.svg/250px-Aaj_Tak_Logo.svg.png"
+    },
+    {
+      "id": "india-today",
+      "name": "India Today",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/INDIATODAY_REDIS.m3u8",
+      "language": "English",
+      "description": "English news from India Today Group",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/68/India_Today_TV_logo.svg/250px-India_Today_TV_logo.svg.png"
+    },
+    {
+      "id": "9x-jalwa",
+      "name": "9X Jalwa",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/9x-jalwa/master.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood music & entertainment",
+      "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_9X_JALWA/images/LOGO_HD/image.png"
+    },
+    {
+      "id": "9x-tashan",
+      "name": "9X Tashan",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://9xjio.wiseplayout.com/9X_Tashan/master.m3u8",
+      "language": "Punjabi",
+      "description": "Punjabi music channel",
+      "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_9X_TASHAN/images/LOGO_HD/image.png"
+    },
+    {
+      "id": "9x-jhakaas",
+      "name": "9X Jhakaas",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://9xjio.wiseplayout.com/9X_Jhakaas/master.m3u8",
+      "language": "Marathi",
+      "description": "Marathi music channel",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/9xjhakaas.png"
+    },
+    {
+      "id": "flix-hd",
+      "name": "&flix HD",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0il/index.m3u8",
+      "language": "English",
+      "description": "Hollywood movies in HD",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/%26flix_logo.svg/250px-%26flix_logo.svg.png"
+    },
+    {
+      "id": "pictures-hd",
+      "name": "&pictures HD",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0j4/index.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood blockbuster movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/%26pictures_logo.svg/250px-%26pictures_logo.svg.png"
+    },
+    {
+      "id": "prive-hd",
+      "name": "&prive HD",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0it/index.m3u8",
+      "language": "English",
+      "description": "Premium Hollywood movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/%26Priv%C3%A9_HD.svg/250px-%26Priv%C3%A9_HD.svg.png"
+    },
+    {
+      "id": "and-tv-hd",
+      "name": "&TV HD",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0j5/index.m3u8",
+      "language": "Hindi",
+      "description": "Hindi entertainment channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/%26TV_2025.svg/250px-%26TV_2025.svg.png"
+    },
+    {
+      "id": "colors-hd",
+      "name": "Colors HD",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/COLORS_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "Popular Hindi serials and reality shows",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Colors_TV_logo.svg/250px-Colors_TV_logo.svg.png"
+    },
+    {
+      "id": "chintu-tv",
+      "name": "Chintu TV",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1117/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu kids entertainment",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Chintu\_TV.png"
+    },
+    {
+      "id": "chutti-tv",
+      "name": "Chutti TV",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "https://d2wfvpquya8fkh.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/CHUTTI\_TV\_H264-3\_cloud\_in/index.m3u8",
+      "language": "Tamil",
+      "description": "Tamil kids channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Chutti_TV_logo.svg/250px-Chutti_TV_logo.svg.png"
+    },
+    {
+      "id": "dd-national",
+      "name": "DD National",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddnational.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "India's national broadcaster",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/DD_National_2024.svg/250px-DD_National_2024.svg.png"
+    },
+    {
+      "id": "dd-news",
+      "name": "DD News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddnews.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Doordarshan national news",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3f/DD_News_2024.svg/250px-DD_News_2024.svg.png"
+    },
+    {
+      "id": "dd-india",
+      "name": "DD India",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddindia.smil/index.m3u8",
+      "language": "English",
+      "description": "Doordarshan international news",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/DD_India_2024.svg/250px-DD_India_2024.svg.png"
+    },
+    {
+      "id": "dd-sports",
+      "name": "DD Sports",
+      "category": "Sports",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddsports.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Live sports on Doordarshan",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/DD_Sports_2024.svg/250px-DD_Sports_2024.svg.png"
+    },
+    {
+      "id": "dd-yadagiri",
+      "name": "DD Yadagiri",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddyadagiri.smil/index.m3u8",
+      "language": "Telugu",
+      "description": "Doordarshan Telangana",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/DD_Yadagiri_logo.svg/250px-DD_Yadagiri_logo.svg.png"
+    },
+    {
+      "id": "dd-saptagiri",
+      "name": "DD Saptagiri",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddsaptagiri.smil/index.m3u8",
+      "language": "Telugu",
+      "description": "Doordarshan Andhra Pradesh",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/DD_Saptagiri_logo.svg/250px-DD_Saptagiri_logo.svg.png"
+    },
+    {
+      "id": "dd-bharati",
+      "name": "DD Bharati",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddbharati.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Cultural and educational programming",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d9/DD_Bharati_2024.svg/250px-DD_Bharati_2024.svg.png"
+    },
+    {
+      "id": "dd-kisan",
+      "name": "DD Kisan",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddkisan.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Agricultural and rural programming",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/90/DD_Kisan.svg/250px-DD_Kisan.svg.png"
+    },
+    {
+      "id": "dd-podhigai",
+      "name": "DD Podhigai",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddpodhigai.smil/index.m3u8",
+      "language": "Tamil",
+      "description": "Doordarshan Tamil Nadu",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/DD_Podhigai_logo.svg/250px-DD_Podhigai_logo.svg.png"
+    },
+    {
+      "id": "dd-chandana",
+      "name": "DD Chandana",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddchandana.smil/index.m3u8",
+      "language": "Kannada",
+      "description": "Doordarshan Karnataka",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/DD_Chandana_logo.svg/250px-DD_Chandana_logo.svg.png"
+    },
+    {
+      "id": "dd-malayalam",
+      "name": "DD Malayalam",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddmalayalam.smil/index.m3u8",
+      "language": "Malayalam",
+      "description": "Doordarshan Kerala",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/DD_Malayalam_logo.svg/250px-DD_Malayalam_logo.svg.png"
+    },
+    {
+      "id": "dd-bangla",
+      "name": "DD Bangla",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddbangla.smil/index.m3u8",
+      "language": "Bengali",
+      "description": "Doordarshan West Bengal",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/DD_Bangla_logo.svg/250px-DD_Bangla_logo.svg.png"
+    },
+    {
+      "id": "dd-punjabi",
+      "name": "DD Punjabi",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddpunjabi.smil/index.m3u8",
+      "language": "Punjabi",
+      "description": "Doordarshan Punjab",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/DD_Punjabi_logo.svg/250px-DD_Punjabi_logo.svg.png"
+    },
+    {
+      "id": "dd-odia",
+      "name": "DD Odia",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddodia.smil/index.m3u8",
+      "language": "Odia",
+      "description": "Doordarshan Odisha",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/DD_Odia_logo.svg/250px-DD_Odia_logo.svg.png"
+    },
+    {
+      "id": "dd-gujarati",
+      "name": "DD Girnar",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddgirnar.smil/index.m3u8",
+      "language": "Gujarati",
+      "description": "Doordarshan Gujarat",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/DD_Girnar_logo.svg/250px-DD_Girnar_logo.svg.png"
+    },
+    {
+      "id": "dd-rajasthan",
+      "name": "DD Rajasthan",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddrajasthan.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Doordarshan Rajasthan",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/DD_Rajasthan_logo.svg/250px-DD_Rajasthan_logo.svg.png"
+    },
+    {
+      "id": "dd-bihar",
+      "name": "DD Bihar",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddbihar.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Doordarshan Bihar",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/DD_Bihar_logo.svg/250px-DD_Bihar_logo.svg.png"
+    },
+    {
+      "id": "dd-sahyadri",
+      "name": "DD Sahyadri",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddsahyadri.smil/index.m3u8",
+      "language": "Marathi",
+      "description": "Doordarshan Maharashtra",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/DD_Sahyadri_logo.svg/250px-DD_Sahyadri_logo.svg.png"
+    },
+    {
+      "id": "dd-madhya-pradesh",
+      "name": "DD MP",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddmp.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Doordarshan Madhya Pradesh",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/84/DD_MP_logo.svg/250px-DD_MP_logo.svg.png"
+    },
+    {
+      "id": "dd-up",
+      "name": "DD UP",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddup.smil/index.m3u8",
+      "language": "Hindi",
+      "description": "Doordarshan Uttar Pradesh",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e3/DD_UP_logo.svg/250px-DD_UP_logo.svg.png"
+    },
+    {
+      "id": "dd-urdu",
+      "name": "DD Urdu",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddurdu.smil/index.m3u8",
+      "language": "Urdu",
+      "description": "Urdu language programming",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/DD_Urdu_logo.svg/250px-DD_Urdu_logo.svg.png"
+    },
+    {
+      "id": "dd-kashir",
+      "name": "DD Kashir",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdnbbvth.akamaized.net/rtplive/smil:ddkashir.smil/index.m3u8",
+      "language": "Kashmiri",
+      "description": "Doordarshan Jammu & Kashmir",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/DD_Kashir_logo.svg/250px-DD_Kashir_logo.svg.png"
+    },
+    {
+      "id": "b4u-movies",
+      "name": "B4U Movies",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://d2tbworamivdmb.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/B4U_Movies_HLS/b4umovies-hls-v1.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood movies 24/7",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/B4U_Movies.png/250px-B4U_Movies.png"
+    },
+    {
+      "id": "animax-asia",
+      "name": "Animax Asia",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "https://d3lgvfbfqsldep.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/Animax_Asia/playlist.m3u8",
+      "language": "English",
+      "description": "Japanese anime 24/7",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Animax_Asia_Logo.svg/250px-Animax_Asia_Logo.svg.png"
+    },
+    {
+      "id": "sony-sab-hd",
+      "name": "Sony SAB HD",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/SABHD_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "Family comedy entertainment in HD",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_SAB_Logo_%282022%29.png/120px-Sony_SAB_Logo_%282022%29.png"
+    },
+    {
+      "id": "sony-max-hd",
+      "name": "Sony MAX HD",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/MAXHD_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood blockbusters in HD",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Sony_Max_2023.png/250px-Sony_Max_2023.png"
+    },
+    {
+      "id": "sony-pix",
+      "name": "Sony PIX",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/SONYPIX_REDIS.m3u8",
+      "language": "English",
+      "description": "Hollywood action movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Sony_PIX.svg/250px-Sony_PIX.svg.png"
+    },
+    {
+      "id": "set-hd",
+      "name": "Sony SET HD",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/SETHD_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "Premium Hindi entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/SET_India_Logo_%282022%29.png/120px-SET_India_Logo_%282022%29.png"
+    },
+    {
+      "id": "sony-wah",
+      "name": "Sony Wah",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/SONYWAH_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "Hindi classic movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Sony_Wah.svg/250px-Sony_Wah.svg.png"
+    },
+    {
+      "id": "zee-anmol-cinema",
+      "name": "Zee Anmol Cinema",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://d2wfvpquya8fkh.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ZEE_ANMOL_CINEMA_H264-3_cloud_in/index.m3u8",
+      "language": "Hindi",
+      "description": "Bollywood classic movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Zee_TV_2025.svg/250px-Zee_TV_2025.svg.png"
+    },
+    {
+      "id": "zee-bollywood",
+      "name": "Zee Bollywood",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://d2wfvpquya8fkh.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ZEE_BOLLYWOOD_H264-3_cloud_in/index.m3u8",
+      "language": "Hindi",
+      "description": "Non-stop Bollywood movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Zee_TV_2025.svg/250px-Zee_TV_2025.svg.png"
+    },
+    {
+      "id": "sun-tv",
+      "name": "Sun TV",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://livestream10.sunnxt.com/DolbyVision/SunTV_HDR/SunTV_HDR_Endpoints/SunTV-HDR10-IN-index.m3u8",
+      "language": "Tamil",
+      "description": "Tamil entertainment leader",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Sun_TV.svg/250px-Sun_TV.svg.png"
+    },
+    {
+      "id": "sun-music",
+      "name": "Sun Music",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://livestream10.sunnxt.com/DolbyVision/SunMusic_HDR/SunMusic_HDR_Endpoints/SunMusic-HDR10-IN-index.m3u8",
+      "language": "Tamil",
+      "description": "Tamil music videos 24/7",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Sun_Music.svg/250px-Sun_Music.svg.png"
+    },
+    {
+      "id": "sun-news",
+      "name": "Sun News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://livestream10.sunnxt.com/DolbyVision/SunNews_HDR/SunNews_HDR_Endpoints/SunNews-HDR10-IN-index.m3u8",
+      "language": "Tamil",
+      "description": "Tamil news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/45/Sun_News.svg/250px-Sun_News.svg.png"
+    },
+    {
+      "id": "udaya-tv",
+      "name": "Udaya TV",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://livestream10.sunnxt.com/DolbyVision/UdayaTV_HDR/UdayaTV_HDR_Endpoints/UdayaTV-HDR10-IN-index.m3u8",
+      "language": "Kannada",
+      "description": "Kannada family entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/Udaya_TV.svg/250px-Udaya_TV.svg.png"
+    },
+    {
+      "id": "udaya-music",
+      "name": "Udaya Music",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://livestream10.sunnxt.com/DolbyVision/UdayaMusic_HDR/UdayaMusic_HDR_Endpoints/UdayaMusic-HDR10-IN-index.m3u8",
+      "language": "Kannada",
+      "description": "Kannada music videos",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Udaya_Music.svg/250px-Udaya_Music.svg.png"
+    },
+    {
+      "id": "kalaignar-tv",
+      "name": "Kalaignar TV",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1101/master.m3u8",
+      "language": "Tamil",
+      "description": "Tamil general entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Kalaignar_TV_Logo.svg/250px-Kalaignar_TV_Logo.svg.png"
+    },
+    {
+      "id": "republic-tv",
+      "name": "Republic TV",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://prod-sports-north-gm.jiocinema.com/bpk-tv/Republic_TV_HD_voot_MOB/Fallback/index.m3u8",
+      "language": "English",
+      "description": "English news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Republic_TV.svg/250px-Republic_TV.svg.png"
+    },
+    {
+      "id": "republic-bharat",
+      "name": "Republic Bharat",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://prod-sports-north-gm.jiocinema.com/bpk-tv/Republic_Bharat_HD_voot_MOB/Fallback/index.m3u8",
+      "language": "Hindi",
+      "description": "Hindi news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Republic_Bharat.svg/250px-Republic_Bharat.svg.png"
+    },
+    {
+      "id": "ndtv-india",
+      "name": "NDTV India",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678/ndtvindia/master.m3u8",
+      "language": "Hindi",
+      "description": "Hindi news and analysis",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/NDTV_India_logo.svg/250px-NDTV_India_logo.svg.png"
+    },
+    {
+      "id": "ndtv-24x7",
+      "name": "NDTV 24x7",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://ndtv24x7elemarchana.akamaized.net/hls/live/2003678/ndtv24x7/master.m3u8",
+      "language": "English",
+      "description": "24-hour English news",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/NDTV_24x7.svg/250px-NDTV_24x7.svg.png"
+    },
+    {
+      "id": "times-now",
+      "name": "Times Now",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/TIMESNOW_REDIS.m3u8",
+      "language": "English",
+      "description": "English news debates",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Times_Now.svg/250px-Times_Now.svg.png"
+    },
+    {
+      "id": "zee-news",
+      "name": "Zee News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://livehub-voidnet.onrender.com/cluster/streamcore/in/ZEENEWS_REDIS.m3u8",
+      "language": "Hindi",
+      "description": "Leading Hindi news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Zee_News_2023.svg/250px-Zee_News_2023.svg.png"
+    },
+    {
+      "id": "news18-india",
+      "name": "News18 India",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://n18syndication.akamaized.net/n18liveabr/nn_akamai/playlist.m3u8",
+      "language": "Hindi",
+      "description": "Hindi news from News18",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/News18_India.svg/250px-News18_India.svg.png"
+    },
+    {
+      "id": "cnbc-awaaz",
+      "name": "CNBC Awaaz",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://n18syndication.akamaized.net/awaazliveabr/nn_akamai/playlist.m3u8",
+      "language": "Hindi",
+      "description": "Hindi business news",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/CNBC_Awaaz.svg/250px-CNBC_Awaaz.svg.png"
+    },
+    {
+      "id": "aastha-tv",
+      "name": "Aastha TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://g3.itvplayer.in/movlogstocdn/aastha/mono.m3u8",
+      "language": "Hindi",
+      "description": "Hindu spiritual programming",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Aastha_TV_logo.svg/250px-Aastha_TV_logo.svg.png"
+    },
+    {
+      "id": "sanskar-tv",
+      "name": "Sanskar TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://g3.itvplayer.in/movlogstocdn/sanskar/mono.m3u8",
+      "language": "Hindi",
+      "description": "Hindu devotional channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Sanskar_TV.svg/250px-Sanskar_TV.svg.png"
+    },
+    {
+      "id": "sadhna-tv",
+      "name": "Sadhna TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://g3.itvplayer.in/movlogstocdn/sadhna/mono.m3u8",
+      "language": "Hindi",
+      "description": "Spiritual programming",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/Sadhna_TV.svg/250px-Sadhna_TV.svg.png"
+    },
+    {
+      "id": "ishwar-tv",
+      "name": "Ishwar TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://g3.itvplayer.in/movlogstocdn/ishwartv/mono.m3u8",
+      "language": "Hindi",
+      "description": "Religious programming",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Ishwar\_TV.png"
+    },
+    {
+      "id": "god-tv",
+      "name": "GOD TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://bcovlive-a.akamaihd.net/80e543a4a3dd402a8f4aa0536ed04a34/eu-central-1/5034672814001/playlist_ssaiM.m3u8",
+      "language": "English",
+      "description": "Christian broadcasting network",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/God_TV_logo.svg/250px-God_TV_logo.svg.png"
+    },
+    {
+      "id": "hope-tv",
+      "name": "Hope Channel",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://hopetv.global.ssl.fastly.net/hls/hope/index.m3u8",
+      "language": "English",
+      "description": "Seventh-day Adventist network",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/Hope_Channel_logo.svg/250px-Hope_Channel_logo.svg.png"
+    },
+    {
+      "id": "tvk-tv",
+      "name": "TVK",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1194/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu devotional channel",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/TVK.png"
     }
   ]
 }
