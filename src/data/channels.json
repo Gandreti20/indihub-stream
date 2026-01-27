@@ -1153,6 +1153,456 @@
       "language": "Telugu",
       "description": "Telugu devotional channel",
       "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/TVK.png"
+    },
+    {
+      "id": "aastha-telugu",
+      "name": "Aastha Telugu",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://aasthaott.akamaized.net/110923/smil:aasthatelugu.smil/playlist.m3u8",
+      "language": "Telugu",
+      "description": "Telugu spiritual programming",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Aastha_Telugu.png"
+    },
+    {
+      "id": "abn-jyoti-hls",
+      "name": "ABN Andhra Jyoti",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/407/master.m3u8",
+      "language": "Telugu",
+      "description": "AP & Telangana news coverage",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/ABN_Andhra_Jyothi.png"
+    },
+    {
+      "id": "bhakthi-tv-hls",
+      "name": "Bhakthi TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/397/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu devotional & spiritual",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/61/Bhakthi_TV_logo.jpg"
+    },
+    {
+      "id": "big-tv",
+      "name": "BIG TV",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1059/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news channel",
+      "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BIG_TV/images/LOGO_HD/image.png"
+    },
+    {
+      "id": "brk-news",
+      "name": "BRK News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1037/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu breaking news",
+      "logo": "https://d229kpbsb5jevy.cloudfront.net/yuppfast/content/common/channel/logos/brk-news.png"
+    },
+    {
+      "id": "cvr-news",
+      "name": "CVR News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://mumt04.tangotv.in/CVRNEWS/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news and current affairs",
+      "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_CVR_NEWS/images/LOGO_HD/LOGO_HD_image.png"
+    },
+    {
+      "id": "cvr-health",
+      "name": "CVR Health",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-6.pishow.tv/live/395/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu health & lifestyle",
+      "logo": "https://i.imgur.com/bCyW32I.png"
+    },
+    {
+      "id": "cvr-om",
+      "name": "CVR OM Spiritual",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/957/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu spiritual programming",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/CVR_OM_Spiritual.png"
+    },
+    {
+      "id": "dd-saptagiri-hls",
+      "name": "DD Saptagiri",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://d2lk5u59tns74c.cloudfront.net/out/v1/26e915d6d12b4a06822c5e33c088ed56/index.m3u8",
+      "language": "Telugu",
+      "description": "Doordarshan Andhra Pradesh",
+      "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_SAPTAGIRI/images/LOGO_HD/image.png"
+    },
+    {
+      "id": "dd-yadagiri-hls",
+      "name": "DD Yadagiri",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/21/master.m3u8",
+      "language": "Telugu",
+      "description": "Doordarshan Telangana",
+      "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_DD_YADAGIRI/images/LOGO_HD/image.png"
+    },
+    {
+      "id": "etv-ap",
+      "name": "ETV Andhra Pradesh",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://d14vo2b97spizt.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_AP_H264-3_cloud_in/index.m3u8",
+      "language": "Telugu",
+      "description": "AP state news coverage",
+      "logo": "https://i.imgur.com/pFNCRnf.png"
+    },
+    {
+      "id": "etv-telangana",
+      "name": "ETV Telangana",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/398/master.m3u8",
+      "language": "Telugu",
+      "description": "Telangana state news coverage",
+      "logo": "https://i.imgur.com/pFNCRnf.png"
+    },
+    {
+      "id": "etv-news",
+      "name": "ETV News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1097/master.m3u8",
+      "language": "Telugu",
+      "description": "24/7 Telugu news channel",
+      "logo": "https://i.imgur.com/pFNCRnf.png"
+    },
+    {
+      "id": "etv-josh",
+      "name": "ETV Josh",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1096/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu youth entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "etv-life",
+      "name": "ETV Life",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://d1yxczf0xpxc89.cloudfront.net/v1/master/9d43eacaed199f8d5883927e7aef514a8a08e108/ETV_LIFE_H264-3_cloud_in/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu lifestyle channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/d/de/ETVnewLogo.png/239px-ETVnewLogo.png"
+    },
+    {
+      "id": "gemini-life",
+      "name": "Gemini Life",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1122/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu lifestyle & wellness",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/6/63/Gemini_TV_Logo.png"
+    },
+    {
+      "id": "gubbare",
+      "name": "Gubbare",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1165/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu kids entertainment",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Gubbare.png"
+    },
+    {
+      "id": "hmtv",
+      "name": "HMTV",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/393/master.m3u8",
+      "language": "Telugu",
+      "description": "Telangana news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/HMTV_logo.png/250px-HMTV_logo.png"
+    },
+    {
+      "id": "inews",
+      "name": "INews",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1029/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news and politics",
+      "logo": "https://i.imgur.com/FQh1VQT.png"
+    },
+    {
+      "id": "mahaa-news",
+      "name": "Mahaa News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1203/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news coverage",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Mahaa_news_logo.svg/250px-Mahaa_news_logo.svg.png"
+    },
+    {
+      "id": "mahaa-max",
+      "name": "Mahaa Max",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1204/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/Mahaa_news_logo.svg/250px-Mahaa_news_logo.svg.png"
+    },
+    {
+      "id": "mango-mobile-tv",
+      "name": "Mango Mobile TV",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1051/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu movies & shows",
+      "logo": "https://i.imgur.com/HpMg2L8.png"
+    },
+    {
+      "id": "nireekshana-tv",
+      "name": "Nireekshana TV",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1031/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu Christian channel",
+      "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Nireekshana_TV.png"
+    },
+    {
+      "id": "ntv-hls",
+      "name": "NTV Telugu",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/394/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news & current affairs",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/d/dc/NTV_Telugu_Logo.png"
+    },
+    {
+      "id": "prime9-news",
+      "name": "Prime9 News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1186/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu breaking news",
+      "logo": "https://i.imgur.com/lAKgXW9.png"
+    },
+    {
+      "id": "raj-news-telugu",
+      "name": "Raj News Telugu",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1093/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Raj_News.svg/250px-Raj_News.svg.png"
+    },
+    {
+      "id": "raj-musix-telugu",
+      "name": "Raj Musix Telugu",
+      "category": "Music",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1091/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu music videos 24/7",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Raj_Musix.svg/250px-Raj_Musix.svg.png"
+    },
+    {
+      "id": "sakshi-hls",
+      "name": "Sakshi TV",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/389/master.m3u8",
+      "language": "Telugu",
+      "description": "AP & Telangana news",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4f/Sakshi_TV_Logo.png/250px-Sakshi_TV_Logo.png"
+    },
+    {
+      "id": "sony-yay-telugu",
+      "name": "Sony Yay! Telugu",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1027/master.m3u8",
+      "language": "Telugu",
+      "description": "Kids cartoons in Telugu",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Sony_YAY!_logo.svg/250px-Sony_YAY!_logo.svg.png"
+    },
+    {
+      "id": "studio-one-plus",
+      "name": "Studio One +",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1112/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu movie channel",
+      "logo": "https://i.imgur.com/QvTsB2w.png"
+    },
+    {
+      "id": "studio-yuva",
+      "name": "Studio Yuva",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1167/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu youth programming",
+      "logo": "https://i.imgur.com/QvTsB2w.png"
+    },
+    {
+      "id": "svbc-hls",
+      "name": "SVBC",
+      "category": "Devotional",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/388/master.m3u8",
+      "language": "Telugu",
+      "description": "Tirumala Tirupati Devasthanams",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/SVBCTVLogo.png/250px-SVBCTVLogo.png"
+    },
+    {
+      "id": "swatantra-tv",
+      "name": "Swatantra TV",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1171/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu independent news",
+      "logo": "https://i.imgur.com/cN7gDsO.png"
+    },
+    {
+      "id": "t-news",
+      "name": "T News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/392/master.m3u8",
+      "language": "Telugu",
+      "description": "Telangana news channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/TNews_logo.svg/250px-TNews_logo.svg.png"
+    },
+    {
+      "id": "tolly-tv",
+      "name": "Tolly TV",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1111/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu classic movies",
+      "logo": "https://i.imgur.com/7k8fGiQ.png"
+    },
+    {
+      "id": "tv5-hls",
+      "name": "TV5 News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/390/master.m3u8",
+      "language": "Telugu",
+      "description": "AP & Telangana breaking news",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/2/29/TV5_Telugu_logo.png"
+    },
+    {
+      "id": "tv9-hls",
+      "name": "TV9 Telugu",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/387/master.m3u8",
+      "language": "Telugu",
+      "description": "24/7 Telugu news",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/TV9TeluguLogo.jpg/250px-TV9TeluguLogo.jpg"
+    },
+    {
+      "id": "v6-hls",
+      "name": "V6 News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/396/master.m3u8",
+      "language": "Telugu",
+      "description": "Telangana news & politics",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/V6_News.jpg/250px-V6_News.jpg"
+    },
+    {
+      "id": "vanitha-tv",
+      "name": "Vanitha TV",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1046/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu women's channel",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Vanitha_TV_logo.svg/250px-Vanitha_TV_logo.svg.png"
+    },
+    {
+      "id": "vissa-tv",
+      "name": "Vissa TV",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1114/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu entertainment",
+      "logo": "https://i.imgur.com/VJxXfvK.png"
+    },
+    {
+      "id": "zee-telugu-news",
+      "name": "Zee Telugu News",
+      "category": "News",
+      "isLive": true,
+      "streamUrl": "https://cdn-1.pishow.tv/live/1052/master.m3u8",
+      "language": "Telugu",
+      "description": "Telugu news by Zee Network",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Zee_Telugu_2025.svg/250px-Zee_Telugu_2025.svg.png"
+    },
+    {
+      "id": "nickelodeon-telugu",
+      "name": "Nickelodeon Telugu",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0jj/index.m3u8",
+      "language": "Telugu",
+      "description": "Kids cartoons in Telugu",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nickelodeon_2023_logo_%28outline%29.svg/250px-Nickelodeon_2023_logo_%28outline%29.svg.png"
+    },
+    {
+      "id": "super-hungama-telugu",
+      "name": "Super Hungama Telugu",
+      "category": "Kids",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0hp/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu kids entertainment",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Hungama_TV.svg/250px-Hungama_TV.svg.png"
+    },
+    {
+      "id": "star-maa-movies",
+      "name": "Star Maa Movies",
+      "category": "Movies",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0ho/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu blockbuster movies",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Star_maa_logo_2023.png/250px-Star_maa_logo_2023.png"
+    },
+    {
+      "id": "zee-telugu-hd",
+      "name": "Zee Telugu HD",
+      "category": "Entertainment",
+      "isLive": true,
+      "streamUrl": "http://116.90.120.152:8000/play/a0hm/index.m3u8",
+      "language": "Telugu",
+      "description": "Telugu entertainment in HD",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Zee_Telugu_2025.svg/250px-Zee_Telugu_2025.svg.png"
     }
   ]
 }
